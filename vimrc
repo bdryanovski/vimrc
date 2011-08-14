@@ -174,7 +174,7 @@ colorscheme railscasts_alt
 let coffee_make_options = "--bare"
 au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
-au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
+"au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 
 " Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
