@@ -178,3 +178,40 @@ au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
 " Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
+
+" Map some keys 
+
+" Use CTRL-S for saving, also in Insert mode
+noremap <silent> <C-S> :update<CR>
+vnoremap <silent> <C-S> <C-C>:update<CR>
+inoremap <silent> <C-S> <C-O>:update<CR>
+" bckspace in Visual mode deletes selection
+vnoremap <BS> d
+
+" CTRL-X and SHIFT-Del are Cut
+vnoremap <C-X> "+x
+vnoremap <S-Del> "+x
+"
+" " CTRL-C and CTRL-Insert are Copy
+vnoremap <C-C> "+y
+vnoremap <C-Insert> "+y
+
+" CTRL-V and SHIFT-Insert are Paste
+map <C-V>   "+gP
+map <S-Insert>    "+gP
+cmap <C-V>    <C-R>+
+cmap <S-Insert>   <C-R>+
+
+" CTRL-Z is Undo; not in cmdline though
+noremap <C-Z> u
+inoremap <C-Z> <C-O>u
+"
+" CTRL-Y is Redo (although not repeat); not in cmdline though
+noremap <C-Y> <C-R>
+inoremap <C-Y> <C-O><C-R>
+
+" CTRL-Tab is Next window
+noremap <C-Tab> <C-W>w
+inoremap <C-Tab> <C-O><C-W>w
+cnoremap <C-Tab> <C-C><C-W>w
+onoremap <C-Tab> <C-C><C-W>w
