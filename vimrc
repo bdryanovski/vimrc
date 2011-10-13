@@ -14,7 +14,8 @@ set ruler                             " show the cursor position
 set title                             " show title
 set incsearch                         " find as entering pattern
 set t_Co=256                          " uses 256 colors
-set ignorecase                        " case insensitive patterns,...
+set ignorecase                        " case insensitive patterns,..
+set cursorline
 set smartcase                         " when only lowercase is used
 set pastetoggle=<F2>                  " F2 toggles indenting when pasting
 set wildmenu                          " use command-line completion menu,...
@@ -27,8 +28,8 @@ set softtabstop=2                     " no. of spaces for tab when editing
 set expandtab                         " expand tabs into spaces
 set smarttab                          " smart tabulation and backspace
 set mouse=a                           " enable mouse in all modes
-set list                              " show non-print characters,...
-set listchars=trail:⋅,nbsp:⋅,tab:▷⋅   " for tabs and trailing spaces
+"set list                              " show non-print characters,...
+"set listchars=trail:⋅,nbsp:⋅,tab:▷⋅   " for tabs and trailing spaces
 set number                            " show line numbers OR,...
 "set relativenumber                    " relative line numbers (>= Vim 7.3)
 
@@ -168,7 +169,7 @@ let vala_no_tab_space_error = 1
 nnoremap <leader>t :ConqueTermSplit bash<cr>
 
 " Set color scheme
-colorscheme railscasts_alt
+colorscheme molokai "railscasts_alt
 
 " Coffe-Script
 let coffee_make_options = "--bare"
@@ -182,25 +183,25 @@ let g:neocomplcache_enable_at_startup = 1
 " Map some keys 
 
 " Use CTRL-S for saving, also in Insert mode
-noremap <silent> <C-S> :update<CR>
-vnoremap <silent> <C-S> <C-C>:update<CR>
-inoremap <silent> <C-S> <C-O>:update<CR>
+"noremap <silent> <C-S> :update<CR>
+"vnoremap <silent> <C-S> <C-C>:update<CR>
+"inoremap <silent> <C-S> <C-O>:update<CR>
 " bckspace in Visual mode deletes selection
 vnoremap <BS> d
 
 " CTRL-X and SHIFT-Del are Cut
-vnoremap <C-X> "+x
-vnoremap <S-Del> "+x
+"vnoremap <C-X> "+x
+"vnoremap <S-Del> "+x
 "
 " " CTRL-C and CTRL-Insert are Copy
-vnoremap <C-C> "+y
-vnoremap <C-Insert> "+y
+"vnoremap <C-C> "+y
+"vnoremap <C-Insert> "+y
 
 " CTRL-V and SHIFT-Insert are Paste
-map <C-V>   "+gP
-map <S-Insert>    "+gP
-cmap <C-V>    <C-R>+
-cmap <S-Insert>   <C-R>+
+"map <C-V>   "+gP
+"map <S-Insert>    "+gP
+"cmap <C-V>    <C-R>+
+"cmap <S-Insert>   <C-R>+
 
 " CTRL-Z is Undo; not in cmdline though
 noremap <C-Z> u
