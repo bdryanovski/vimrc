@@ -8,7 +8,6 @@ call pathogen#runtime_append_all_bundles()
 
 " Settings
 set nocompatible                      " don't try to be strictly vi-like
-set clipboard = unnamed
 set modelines=0                       " don't use modelines (for security)
 set viminfo='20,\"50                  " use a viminfo file,...
 set history=50                        " limit history
@@ -52,6 +51,9 @@ set statusline+=%-14.([%l/%L],%c%V%)     " cursor info
 " Set the leader key
 let mapleader = ","
 
+" Set color scheme
+colorscheme molokai "railscasts_alt
+
 " Map F1 key to Esc.
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
@@ -94,20 +96,6 @@ if has("autocmd")
   augroup END
 endif
 
-if has("cscope") && filereadable("/usr/bin/cscope")
-   set csprg=/usr/bin/cscope
-   set csto=0
-   set cst
-   set nocsverb
-   " add any database in current directory
-   if filereadable("cscope.out")
-      cs add cscope.out
-   " else add database pointed to by environment
-   elseif $CSCOPE_DB != ""
-      cs add $CSCOPE_DB
-   endif
-   set csverb
-endif
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -164,6 +152,7 @@ function! ToggleScratch()
     Sscratch
   endif
 endfunction
+
 " Plugin: Scratch - keys to toggle Scratch buffer
 map <leader>s :call ToggleScratch()<CR>
 
@@ -175,28 +164,8 @@ source ~/.vim/snippets/support_functions.vim
 autocmd vimenter * call ExtractSnips("~/.vim/snippets/html", "eruby")
 autocmd vimenter * call ExtractSnips("~/.vim/snippets/html", "php")
 
-" Plugin: LaTeX - configuration (plugin not bundled in gavim2)
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor='latex'
 
-" Plugin: Vala - vala support
-autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
-autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
-au BufRead,BufNewFile *.vala  setfiletype vala
-au BufRead,BufNewFile *.vapi  setfiletype vala
-let vala_comment_strings = 1
-let vala_space_errors = 1
-let vala_no_tab_space_error = 1
-
-" Plugin: Ack - uncomment suitable line if configuration is necessary
-"let g:ackprg="ack -H --nocolor --nogroup"         " if ack --version < 1.92
-"let g:ackprg="ack-grep -H --nocolor --nogroup"    " for Debian/Ubuntu
-
-
-" Set color scheme
-colorscheme molokai "railscasts_alt
-
-" Coffe-Script
+" Plugin: Coffe-Script
 let coffee_make_options = "--bare"
 au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
@@ -212,6 +181,7 @@ let g:neocomplcache_enable_at_startup = 1
 "noremap <silent> <C-S> :update<CR>
 "vnoremap <silent> <C-S> <C-C>:update<CR>
 "inoremap <silent> <C-S> <C-O>:update<CR>
+
 " bckspace in Visual mode deletes selection
 vnoremap <BS> d
 
