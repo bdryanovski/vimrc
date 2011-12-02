@@ -6,7 +6,9 @@ endif
 filetype off                          " disable filetype use. Enabled later
 call pathogen#runtime_append_all_bundles()
 
+" Settings
 set nocompatible                      " don't try to be strictly vi-like
+set clipboard = unnamed
 set modelines=0                       " don't use modelines (for security)
 set viminfo='20,\"50                  " use a viminfo file,...
 set history=50                        " limit history
@@ -39,6 +41,14 @@ setlocal ofu=syntaxcomplete#Complete  " enable syntax based omni completion
 setlocal foldmethod=syntax            " folding uses syntax for folding
 setlocal nofoldenable                 " don't start with folded lines
 
+" Status line definition
+set statusline=
+set statusline+=%<%f\ %h%m%r             " filename and flags
+set statusline+=%{fugitive#statusline()} " git info
+set statusline+=%=                       " alignment separator
+set statusline+=[%{&ft}]                 " filetype
+set statusline+=%-14.([%l/%L],%c%V%)     " cursor info
+
 " Set the leader key
 let mapleader = ","
 
@@ -63,11 +73,13 @@ if has("autocmd")
     autocmd!
     " In text files, always limit the width of text to 78 characters
     autocmd BufRead *.txt set tw=78
+
     " When editing a file, always jump to the last cursor position
     autocmd BufReadPost *
     \ if line("'\"") > 0 && line ("'\"") <= line("$") |
     \   exe "normal! g'\"" |
     \ endif
+
     " don't write swapfile on most commonly used directories for NFS mounts or USB sticks
     autocmd BufNewFile,BufReadPre /media/*,/mnt/* set directory=~/tmp,/var/tmp,/tmp
 
@@ -119,6 +131,21 @@ com! DiffSaved call s:DiffWithSaved()
 
 nnoremap <leader>? :DiffSaved<cr>
 
+" PLUGINS ====================================
+
+" Ruby speedup
+let g:ruby_path                      = ''
+let g:rubycomplete_buffer_loading    = 0
+let g:rubycomplete_classes_in_global = 0
+let g:rubycomplete_rails             = 0
+
+" get rid of custom rails syntax highlighting
+let g:rails_syntax = 0
+
+" syntax highlighting:
+let ruby_no_expensive = 1
+let ruby_operators    = 1
+
 " Plugin: BufExplorer - easier invoke keys
 nnoremap <leader>bb :BufExplorer<cr>
 
@@ -165,8 +192,6 @@ let vala_no_tab_space_error = 1
 "let g:ackprg="ack -H --nocolor --nogroup"         " if ack --version < 1.92
 "let g:ackprg="ack-grep -H --nocolor --nogroup"    " for Debian/Ubuntu
 
-" Plugin: keys to launch conque - terminal
-nnoremap <leader>t :ConqueTermSplit bash<cr>
 
 " Set color scheme
 colorscheme molokai "railscasts_alt
@@ -180,7 +205,8 @@ au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 " Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 
-" Map some keys 
+" Map ======================================
+
 
 " Use CTRL-S for saving, also in Insert mode
 "noremap <silent> <C-S> :update<CR>
@@ -216,3 +242,33 @@ noremap <C-Tab> <C-W>w
 inoremap <C-Tab> <C-O><C-W>w
 cnoremap <C-Tab> <C-C><C-W>w
 onoremap <C-Tab> <C-C><C-W>w
+
+" Moving through splits:
+nmap gh <C-w>h
+nmap gj <C-w>j
+nmap gk <C-w>k
+nmap gl <C-w>l
+
+" Upcase current word
+nnoremap <C-u> mzgUiw`z
+
+" Split and execute any command:
+nnoremap __ :split \|<Space>
+
+" Open new tab more easily:
+nnoremap <leader>t :tabnew<cr>
+nnoremap <leader>T :tabedit %<cr>gT:quit<cr>
+
+" Paste in insert and command modes
+imap <C-p> <Esc>pa
+cmap <C-p> <C-r>"
+
+" https://github.com/bjeanes/dot-files/blob/master/vim/vimrc
+" For when you forget to sudo.. Really Write the file.
+command! W call s:SudoWrite()
+function! s:SudoWrite()
+  write !sudo tee % >/dev/null
+  e!
+endfunction
+
+
