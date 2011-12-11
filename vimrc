@@ -235,10 +235,23 @@ cmap <C-p> <C-r>"
 
 " https://github.com/bjeanes/dot-files/blob/master/vim/vimrc
 " For when you forget to sudo.. Really Write the file.
-command! W call s:SudoWrite()
-function! s:SudoWrite()
-  write !sudo tee % >/dev/null
-  e!
-endfunction
+"command! W call s:SudoWrite()
+"function! s:SudoWrite()
+"  write !sudo tee % >/dev/null
+"  e!
+"endfunction
 
+" Add the closing brace only at the end of the line
+function! ConditionalPairMap(open, close)
+  let line = getline('.')
+  let col = col('.')
+  if col < col('$') || stridx(line, a:close, col + 1) != -1
+    return a:open
+  else
+    return a:open . a:close . repeat("\<left>", len(a:close))
+  endif
+endf
 
+inoremap <expr> ( ConditionalPairMap('(', ')')
+inoremap <expr> { ConditionalPairMap('{', '}')
+inoremap <expr> [ ConditionalPairMap('[', ']')
