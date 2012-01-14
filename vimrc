@@ -23,6 +23,7 @@ set wildmenu                          " use command-line completion menu,...
 set wildmode=longest:full             " with wildmode
 set bs=indent,eol,start               " allow backspacing over everything
 set autoindent                        " enable auto-indentation
+set ts=2                              " tabs are 2 space
 set tabstop=2                         " no. of spaces for tab in file
 set shiftwidth=2                      " no. of spaces for step in autoindent
 set softtabstop=2                     " no. of spaces for tab when editing
@@ -33,6 +34,16 @@ set mouse=a                           " enable mouse in all modes
 "set listchars=trail:⋅,nbsp:⋅,tab:▷⋅   " for tabs and trailing spaces
 set number                            " show line numbers OR,...
 "set relativenumber                    " relative line numbers (>= Vim 7.3)
+
+" In VIEW mode.
+set showmatch 
+set mat=5
+
+" Backup and Files
+"set backup                     " enable creation of backup files
+"set backupdir=~/.vim/backups   " Where to store the backups
+"set directory=~/.vim/tmp       " Temporary files will go
+
 
 filetype plugin indent on             " enable filetype use
 
@@ -65,6 +76,11 @@ map <F9> <Esc>:setlocal nospell<CR>
 
 " Remove highlighting search results
 nnoremap <leader><space> :noh <CR>
+
+" Copy/Paste mapping
+nmap <C-V> "+gP
+imap <C-V> <ESC><C-V>i
+vmap <C-C> "+y
 
 " Map w!! to write file with sudo, when forgot to open with sudo.
 cmap w!! w !sudo tee % >/dev/null
@@ -144,6 +160,9 @@ let NERDChristmasTree = 1
 let NERDTreeHighlightCursorline = 1
 let NERDTreeMapActivateNode='<CR>'
 
+" vim-pasta 
+let g:pasta_enabled_filetypes = ['ruby', 'javascript', 'css', 'coffee', 'php']
+
 " Plugin: Scratch - define invoke function
 function! ToggleScratch()
   if expand('%') == g:ScratchBufferName
@@ -200,24 +219,24 @@ vnoremap <BS> d
 "cmap <S-Insert>   <C-R>+
 
 " CTRL-Z is Undo; not in cmdline though
-noremap <C-Z> u
-inoremap <C-Z> <C-O>u
+"noremap <C-Z> u
+"inoremap <C-Z> <C-O>u
 "
 " CTRL-Y is Redo (although not repeat); not in cmdline though
-noremap <C-Y> <C-R>
-inoremap <C-Y> <C-O><C-R>
+"noremap <C-Y> <C-R>
+"inoremap <C-Y> <C-O><C-R>
 
 " CTRL-Tab is Next window
-noremap <C-Tab> <C-W>w
-inoremap <C-Tab> <C-O><C-W>w
-cnoremap <C-Tab> <C-C><C-W>w
-onoremap <C-Tab> <C-C><C-W>w
+"noremap <C-Tab> <C-W>w
+"inoremap <C-Tab> <C-O><C-W>w
+"cnoremap <C-Tab> <C-C><C-W>w
+"onoremap <C-Tab> <C-C><C-W>w
 
 " Moving through splits:
-nmap gh <C-w>h
-nmap gj <C-w>j
-nmap gk <C-w>k
-nmap gl <C-w>l
+"nmap gh <C-w>h
+"nmap gj <C-w>j
+"nmap gk <C-w>k
+"nmap gl <C-w>l
 
 " Upcase current word
 nnoremap <C-u> mzgUiw`z
