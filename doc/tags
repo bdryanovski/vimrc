@@ -23,6 +23,7 @@
 'Tlist_Use_SingleClick'	taglist.txt	/*'Tlist_Use_SingleClick'*
 'Tlist_WinHeight'	taglist.txt	/*'Tlist_WinHeight'*
 'Tlist_WinWidth'	taglist.txt	/*'Tlist_WinWidth'*
+:Gist	gist-vim.txt	/*:Gist*
 :Neco	neocomplcache.txt	/*:Neco*
 :NeoComplCacheAutoCompletionLength	neocomplcache.txt	/*:NeoComplCacheAutoCompletionLength*
 :NeoComplCacheCachingBuffer	neocomplcache.txt	/*:NeoComplCacheCachingBuffer*
@@ -66,6 +67,7 @@
 <Plug>(neocomplcache_snippets_force_jump)	neocomplcache.txt	/*<Plug>(neocomplcache_snippets_force_jump)*
 <Plug>(neocomplcache_snippets_jump)	neocomplcache.txt	/*<Plug>(neocomplcache_snippets_jump)*
 <Plug>(neocomplcache_start_unite_complete)	neocomplcache.txt	/*<Plug>(neocomplcache_start_unite_complete)*
+Gist.vim	gist-vim.txt	/*Gist.vim*
 Tlist_Get_Tag_Prototype_By_Line()	taglist.txt	/*Tlist_Get_Tag_Prototype_By_Line()*
 Tlist_Get_Tagname_By_Line()	taglist.txt	/*Tlist_Get_Tagname_By_Line()*
 Tlist_Set_App()	taglist.txt	/*Tlist_Set_App()*
@@ -129,6 +131,12 @@ g:neocomplcache_tags_filter_patterns	neocomplcache.txt	/*g:neocomplcache_tags_fi
 g:neocomplcache_temporary_dir	neocomplcache.txt	/*g:neocomplcache_temporary_dir*
 g:neocomplcache_text_mode_filetypes	neocomplcache.txt	/*g:neocomplcache_text_mode_filetypes*
 g:neocomplcache_vim_completefuncs	neocomplcache.txt	/*g:neocomplcache_vim_completefuncs*
+gist-vim-install	gist-vim.txt	/*gist-vim-install*
+gist-vim-license	gist-vim.txt	/*gist-vim-license*
+gist-vim-requirements	gist-vim.txt	/*gist-vim-requirements*
+gist-vim-thanks	gist-vim.txt	/*gist-vim-thanks*
+gist-vim-tips	gist-vim.txt	/*gist-vim-tips*
+gist-vim-usage	gist-vim.txt	/*gist-vim-usage*
 include_complete	neocomplcache.txt	/*include_complete*
 neocomplcache	neocomplcache.txt	/*neocomplcache*
 neocomplcache#cancel_popup()	neocomplcache.txt	/*neocomplcache#cancel_popup()*
