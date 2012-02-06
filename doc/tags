@@ -194,3 +194,4 @@ taglist-using	taglist.txt	/*taglist-using*
 taglist.txt	taglist.txt	/*taglist.txt*
 tags_complete	neocomplcache.txt	/*tags_complete*
 vim_complete	neocomplcache.txt	/*vim_complete*
+vimbook.txt	vimbook.txt	/*vimbook.txt*
