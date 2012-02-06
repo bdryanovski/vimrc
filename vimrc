@@ -27,8 +27,11 @@ set shiftwidth=2                      " no. of spaces for step in autoindent
 set softtabstop=2                     " no. of spaces for tab when editing
 set expandtab                         " expand tabs into spaces
 set smarttab                          " smart tabulation and backspace
+set laststatus=2                      " always show statusline
 set mouse=a                           " enable mouse in all modes
 set number                            " show line numbers OR,...
+set showmode                          " always show what mode we'r
+set nowrap                            " don't wrap lines
 "set list                              " show non-print characters,...
 "set listchars=trail:⋅,nbsp:⋅,tab:▷⋅   " for tabs and trailing spaces
 "set relativenumber                    " relative line numbers (>= Vim 7.3)
@@ -74,9 +77,14 @@ colorscheme molokai "railscasts_alt
 " -------------------------------------------------------------------------
 " Code xx column line - very useful I think?
 " -------------------------------------------------------------------------
-set cc=80
+set cc=100
 highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
-match OverLength /\%>80v.\+/
+match OverLength /\%>100v.\+/
+
+" -------------------------------------------------------------------------
+" Autogenerate the docs
+" -------------------------------------------------------------------------
+autocmd BufWritePost ~/.vim/doc/* :helptags ~/.vim/doc
 
 " -------------------------------------------------------------------------
 " Settings for Pathogen
@@ -236,6 +244,16 @@ au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 let g:neocomplcache_enable_at_startup = 1
 
 " --------------------------------------------------------------------
+" Plugin: Powerline
+" --------------------------------------------------------------------
+let g:Powerline_symbols = 'compatible'
+
+" --------------------------------------------------------------------
+" Plugin: tagbar
+" --------------------------------------------------------------------
+" see key mapping section
+
+" --------------------------------------------------------------------
 " Plugin: vim-indent-guides 
 " --------------------------------------------------------------------
 let g:indent_guides_enable_on_vim_startup = 1
@@ -274,6 +292,8 @@ map <F2> :BufExplorer<CR>
 map <F3> :NERDTreeToggle<CR>
 " Clear syntax highlighting
 map <F4> :noh<CR> 
+map <F5> :TagbarToggle<CR>
+map <F10> :help vimbook.txt<CR>
 map <F12> :edit /home/zero/.vimrc<CR>
 map <S-F12> :source /home/zero/.vimrc<CR>
 
@@ -302,13 +322,6 @@ map <F9> <Esc>:setlocal nospell<CR>
 nnoremap <leader><space> :noh <CR>
 
 "
-" Copy/Paste mapping
-"
-nmap <C-V> "+gP
-imap <C-V> <ESC><C-V>i
-vmap <C-C> "+y
-
-"
 " Map w!! to write file with sudo, when forgot to open with sudo.
 "
 cmap w!! w !sudo tee % >/dev/null
@@ -316,9 +329,9 @@ cmap w!! w !sudo tee % >/dev/null
 "
 " Use CTRL-S for saving, also in Insert mode
 "
-"noremap <silent> <C-S> :update<CR>
-"vnoremap <silent> <C-S> <C-C>:update<CR>
-"inoremap <silent> <C-S> <C-O>:update<CR>
+noremap <silent> <C-S> :update<CR>
+vnoremap <silent> <C-S> <C-C>:update<CR>
+inoremap <silent> <C-S> <C-O>:update<CR>
 
 "
 " bckspace in Visual mode deletes selection
@@ -326,52 +339,38 @@ cmap w!! w !sudo tee % >/dev/null
 vnoremap <BS> d
 
 "
+" Copy/Paste mapping
+"
+nmap <C-V> "+gP
+imap <C-V> <ESC><C-V>i
+vmap <C-C> "+y
+vnoremap <C-Insert> "+y
+
+"
 " CTRL-X and SHIFT-Del are Cut
 "
-"vnoremap <C-X> "+x
-"vnoremap <S-Del> "+x
-
-"
-" CTRL-C and CTRL-Insert are Copy
-"
-"vnoremap <C-C> "+y
-"vnoremap <C-Insert> "+y
-
-"
-" CTRL-V and SHIFT-Insert are Paste
-"
-"map <C-V>   "+gP
-"map <S-Insert>    "+gP
-"cmap <C-V>    <C-R>+
-"cmap <S-Insert>   <C-R>+
+vnoremap <C-X> "+x
+vnoremap <S-Del> "+x
 
 "
 " CTRL-Z is Undo; not in cmdline though
 "
-"noremap <C-Z> u
-"inoremap <C-Z> <C-O>u
+noremap <C-Z> u
+inoremap <C-Z> <C-O>u
 
 "
 " CTRL-Y is Redo (although not repeat); not in cmdline though
 "
-"noremap <C-Y> <C-R>
-"inoremap <C-Y> <C-O><C-R>
+noremap <C-Y> <C-R>
+inoremap <C-Y> <C-O><C-R>
 
 "
 " CTRL-Tab is Next window
 "
-"noremap <C-Tab> <C-W>w
-"inoremap <C-Tab> <C-O><C-W>w
-"cnoremap <C-Tab> <C-C><C-W>w
-"onoremap <C-Tab> <C-C><C-W>w
-
-"
-" Moving through splits:
-"
-"nmap gh <C-w>h
-"nmap gj <C-w>j
-"nmap gk <C-w>k
-"nmap gl <C-w>l
+noremap <C-Tab> <C-W>w
+inoremap <C-Tab> <C-O><C-W>w
+cnoremap <C-Tab> <C-C><C-W>w
+onoremap <C-Tab> <C-C><C-W>w
 
 "
 " Smart way to move btw. windows
@@ -403,3 +402,25 @@ nnoremap <leader>T :tabedit %<cr>gT:quit<cr>
 imap <C-p> <Esc>pa
 cmap <C-p> <C-r>"
 
+"
+" Copy/Paste mapping
+"
+nmap <C-V> "+gP
+imap <C-V> <ESC><C-V>i
+vmap <C-C> "+y
+
+"
+" Moving through splits:
+"
+"nmap gh <C-w>h
+"nmap gj <C-w>j
+"nmap gk <C-w>k
+"nmap gl <C-w>l
+
+"
+" CTRL-V and SHIFT-Insert are Paste
+"
+"map <C-V>   "+gP
+"map <S-Insert>    "+gP
+"cmap <C-V>    <C-R>+
+"cmap <S-Insert>   <C-R>+
