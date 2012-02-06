@@ -1,102 +1,134 @@
 *vimbook.txt*
-------------------------------------------------------------------------------
-# searching
-/joe/e                      : cursor set to End of match
-/joe/e+1                    : cursor set to End of match plus 1
-/joe/s-2                    : cursor set to Start of match minus 2
-/^joe.*fred.*bill/          : normal
-/^[A-J]\+/                  : search for lines beginning with one or more A-J
-/begin\_.*end               : search over possible multiple lines
-/fred\_s*joe/i              : any whitespace including newline
-/fred\|joe                  : Search for FRED OR JOE
-/\([^0-9]\|^\)%.*%          : Search for absence of a digit or beginning of line
-/.*fred\&.*joe              : Search for FRED AND JOE in any ORDER!
-/\<fred\>/i                 : search for fred but not alfred or frederick
-/\<\d\d\d\d\>               : Search for exactly 4 digit numbers
-/\D\d\d\d\d\D               : Search for exactly 4 digit numbers
-/\<\d\{4}\>                 : same thing
+---------------------------------------------------------------------------------------------------
+# Searching
+---------------------------------------------------------------------------------------------------
+/joe/e                                   : cursor set to End of match
+/joe/e+1                                 : cursor set to End of match plus 1
+/joe/s-2                                 : cursor set to Start of match minus 2
+/^joe.*fred.*bill/                       : normal
+/^[A-J]\+/                               : search for lines beginning with one or more A-J
+/begin\_.*end                            : search over possible multiple lines
+/fred\_s*joe/i                           : any whitespace including newline
+/fred\|joe                               : Search for FRED OR JOE
+/\([^0-9]\|^\)%.*%                       : Search for absence of a digit or beginning of line
+/.*fred\&.*joe                           : Search for FRED AND JOE in any ORDER!
+/\<fred\>/i                              : search for fred but not alfred or frederick
+/\<\d\d\d\d\>                            : Search for exactly 4 digit numbers
+/\D\d\d\d\d\D                            : Search for exactly 4 digit numbers
+/\<\d\{4}\>                              : same thing
+
 # finding empty lines
 /^\n\{3}                    : find 3 empty lines
+
 # Specify what you are NOT searching for (vowels) 
 /\c\v([^aeiou]&\a){4}       : search for 4 consecutive consanants
+
 # using rexexp memory in a search
 /\(fred\).*\(joe\).*\2.*\1
+
 # Repeating the Regexp (rather than what the Regexp finds)
 /^\([^,]*,\)\{8}
+
 # visual searching
 :vmap // y/<C-R>"<CR>       : search for visually highlighted text
 :vmap <silent> //    y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR> : with spec chars
+
 # searching over multiple lines \_ means including newline
 /<!--\_p\{-}-->                   : search for multiple line comments
 /fred\_s*joe/i                    : any whitespace including newline
 /bugs\(\_.\)*bunny                : bugs followed by bunny anywhere in file
 :h \_                             : help
+
 # search for declaration of subroutine/function under cursor
 :nmap gx yiw/^\(sub\<bar>function\)\s\+<C-R>"<CR>
+
 # multiple file search
 :bufdo /searchstr
 :argdo /searchstr
+
 # How to search for a URL without backslashing
 ?http://www.vim.org/        : search BACKWARDS!!! clever huh!
-----------------------------------------
+
 #substitution
 :%s/fred/joe/igc            : general substitute command
 :%s/\r//g                   : Delete DOS returns ^M
+
 # Is your Text File jumbled onto one line? use following
 :%s/\r/\r/g                 : Turn DOS returns ^M into real returns
 :%s=  *$==                  : delete end of line blanks
 :%s= \+$==                  : Same thing
 :%s#\s*\r\?$##              : Clean both trailing spaces AND DOS returns
 :%s#\s*\r*$##               : same thing
+
 # deleting empty lines
 :%s/^\n\{3}//               : delete blocks of 3 empty lines
 :%s/^\n\+/\r/               : compressing empty lines
+
 # IF YOU ONLY WANT TO KNOW ONE THING
 :'a,'bg/fred/s/dick/joe/igc : VERY USEFUL
+
 # duplicating columns
 :%s= [^ ]\+$=&&=            : duplicate end column
 :%s= \f\+$=&&=              : same thing
 :%s= \S\+$=&&               : usually the same
+
 # memory
 :s/\(.*\):\(.*\)/\2 : \1/   : reverse fields separated by :
 :%s/^\(.*\)\n\1/\1$/        : delete duplicate lines
+
 # non-greedy matching \{-}
 :%s/^.\{-}pdf/new.pdf/      : delete to 1st pdf only
+
 # use of optional atom \?
 :%s#\<[zy]\?tbl_[a-z_]\+\>#\L&#gc : lowercase with optional leading characters
+
 # over possibly many lines
 :%s/<!--\_.\{-}-->//        : delete possibly multi-line comments
 :help /\{-}                 : help non-greedy
+
 # substitute using a register
 :s/fred/<c-r>a/g            : sub "fred" with contents of register "a"
 :s/fred/\=@a/g              : better alternative as register not displayed
+
 # multiple commands on one line
 :%s/\f\+\.gif\>/\r&\r/g | v/\.gif$/d | %s/gif/jpg/
+
 # ORing
 :%s/suck\|buck/loopy/gc     : ORing (must break pipe)
+
 # Calling a VIM function
 :s/__date__/\=strftime("%c")/ : insert datestring
+
 # Working with Columns sub any str1 in col3
 :%s:\(\(\w\+\s\+\)\{2}\)str1:\1str2:
+
 # Swapping first & last column (4 columns)
 :%s:\(\w\+\)\(.*\s\+\)\(\w\+\)$:\3\2\1:
+
 # filter all form elements into paste register
 :redir @*|sil exec 'g#<\(input\|select\|textarea\|/\=form\)\>#p'|redir END
 :nmap ,z :redir @*<Bar>sil exec 'g@<\(input\<Bar>select\<Bar>textarea\<Bar>/\=form\)\>@p'<Bar>redir END<CR>
+
 # increment numbers by 6 on certain lines only
 :g/loc\|function/s/\d/\=submatch(0)+6/
+
 # better
 :%s#txtdev\zs\d#\=submatch(0)+1#g
 :h /\zs
+
 # increment only numbers gg\d\d  by 6 (another way)
 :%s/\(gg\)\@<=\d\+/\=submatch(0)+6/
 :h zero-width
+
 # find replacement text, put in memory, then use \zs to simplify substitute
 :%s/"\([^.]\+\).*\zsxx/\1/
+
 # Pull word under cursor into LHS of a substitute
 :nmap <leader>z :%s#\<<c-r>=expand("<cword>")<cr>\>#
+
 # Pull Visually Highlighted text into LHS of a substitute
 :vmap <leader>z :<C-U>%s/\<<c-r>*\>/
+
 ----------------------------------------
 # all following performing similar task, substitute within substitution
 # Multiple single character substitution in a portion of line only
