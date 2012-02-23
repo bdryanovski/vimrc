@@ -145,3 +145,6 @@ endfunction
 com! DiffSaved call s:DiffWithSaved()
 
 nnoremap <leader>? :DiffSaved<cr>
+
+" Filetypes
+autocmd BufRead *.jhtml set filetype=jhtml
