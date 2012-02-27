@@ -73,14 +73,27 @@ colorscheme molokai "railscasts_alt
 " -------------------------------------------------------------------------
 " Code xx column line - very useful I think?
 " -------------------------------------------------------------------------
-set cc=100
-highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
-match OverLength /\%>100v.\+/
+"set cc=100
+"highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
+"match OverLength /\%>100v.\+/
+
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
 
 " -------------------------------------------------------------------------
 " Autogenerate the docs
 " -------------------------------------------------------------------------
 autocmd BufWritePost ~/.vim/doc/* :helptags ~/.vim/doc
+
+" -------------------------------------------------------------------------
+" Automatically reload vimrc when it's saved
+" -------------------------------------------------------------------------
+au BufWritePost .vimrc so ~/.vimrc
+
 
 " -------------------------------------------------------------------------
 " Settings for Pathogen
