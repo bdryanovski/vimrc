@@ -1,6 +1,8 @@
 " ------------------------------------------------------------------------
 " Settings
 " ------------------------------------------------------------------------
+set fileencodings=utf-8               " encoding always must be utf-8
+set fileformats=unix,dos              " Setting file format try first unix
 set nocompatible                      " don't try to be strictly vi-like
 set modelines=0                       " don't use modelines (for security)
 set viminfo='20,\"50                  " use a viminfo file,...
