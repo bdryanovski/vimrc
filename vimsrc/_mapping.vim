@@ -40,6 +40,25 @@ map <F9> <Esc>:setlocal nospell<CR>
 nnoremap <leader><space> :noh <CR>
 
 "
+" soft tabbing at 2, 4 and 8 spaces of width 
+"
+"nnoremap <leader>2 <esc>:set expandtab tabstop=2 softtabstop=2 shiftwidth=2<cr>
+"nnoremap <leader>4 <esc>:set expandtab tabstop=4 softtabstop=4 shiftwidth=4<cr>
+"nnoremap <leader>8 <esc>:set expandtab tabstop=8 softtabstop=8 shiftwidth=8<cr>
+" hard tabbing at 2, for and 8 spaces of width "
+nnoremap <leader><leader>2 <esc>:set noexpandtab tabstop=2 softtabstop=2 shiftwidth=2<cr>
+nnoremap <leader><leader>4 <esc>:set noexpandtab tabstop=4 softtabstop=4 shiftwidth=4<cr>
+nnoremap <leader><leader>8 <esc>:set noexpandtab tabstop=8 softtabstop=8 shiftwidth=8<cr>
+
+"
+" Quick insert of newline in normal mode
+" ctrl = put new line after the cursor
+" shift + ctrl = put new line before cursor
+"
+nnoremap <silent> <CR> :put=''<CR> 
+nnoremap <silent> <S-CR> :.-1put =''<CR>
+
+"
 " Map w!! to write file with sudo, when forgot to open with sudo.
 "
 cmap w!! w !sudo tee % >/dev/null
