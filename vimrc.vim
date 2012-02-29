@@ -3,6 +3,6 @@
 if has("unix")
    source ~/.vim/vimsrc/unixrc.vim
 elseif has("win32")
-   source $VIMRUNTIME/vimsrc/win32rc.vim
+   source $VIMHOME/vimsrc/win32rc.vim
 endif
    
