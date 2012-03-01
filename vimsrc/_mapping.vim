@@ -12,8 +12,8 @@ map <F3> :NERDTreeToggle<CR>
 map <F4> :noh<CR> 
 map <F5> :TagbarToggle<CR>
 map <F10> :help vimbook.txt<CR>
-map <F12> :edit /home/zero/.vimrc<CR>
-map <S-F12> :source /home/zero/.vimrc<CR>
+map <F12> :edit $VIMHOME/vimrc.vim"<CR>
+map <S-F12> :source $VIMHOME/vimrc.vim<CR>
 
 " --------------------------------------------------------------------
 " Map tabs 
