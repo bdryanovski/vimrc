@@ -161,5 +161,16 @@ com! DiffSaved call s:DiffWithSaved()
 
 nnoremap <leader>? :DiffSaved<cr>
 
-" Filetypes
+" -----------------------------------------------------------------------------
+"  Code folding
+" -----------------------------------------------------------------------------
+" set nofoldenable            "dont fold by default
+set foldmethod=indent         " folding based on the indent
+set foldnestmax=10            " deepest fold 
+set foldlevel=1
+
+
+" -----------------------------------------------------------------------------
+" Syntax highlighting Filetypes
+" -----------------------------------------------------------------------------
 autocmd BufRead *.jhtml set filetype=jhtml
