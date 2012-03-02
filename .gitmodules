@@ -3,19 +3,19 @@
 	url = http://github.com/tpope/vim-fugitive.git
 [submodule "bundle/vim-less"]
 	path = bundle/vim-less
-	url = https://github.com/groenewege/vim-less.git
+	url = http://github.com/groenewege/vim-less.git
 [submodule "bundle/github-search"]
 	path = bundle/github-search
-	url = https://github.com/gmarik/github-search.vim.git
+	url = http://github.com/gmarik/github-search.vim.git
 [submodule "bundle/vim-markdown"]
 	path = bundle/vim-markdown
-	url = https://github.com/tpope/vim-markdown.git
+	url = http://github.com/tpope/vim-markdown.git
 [submodule "bundle/vim-rails"]
 	path = bundle/vim-rails
-	url = https://github.com/tpope/vim-rails.git
+	url = http://github.com/tpope/vim-rails.git
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
-	url = https://github.com/vim-ruby/vim-ruby.git
+	url = http://github.com/vim-ruby/vim-ruby.git
 [submodule "bundle/vim-indent-guides"]
 	path = bundle/vim-indent-guides
-	url = https://github.com/nathanaelkane/vim-indent-guides.git
+	url = http://github.com/nathanaelkane/vim-indent-guides.git
