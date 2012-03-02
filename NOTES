@@ -1,0 +1,8 @@
+# Git Submodules
+
+git submodule add git://repo .vim/bundler/repo
+git submodule init
+git submodule update 
+
+
+
