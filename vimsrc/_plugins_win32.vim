@@ -73,9 +73,9 @@ let g:rails_statusline=0
 " --------------------------------------------------------------------
 " Plugin: Snipmate configuration
 " --------------------------------------------------------------------
-"source ~/.vim/snippets/support_functions.vim
-"autocmd vimenter * call ExtractSnips("~/.vim/snippets/html", "eruby")
-"autocmd vimenter * call ExtractSnips("~/.vim/snippets/html", "php")
+source $VIMHOME/sinippets/support_functions.vim
+autocmd vimenter * call ExtractSnips($VIMHOME."/snippets/html", "eruby")
+autocmd vimenter * call ExtractSnips($VIMHOME."/snippets/html", "php")
 
 
 " --------------------------------------------------------------------
