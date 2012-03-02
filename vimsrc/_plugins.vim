@@ -87,11 +87,6 @@ au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 "au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 
 " --------------------------------------------------------------------
-" Plugin: Neocomplcache
-" --------------------------------------------------------------------
-let g:neocomplcache_enable_at_startup = 1
-
-" --------------------------------------------------------------------
 " Plugin: Powerline
 " --------------------------------------------------------------------
 let g:Powerline_symbols = 'compatible'

@@ -20,7 +20,6 @@ copy C:/Users/xxx/vimfiles/vimrc.vim C:/Users/xxx/_vimrc
 
 ## Plugins used: 
   * [bufexplorer]()     
-  * [coffee-check]()     
   * [colors-solarized]()   
   * [github-search]()   
   * [guicolorshcme]()   
@@ -28,7 +27,6 @@ copy C:/Users/xxx/vimfiles/vimrc.vim C:/Users/xxx/_vimrc
   * [NERDCommenter]()   
   * [nerdtree]()   
   * [octopress]()  
-  * [puppet]()   
   * [scratch]()   
   * [snipmate]()  
   * [tagbar]()   
