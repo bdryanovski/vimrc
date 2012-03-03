@@ -1,6 +1,6 @@
-" ------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Settings
-" ------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 set fileencodings=utf-8               " encoding always must be utf-8
 set fileformats=unix,dos              " Setting file format try first unix
 set nocompatible                      " don't try to be strictly vi-like
@@ -39,27 +39,27 @@ setlocal ofu=syntaxcomplete#Complete  " enable syntax based omni completion
 setlocal foldmethod=syntax            " folding uses syntax for folding
 setlocal nofoldenable                 " don't start with folded lines
 
-" -------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Set the leader key
-" -------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 let mapleader = ","
 
-" -------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " In VIEW mode.
-" -------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 set showmatch 
 set mat=5
 
-" -------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Backup and Files
-" -------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 "set backup                     " enable creation of backup files
 "set backupdir=~/.vim/backups   " Where to store the backups
 "set directory=~/.vim/tmp       " Temporary files will go
 
-" ------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Status line definition
-" ------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 set statusline=
 set statusline+=%<%f\ %h%m%r             " filename and flags
 set statusline+=%{fugitive#statusline()} " git info
@@ -72,9 +72,9 @@ set statusline+=%-14.([%l/%L],%c%V%)     " cursor info
 "
 colorscheme molokai "railscasts_alt
 
-" -------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Code xx column line - very useful I think?
-" -------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 "set cc=100
 "highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
 "match OverLength /\%>100v.\+/
@@ -86,57 +86,28 @@ else
 endif
 
 
-" -------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Autogenerate the docs
-" -------------------------------------------------------------------------
-autocmd BufWritePost ~/.vim/doc/* :helptags ~/.vim/doc
+" -----------------------------------------------------------------------------
+autocmd BufWritePost $VIMHOME/doc/* :helptags $VIMHOME/doc
 
-" -------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Automatically reload vimrc when it's saved
-" -------------------------------------------------------------------------
-au BufWritePost .vimrc so ~/.vimrc
+" -----------------------------------------------------------------------------
+au BufWritePost vimrc.vim so $VIMHOME/vimrc.vim
 
 
-" -------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Settings for Pathogen
-" -------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 filetype off                          " disable filetype use. Enabled later
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-" -------------------------------------------------------------------------
-" Only do this part if compiled with support for autocommands
-" -------------------------------------------------------------------------
-if has("autocmd")
-  augroup linux
-    autocmd!
-    " In text files, always limit the width of text to 78 characters
-    autocmd BufRead *.txt set tw=78
-
-    " When editing a file, always jump to the last cursor position
-    autocmd BufReadPost *
-    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-    \   exe "normal! g'\"" |
-    \ endif
-
-    " don't write swapfile on most commonly used directories for NFS mounts or USB sticks
-    autocmd BufNewFile,BufReadPre /media/*,/mnt/* set directory=~/tmp,/var/tmp,/tmp
-
-    " Switch to working directory of the open file
-    autocmd BufEnter * lcd %:p:h
-
-    " Custom filetypes settings: Python, Shell, JSON, Vagrant, CloudFormation
-    au FileType python,sh set tabstop=4 shiftwidth=4 softtabstop=4
-    au BufRead,BufNewFile *.json setfiletype javascript
-    au BufRead,BufNewFile Vagrantfile setfiletype ruby
-    "au BufRead,BufNewFile *.template setfiletype javascript
-  augroup END
-endif
-
-"
+" -----------------------------------------------------------------------------
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
-"
+" -----------------------------------------------------------------------------
 if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
@@ -147,9 +118,9 @@ endif
 "
 let &guicursor = &guicursor . ",a:blinkon0"
 
-"
+" -----------------------------------------------------------------------------
 " View changes after the last save
-"
+" -----------------------------------------------------------------------------
 function! s:DiffWithSaved()
   let filetype=&ft
   diffthis
@@ -169,8 +140,70 @@ set foldmethod=indent         " folding based on the indent
 set foldnestmax=10            " deepest fold 
 set foldlevel=1
 
+" -----------------------------------------------------------------------------
+" Add the closing brace only at the end of the line
+" -----------------------------------------------------------------------------
+function! ConditionalPairMap(open, close)
+  let line = getline('.')
+  let col = col('.')
+  if col < col('$') || stridx(line, a:close, col + 1) != -1
+    return a:open
+  else
+    return a:open . a:close . repeat("\<left>", len(a:close))
+  endif
+endf
+
+inoremap <expr> ( ConditionalPairMap('(', ')')
+inoremap <expr> { ConditionalPairMap('{', '}')
+inoremap <expr> [ ConditionalPairMap('[', ']')
 
 " -----------------------------------------------------------------------------
-" Syntax highlighting Filetypes
+" Only do this part if compiled with support for autocommands
 " -----------------------------------------------------------------------------
-autocmd BufRead *.jhtml set filetype=jhtml
+if has("autocmd")
+  augroup linux
+
+    " Clear all custom autocommands
+    autocmd!
+
+    " In text files, always limit the width of text to 78 characters
+    autocmd FileType text set tw=98
+
+    " When editing a file, always jump to the last cursor position
+    autocmd BufReadPost *
+    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+    \   exe "normal! g'\"" |
+    \ endif
+
+    " don't write swapfile on most commonly used directories for NFS mounts or USB sticks
+    autocmd BufNewFile,BufReadPre /media/*,/mnt/* set directory=~/tmp,/var/tmp,/tmp
+
+    " Switch to working directory of the open file
+    autocmd BufEnter * lcd %:p:h
+
+    " Setting compilers
+    autocmd BufEnter *.php compiler php
+    autocmd BufEnter *.c   compiler gcc
+    autocmd BufEnter *.cpp compiler gcc
+    autocmd BufEnter *.rb  compiler ruby
+
+    " If editing Gemfile, then run it after save
+    autocmd BufEnter Gemfile RunCommand !bundle install
+
+    autocmd BufEnter *access.log* set filetype=httplog
+    autocmd BufEnter httpd*.conf  set filetype=apache
+    autocmd BufRead *.jhtml       set filetype=jhtml
+
+    " Maximise on open on Windows
+    if has('win32')
+      autocmd GUIEnter * simalt ~x
+    endif
+
+    " Custom filetypes settings: Python, Shell, JSON, Vagrant, CloudFormation
+    au FileType python,sh set tabstop=4 shiftwidth=4 softtabstop=4
+    au BufRead,BufNewFile *.json setfiletype javascript
+    au BufRead,BufNewFile Vagrantfile setfiletype ruby
+    "au BufRead,BufNewFile *.template setfiletype javascript
+  augroup END
+endif
+
