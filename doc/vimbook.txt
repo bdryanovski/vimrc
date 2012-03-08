@@ -1,7 +1,7 @@
-*vimbook.txt*
----------------------------------------------------------------------------------------------------
-# Searching
----------------------------------------------------------------------------------------------------
+*vimbook.txt*             For Vim version 7.3        Last change: 2012 March 3
+
+*Searching*
+
 /joe/e                                   : cursor set to End of match
 /joe/e+1                                 : cursor set to End of match plus 1
 /joe/s-2                                 : cursor set to Start of match minus 2
@@ -17,7 +17,7 @@
 /\D\d\d\d\d\D                            : Search for exactly 4 digit numbers
 /\<\d\{4}\>                              : same thing
 
-# finding empty lines
+*finding empty lines*
 /^\n\{3}                    : find 3 empty lines
 
 # Specify what you are NOT searching for (vowels) 
@@ -772,4 +772,4 @@ yy@" to execute following commands
 :w!|!tipftp
 ----------------------------------------
 
-
+vim:tw=80:ts=8:ft=help:norl:

@@ -79,8 +79,8 @@ let g:snips_author = 'Bozhidar Dryanovski'
 " -----------------------------------------------------------------------------
 " Plugin: neocomplcache
 " -----------------------------------------------------------------------------
-"let g:acp_enableAtStartup = 0 
-"let g:neocomplcache_enable_at_startup = 1
+let g:acp_enableAtStartup = 0 
+let g:neocomplcache_enable_at_startup = 1
 
 " -----------------------------------------------------------------------------
 " Plugin: Coffe-Script
