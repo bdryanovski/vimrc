@@ -73,10 +73,13 @@ let g:rails_statusline=0
 " -----------------------------------------------------------------------------
 " Plugin: Snipmate configuration
 " -----------------------------------------------------------------------------
-source $VIMHOME/snippets/support_functions.vim
-autocmd vimenter * call ExtractSnips($VIMHOME."/snippets/html", "eruby")
-autocmd vimenter * call ExtractSnips($VIMHOME."/snippets/html", "php")
+let g:snippets_dir = expand($VIMHOME.'/snippets/')
+let g:snips_author = 'Bozhidar Dryanovski'
 
+" -----------------------------------------------------------------------------
+" Plugin: neocomplcache
+" -----------------------------------------------------------------------------
+"let g:neocomplcache_enable_at_startup = 1
 
 " -----------------------------------------------------------------------------
 " Plugin: Coffe-Script
