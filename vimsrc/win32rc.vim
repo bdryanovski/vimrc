@@ -1,3 +1,9 @@
+" -----------------------------------------------------------------------------
+"  Set `selection`, `selectmode`, `mousemodel` and `keymodel` for MS-Windows
+" -----------------------------------------------------------------------------
+
+behave mswin
+
 source $VIMHOME/vimsrc/_settings.vim
 source $VIMHOME/vimsrc/_plugins.vim
 source $VIMHOME/vimsrc/_mapping.vim

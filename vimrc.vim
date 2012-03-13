@@ -7,6 +7,5 @@ elseif has("win32") || has("win64")
    let $VIMHOME = $HOME."/vimfiles"
    source $VIMHOME/vimsrc/win32rc.vim
    source $VIMHOME/gvimrc
-   source $VIMRUNTIME/mswin.vim
 endif
    

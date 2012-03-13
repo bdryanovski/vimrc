@@ -11,6 +11,9 @@ map <F3> :NERDTreeToggle<CR>
 " Clear syntax highlighting
 map <F4> :noh<CR> 
 map <F5> :TagbarToggle<CR>
+" Set they keys to turn on/off the spell check
+map <F8> <Esc>:setlocal spell spelllang=en_us<CR>
+map <F9> <Esc>:setlocal nospell<CR>
 map <F10> :help vimbook.txt<CR>
 map <F12> :edit $VIMHOME/vimrc.vim"<CR>
 map <S-F12> :source $VIMHOME/vimrc.vim<CR>
@@ -27,12 +30,6 @@ map <leader>6 :tabn 6<CR>
 map <leader>7 :tabn 7<CR>
 map <leader>8 :tabn 8<CR>
 map <leader>9 :tabn 9<CR>
-
-"
-" Set the keys to turn spell checking on/off
-" 
-map <F8> <Esc>:setlocal spell spelllang=en_us<CR>
-map <F9> <Esc>:setlocal nospell<CR>
 
 "
 " Remove highlighting search results
@@ -75,19 +72,59 @@ inoremap <silent> <C-S> <C-O>:update<CR>
 "
 vnoremap <BS> d
 
-"
-" Copy/Paste mapping
-"
-nmap <C-V> "+gP
-imap <C-V> <ESC><C-V>i
-vmap <C-C> "+y
-vnoremap <C-Insert> "+y
-
-"
 " CTRL-X and SHIFT-Del are Cut
-"
 vnoremap <C-X> "+x
 vnoremap <S-Del> "+x
+
+" CTRL-C and CTRL-Insert are Copy
+vnoremap <C-C> "+y
+vnoremap <C-Insert> "+y
+
+" CTRL-V and SHIFT-Insert are Paste
+map <C-V>		"+gP
+map <S-Insert>		"+gP
+
+cmap <C-V>		<C-R>+
+cmap <S-Insert>		<C-R>+
+
+" Pasting blockwise and linewise selections is not possible in Insert and
+" Visual mode without the +virtualedit feature.  They are pasted as if they
+" were characterwise instead.
+" Uses the paste.vim autoload script.
+
+exe 'inoremap <script> <C-V>' paste#paste_cmd['i']
+exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
+
+imap <S-Insert>		<C-V>
+vmap <S-Insert>		<C-V>
+
+" Use CTRL-Q to do what CTRL-V used to do
+noremap <C-Q>		<C-V>
+
+" Use CTRL-S for saving, also in Insert mode
+noremap <C-S>		:update<CR>
+vnoremap <C-S>		<C-C>:update<CR>
+inoremap <C-S>		<C-O>:update<CR>
+
+" CTRL-A is Select all
+noremap <C-A> gggH<C-O>G
+inoremap <C-A> <C-O>gg<C-O>gH<C-O>G
+cnoremap <C-A> <C-C>gggH<C-O>G
+onoremap <C-A> <C-C>gggH<C-O>G
+snoremap <C-A> <C-C>gggH<C-O>G
+xnoremap <C-A> <C-C>ggVG
+
+" CTRL-Tab is Next window
+noremap <C-Tab> <C-W>w
+inoremap <C-Tab> <C-O><C-W>w
+cnoremap <C-Tab> <C-C><C-W>w
+onoremap <C-Tab> <C-C><C-W>w
+
+" CTRL-F4 is Close window
+noremap <C-F4> <C-W>c
+inoremap <C-F4> <C-O><C-W>c
+cnoremap <C-F4> <C-C><C-W>c
+onoremap <C-F4> <C-C><C-W>c
 
 "
 " CTRL-Z is Undo; not in cmdline though
@@ -100,14 +137,6 @@ inoremap <C-Z> <C-O>u
 "
 noremap <C-Y> <C-R>
 inoremap <C-Y> <C-O><C-R>
-
-"
-" CTRL-Tab is Next window
-"
-noremap <C-Tab> <C-W>w
-inoremap <C-Tab> <C-O><C-W>w
-cnoremap <C-Tab> <C-C><C-W>w
-onoremap <C-Tab> <C-C><C-W>w
 
 "
 " Smart way to move btw. windows
@@ -140,24 +169,9 @@ imap <C-p> <Esc>pa
 cmap <C-p> <C-r>"
 
 "
-" Copy/Paste mapping
-"
-nmap <C-V> "+gP
-imap <C-V> <ESC><C-V>i
-vmap <C-C> "+y
-
-"
 " Moving through splits:
 "
 "nmap gh <C-w>h
 "nmap gj <C-w>j
 "nmap gk <C-w>k
 "nmap gl <C-w>l
-
-"
-" CTRL-V and SHIFT-Insert are Paste
-"
-"map <C-V>   "+gP
-"map <S-Insert>    "+gP
-"cmap <C-V>    <C-R>+
-"cmap <S-Insert>   <C-R>+
