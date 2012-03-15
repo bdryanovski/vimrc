@@ -1,40 +1,24 @@
 " --------------------------------------------------------------------
 " Map VIM custom keys 
 " --------------------------------------------------------------------
-
-" --------------------------------------------------------------------
-" Map F-keys
-" --------------------------------------------------------------------
-map <F1> <ESC>
-map <F2> :BufExplorer<CR>
-map <F3> :NERDTreeToggle<CR>
-" Clear syntax highlighting
-map <F4> :noh<CR> 
-map <F5> :TagbarToggle<CR>
-" Set they keys to turn on/off the spell check
-map <F8> <Esc>:setlocal spell spelllang=en_us<CR>
-map <F9> <Esc>:setlocal nospell<CR>
-map <F10> :help vimbook.txt<CR>
-map <F12> :edit $VIMHOME/vimrc.vim"<CR>
-map <S-F12> :source $VIMHOME/vimrc.vim<CR>
-
-" --------------------------------------------------------------------
-" Map tabs 
-" --------------------------------------------------------------------
-map <leader>1 :tabn 1<CR>
-map <leader>2 :tabn 2<CR>
-map <leader>3 :tabn 3<CR>
-map <leader>4 :tabn 4<CR>
-map <leader>5 :tabn 5<CR>
-map <leader>6 :tabn 6<CR>
-map <leader>7 :tabn 7<CR>
-map <leader>8 :tabn 8<CR>
-map <leader>9 :tabn 9<CR>
+"
+" Quick insert of newline in normal mode
+" ctrl = put new line after the cursor
+" shift + ctrl = put new line before cursor
+" TODO: Not working under unix, check win32
+"
+nnoremap <silent> <CR> :put=''<CR> 
+nnoremap <silent> <S-CR> :.-1put =''<CR>
 
 "
-" Remove highlighting search results
+" Map w!! to write file with sudo, when forgot to open with sudo.
 "
-nnoremap <leader><space> :noh <CR>
+cmap w!! w !sudo tee % >/dev/null
+
+"
+" bckspace in Visual mode deletes selection
+"
+vnoremap <BS> d
 
 "
 " soft tabbing at 2, 4 and 8 spaces of width 
@@ -48,17 +32,58 @@ nnoremap <leader><leader>4 <esc>:set noexpandtab tabstop=4 softtabstop=4 shiftwi
 nnoremap <leader><leader>8 <esc>:set noexpandtab tabstop=8 softtabstop=8 shiftwidth=8<cr>
 
 "
-" Quick insert of newline in normal mode
-" ctrl = put new line after the cursor
-" shift + ctrl = put new line before cursor
+" Remove highlighting search results
 "
-nnoremap <silent> <CR> :put=''<CR> 
-nnoremap <silent> <S-CR> :.-1put =''<CR>
+nnoremap <leader><space> :noh <CR>
+
+" -----------------------------------------------------------------------------
+" Copy and Paste shortkeys
+" -----------------------------------------------------------------------------
 
 "
-" Map w!! to write file with sudo, when forgot to open with sudo.
+" Paste in insert and command modes
 "
-cmap w!! w !sudo tee % >/dev/null
+imap <C-p> <Esc>pa
+cmap <C-p> <C-r>"
+
+" -----------------------------------------------------------------------------
+" Map F-keys
+" -----------------------------------------------------------------------------
+map <F1> <ESC>
+map <F2> :BufExplorer<CR>
+map <F3> :NERDTreeToggle<CR>
+" Clear syntax highlighting
+map <F4> :noh<CR> 
+map <F5> :TagbarToggle<CR>
+" Set they keys to turn on/off the spell check
+map <F8> <Esc>:setlocal spell spelllang=en_us<CR>
+map <F9> <Esc>:setlocal nospell<CR>
+map <F10> :help vimbook.txt<CR>
+map <F12> :edit $VIMHOME/vimrc.vim"<CR>
+map <S-F12> :source $VIMHOME/vimrc.vim<CR>
+
+" -----------------------------------------------------------------------------
+" Mapping and using tabs
+" -----------------------------------------------------------------------------
+map <leader>1 :tabn 1<CR>
+map <leader>2 :tabn 2<CR>
+map <leader>3 :tabn 3<CR>
+map <leader>4 :tabn 4<CR>
+map <leader>5 :tabn 5<CR>
+map <leader>6 :tabn 6<CR>
+map <leader>7 :tabn 7<CR>
+map <leader>8 :tabn 8<CR>
+map <leader>9 :tabn 9<CR>
+
+"
+" Open new tab more easily:
+"
+nnoremap <leader>t :tabnew<cr>
+nnoremap <leader>T :tabedit %<cr>gT:quit<cr>
+
+" -----------------------------------------------------------------------------
+"  Comman UI key binding
+" -----------------------------------------------------------------------------
 
 "
 " Use CTRL-S for saving, also in Insert mode
@@ -66,11 +91,6 @@ cmap w!! w !sudo tee % >/dev/null
 noremap <silent> <C-S> :update<CR>
 vnoremap <silent> <C-S> <C-C>:update<CR>
 inoremap <silent> <C-S> <C-O>:update<CR>
-
-"
-" bckspace in Visual mode deletes selection
-"
-vnoremap <BS> d
 
 " CTRL-X and SHIFT-Del are Cut
 vnoremap <C-X> "+x
@@ -99,12 +119,8 @@ imap <S-Insert>		<C-V>
 vmap <S-Insert>		<C-V>
 
 " Use CTRL-Q to do what CTRL-V used to do
+" TODO: not working under xterm under unix
 noremap <C-Q>		<C-V>
-
-" Use CTRL-S for saving, also in Insert mode
-noremap <C-S>		:update<CR>
-vnoremap <C-S>		<C-C>:update<CR>
-inoremap <C-S>		<C-O>:update<CR>
 
 " CTRL-A is Select all
 noremap <C-A> gggH<C-O>G
@@ -138,13 +154,30 @@ inoremap <C-Z> <C-O>u
 noremap <C-Y> <C-R>
 inoremap <C-Y> <C-O><C-R>
 
+" -----------------------------------------------------------------------------
+"  Moving into split view
+" -----------------------------------------------------------------------------
+
 "
-" Smart way to move btw. windows
+" Option A : Smart way to move btw. windows
 "
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+"
+" Option B : Moving through splits:
+"
+nmap gh <C-w>h
+nmap gj <C-w>j
+nmap gk <C-w>k
+nmap gl <C-w>l
+
+
+" -----------------------------------------------------------------------------
+"  Shortkeys for some useful text transformations
+" -----------------------------------------------------------------------------
 
 "
 " Upcase current word
@@ -156,22 +189,4 @@ nnoremap <C-u> mzgUiw`z
 "
 nnoremap __ :split \|<Space>
 
-"
-" Open new tab more easily:
-"
-nnoremap <leader>t :tabnew<cr>
-nnoremap <leader>T :tabedit %<cr>gT:quit<cr>
 
-"
-" Paste in insert and command modes
-"
-imap <C-p> <Esc>pa
-cmap <C-p> <C-r>"
-
-"
-" Moving through splits:
-"
-"nmap gh <C-w>h
-"nmap gj <C-w>j
-"nmap gk <C-w>k
-"nmap gl <C-w>l
