@@ -21,7 +21,8 @@ copy C:/Users/xxx/vimfiles/vimrc.vim C:/Users/xxx/_vimrc
 ## Plugins used: 
   * [bufexplorer]()     
   * [colors-solarized]()   
-  * [github-search]()   
+  * [github-search]()  
+  * [tabular.vim]()
   * [guicolorshcme]()   
   * [matchit]()   
   * [NERDCommenter]()   
