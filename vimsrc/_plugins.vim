@@ -8,6 +8,17 @@
 source $VIMHOME/vimsrc/autocorrect.vim
 
 " -----------------------------------------------------------------------------
+" Plugin: tabular.vim 
+" -----------------------------------------------------------------------------
+
+if exists(":Tabularize")
+  nmap <leader>z= :Tabularize /=<CR>
+  xmap <leader>z= :Tabularize /=<CR>
+  nmap <leader>z: :Tabularize /:\zs<CR>
+  xmap <leader>z: :Tabularize /:\zs<CR>
+endif
+
+" -----------------------------------------------------------------------------
 " Plugin: Ruby speedup
 " -----------------------------------------------------------------------------
 let g:ruby_path                      = ''
@@ -42,7 +53,7 @@ let NERDTreeMapActivateNode='<CR>'
 " -----------------------------------------------------------------------------
 " Plugin: Gist settings
 " -----------------------------------------------------------------------------
-let g:gist_clip_command = 'xclip -selection clipboard'
+let g:gist_clip_command = 'xclip -sqlection clipboard'
 let g:gist_detect_filetype = 1    " Detect file type
 let g:gist_open_browser_after_post = 0
 let g:gist_browser_command = 'mozilla %URL% &'
