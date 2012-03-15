@@ -11,13 +11,6 @@ source $VIMHOME/vimsrc/autocorrect.vim
 " Plugin: tabular.vim 
 " -----------------------------------------------------------------------------
 
-if exists(":Tabularize")
-  nmap <leader>z= :Tabularize /=<CR>
-  xmap <leader>z= :Tabularize /=<CR>
-  nmap <leader>z: :Tabularize /:\zs<CR>
-  xmap <leader>z: :Tabularize /:\zs<CR>
-endif
-
 " -----------------------------------------------------------------------------
 " Plugin: Ruby speedup
 " -----------------------------------------------------------------------------
