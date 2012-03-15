@@ -190,6 +190,10 @@ if has("autocmd")
     " If editing Gemfile, then run it after save
     autocmd BufEnter Gemfile RunCommand !bundle install
 
+    " Syntax highlight for files that don't end with *.rb extension - Adding
+    " syntax = ruby  
+    au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
+
     autocmd BufEnter *access.log* set filetype=httplog
     autocmd BufEnter httpd*.conf  set filetype=apache
     autocmd BufRead *.jhtml       set filetype=jhtml
