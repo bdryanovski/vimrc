@@ -6,7 +6,7 @@ set fileformats=unix,dos              " Setting file format try first unix
 set nocompatible                      " don't try to be strictly vi-like
 set modelines=0                       " don't use modelines (for security)
 set viminfo='20,\"50                  " use a viminfo file,...
-set history=500                       " limit history
+set history=1500                      " limit history
 set ruler                             " show the cursor position
 set title                             " show title
 set incsearch                         " find as entering pattern
@@ -14,7 +14,8 @@ set t_Co=256                          " uses 256 colors
 set ignorecase                        " case insensitive patterns,..
 set cursorline
 set smartcase                         " when only lowercase is used
-set pastetoggle=<F2>                  " F2 toggles indenting when pasting
+" TODO: do I really need that ?
+"set pastetoggle=<F2>                 " F2 toggles indenting when pasting
 set wildmenu                          " use command-line completion menu,...
 set wildmode=longest:full             " with wildmode
 set bs=indent,eol,start               " allow backspacing over everything
@@ -36,8 +37,6 @@ set nowrap                            " don't wrap lines
 
 filetype plugin indent on             " enable filetype use
 setlocal ofu=syntaxcomplete#Complete  " enable syntax based omni completion
-setlocal foldmethod=syntax            " folding uses syntax for folding
-setlocal nofoldenable                 " don't start with folded lines
 
 " -----------------------------------------------------------------------------
 " Set the leader key
@@ -136,9 +135,11 @@ nnoremap <leader>? :DiffSaved<cr>
 "  Code folding
 " -----------------------------------------------------------------------------
 " set nofoldenable            "dont fold by default
-set foldmethod=indent         " folding based on the indent
+set foldmethod=syntax         " folding based on the indent
 set foldnestmax=10            " deepest fold 
 set foldlevel=1
+set nofoldenable                 " don't start with folded lines
+
 
 " -----------------------------------------------------------------------------
 " Add the closing brace only at the end of the line
@@ -166,7 +167,7 @@ if has("autocmd")
     " Clear all custom autocommands
     autocmd!
 
-    " In text files, always limit the width of text to 78 characters
+    " In text files, always limit the width of text to 98 characters
     autocmd FileType text set tw=98
 
     " When editing a file, always jump to the last cursor position
@@ -210,4 +211,3 @@ if has("autocmd")
     "au BufRead,BufNewFile *.template setfiletype javascript
   augroup END
 endif
-
