@@ -1,7 +1,58 @@
 *vimbook.txt*             For Vim version 7.3        Last change: 2012 March 3
 
-*Searching*
 
+-------------------------------------------------------------------------------
+Absolutely essential
+-------------------------------------------------------------------------------
+* # g* g#           : find word under cursor (<cword>) (forwards/backwards)
+%                   : match brackets {}[]()
+.                   : repeat last modification
+matchit.vim         : % now matches tags <tr><td><script> <?php etc
+<C-N><C-P>          : word completion in insert mode
+<C-X><C-L>          : Line complete SUPER USEFUL
+/<C-R><C-W>         : Pull <cword> onto search/command line
+/<C-R><C-A>         : Pull <CWORD> onto search/command line
+:set ignorecase     : you nearly always want this
+:syntax on          : colour syntax in Perl,HTML,PHP etc
+:h regexp<C-D>      : type control-D and get a list all help topics containing
+                      regexp (plus use TAB to Step thru list)
+
+
+-------------------------------------------------------------------------------
+*Indenting code*
+-------------------------------------------------------------------------------
+
+>>   : Indent line by shiftwidth spaces
+<<   : De-indent line by shiftwidth spaces
+5>>  : Indent 5 lines
+5==  : Re-indent 5 lines
+
+>%   : Increase indent of a braced or bracketed block (place cursor on brace first)
+=%   : Reindent a braced or bracketed block (cursor on brace)
+<%   : Decrease indent of a braced or bracketed block (cursor on brace)
+]p   : Paste text, aligning indentation with surroundings
+
+=i{  : Re-indent the 'inner block', i.e. the contents of the block
+=a{  : Re-indent 'a block', i.e. block and containing braces
+=2a{ : Re-indent '2 blocks', i.e. this block and containing block
+
+>i{  : Increase inner block indent
+<i{  : Decrease inner block indent
+
+*Re-indenting complete files*
+
+Another common situation is requiring indentation to be fixed throughout a source file:
+gg=G  : Re-indent entire buffer
+
+*Ex commands*
+
+These are useful when you want to indent a specific range of lines, without moving your cursor.
+:< and :>     : Given a range, apply indentation e.g.
+:4,8>         : indent lines 4 to 8, inclusive
+
+-------------------------------------------------------------------------------
+*Searching*
+-------------------------------------------------------------------------------
 /joe/e                                   : cursor set to End of match
 /joe/e+1                                 : cursor set to End of match plus 1
 /joe/s-2                                 : cursor set to Start of match minus 2
@@ -129,7 +180,9 @@
 # Pull Visually Highlighted text into LHS of a substitute
 :vmap <leader>z :<C-U>%s/\<<c-r>*\>/
 
-----------------------------------------
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
 # all following performing similar task, substitute within substitution
 # Multiple single character substitution in a portion of line only
 :%s,\(all/.*\)\@<=/,_,g     : replace all / with _ AFTER "all/"
@@ -139,7 +192,10 @@
 :s#all/#&^M#|s#/#_#g|-j!
 # Substitute inside substitute
 :%s/.*/\='cp '.submatch(0).' all/'.substitute(submatch(0),'/','_','g')/
-----------------------------------------
+
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
 # global command display (see tip 227)
 :g/fred.*joe.*dick/         : display all lines fred,joe & dick
 :g/\<fred\>/                : display all lines fred but not freddy
@@ -175,21 +231,6 @@
 ----------------------------------------
 # Find fred before beginning search for joe
 :/fred/;/joe/-2,/sid/+3s/sally/alley/gIC
-----------------------------------------
-# Absolutely essential
-----------------------------------------
-* # g* g#           : find word under cursor (<cword>) (forwards/backwards)
-%                   : match brackets {}[]()
-.                   : repeat last modification
-matchit.vim         : % now matches tags <tr><td><script> <?php etc
-<C-N><C-P>          : word completion in insert mode
-<C-X><C-L>          : Line complete SUPER USEFUL
-/<C-R><C-W>         : Pull <cword> onto search/command line
-/<C-R><C-A>         : Pull <CWORD> onto search/command line
-:set ignorecase     : you nearly always want this
-:syntax on          : colour syntax in Perl,HTML,PHP etc
-:h regexp<C-D>      : type control-D and get a list all help topics containing
-                      regexp (plus use TAB to Step thru list)
 ----------------------------------------
 # MAKE IT EASY TO UPDATE/RELOAD _vimrc
 :nmap ,s :source $VIM/_vimrc

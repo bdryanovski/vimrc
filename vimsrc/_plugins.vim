@@ -10,7 +10,18 @@ source $VIMHOME/vimsrc/autocorrect.vim
 " -----------------------------------------------------------------------------
 " Plugin: tabular.vim 
 " -----------------------------------------------------------------------------
-
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:<CR>
+  vmap <Leader>a: :Tabularize /:<CR>
+  nmap <Leader>a:: :Tabularize /:\zs<CR>
+  vmap <Leader>a:: :Tabularize /:\zs<CR>
+  nmap <Leader>a, :Tabularize /,<CR>
+  vmap <Leader>a, :Tabularize /,<CR>
+  nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+  vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+endif
 " -----------------------------------------------------------------------------
 " Plugin: Ruby speedup
 " -----------------------------------------------------------------------------
@@ -55,6 +66,13 @@ let g:gist_put_url_to_clipboard_after_post = 0
 " Auth
 let g:github_user = 'bdryanovski'
 let g:github_token = '17a354605cb3d28d449a7973e1a30050'
+
+" -----------------------------------------------------------------------------
+"  Plugin: twitvim.vim
+" -----------------------------------------------------------------------------
+
+let twitvim_consumer_key = '52Y9KlFRhtC2urjZvDeG6g'
+let twitvim_consumer_secret = 'dNligTIT7yxRkJKe0swKlTlC6z9HY9lC4a1jppl2j4'
 
 " -----------------------------------------------------------------------------
 " Plugin: vim-pasta 
@@ -123,6 +141,7 @@ let g:Powerline_symbols = 'compatible'
 " see key mapping section
 
 " -----------------------------------------------------------------------------
+
 " Plugin: vim-indent-guides 
 " -----------------------------------------------------------------------------
 let g:indent_guides_enable_on_vim_startup = 1
