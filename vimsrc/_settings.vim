@@ -31,8 +31,9 @@ set mouse=a                           " enable mouse in all modes
 set number                            " show line numbers OR,...
 set showmode                          " always show what mode we'r
 set nowrap                            " don't wrap lines
-"set list                              " show non-print characters,...
-"set listchars=trail:⋅,nbsp:⋅,tab:▷⋅   " for tabs and trailing spaces
+set autoread                          " auto reload file on change.
+set list                              " show non-print characters,...
+set listchars=trail:⋅,nbsp:⋅,tab:▷⋅   " for tabs and trailing spaces
 "set relativenumber                    " relative line numbers (>= Vim 7.3)
 
 filetype plugin indent on             " enable filetype use
@@ -46,7 +47,7 @@ let mapleader = ","
 " -----------------------------------------------------------------------------
 " In VIEW mode.
 " -----------------------------------------------------------------------------
-set showmatch 
+set showmatch             " show matching brackets/parenthesis
 set mat=5
 
 " -----------------------------------------------------------------------------
@@ -55,6 +56,8 @@ set mat=5
 "set backup                     " enable creation of backup files
 "set backupdir=~/.vim/backups   " Where to store the backups
 "set directory=~/.vim/tmp       " Temporary files will go
+set undolevels=1500             " maximum number of changes that can be undone
+set undoreload=15000            " maximum lines to save for undo on buffer reload.
 
 " -----------------------------------------------------------------------------
 " Status line definition
@@ -70,6 +73,12 @@ set statusline+=%-14.([%l/%L],%c%V%)     " cursor info
 " Set color scheme
 "
 colorscheme molokai "railscasts_alt
+
+" -----------------------------------------------------------------------------
+" VIM UI
+" -----------------------------------------------------------------------------
+set tabpagemax=15                       " show only 15 tabs.
+
 
 " -----------------------------------------------------------------------------
 " Code xx column line - very useful I think?
