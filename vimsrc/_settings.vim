@@ -33,7 +33,7 @@ set showmode                          " always show what mode we'r
 set nowrap                            " don't wrap lines
 set autoread                          " auto reload file on change.
 set list                              " show non-print characters,...
-set listchars=trail:⋅,nbsp:⋅,tab:▷⋅   " for tabs and trailing spaces
+"set listchars=trail:⋅,nbsp:⋅,tab:▷⋅   " for tabs and trailing spaces
 "set relativenumber                    " relative line numbers (>= Vim 7.3)
 
 filetype plugin indent on             " enable filetype use
