@@ -1,6 +1,7 @@
 " -----------------------------------------------------------------------------
 " Settings
 " -----------------------------------------------------------------------------
+set encoding=utf-8
 set fileencodings=utf-8               " encoding always must be utf-8
 set fileformats=unix,dos              " Setting file format try first unix
 set nocompatible                      " don't try to be strictly vi-like
