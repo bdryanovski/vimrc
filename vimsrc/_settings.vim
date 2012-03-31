@@ -208,6 +208,7 @@ if has("autocmd")
     autocmd BufEnter *access.log* set filetype=httplog
     autocmd BufEnter httpd*.conf  set filetype=apache
     autocmd BufRead *.jhtml       set filetype=jhtml
+    autocmd BufNewFile,BufRead *.markdown,*.textile,*.md setfiletype octopress
 
     " Maximise on open on Windows
     if has('win32')
