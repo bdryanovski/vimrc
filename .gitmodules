@@ -40,3 +40,6 @@
 [submodule "bundle/stylus"]
 	path = bundle/stylus
 	url = https://github.com/wavded/vim-stylus.git
+[submodule "bundle/session"]
+	path = bundle/session
+	url = https://github.com/xolox/vim-session.git
