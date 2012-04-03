@@ -9,4 +9,4 @@ set guioptions-=r                       " no right scrollbar
 set guioptions+=m
 set guioptions-=L                       " no left scrollbar when v.split
 
-colorscheme molokai  " monokai
+"colorscheme molokai  " monokai
