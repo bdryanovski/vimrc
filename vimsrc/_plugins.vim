@@ -42,6 +42,18 @@ let ruby_no_expensive = 1
 let ruby_operators    = 1
 
 " -----------------------------------------------------------------------------
+" Plugin: Solarized 
+" -----------------------------------------------------------------------------
+
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+let g:solarized_bold=1
+let g:solarized_underline=1
+let g:solarized_italic=1
+let g:solarized_visibility='normal'
+
+
+" -----------------------------------------------------------------------------
 " Plugin: BufExplorer - easier invoke keys
 " -----------------------------------------------------------------------------
 nnoremap <leader>bb :BufExplorer<cr>
