@@ -191,3 +191,10 @@ nnoremap __ :split \|<Space>
 
 " SVN Blame
 vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+
+" -----------------------------------------------------------------------------
+" Commands:
+" -----------------------------------------------------------------------------
+
+" Delete file with VIM
+command! -complete=file -nargs=1 Remove :echo 'Remove: '.'<f-args>'.' '.(delete(<f-args>) == 0 ? 'SUCCEEDED' : 'FAILED')
