@@ -33,6 +33,7 @@ set number                            " show line numbers OR,...
 set showmode                          " always show what mode we'r
 set nowrap                            " don't wrap lines
 set autoread                          " auto reload file on change.
+set visualbell                        " No sounds
 "set list                              " show non-print characters,...
 "set listchars=trail:⋅,nbsp:⋅,tab:▷⋅   " for tabs and trailing spaces
 "set relativenumber                    " relative line numbers (>= Vim 7.3)
@@ -59,6 +60,10 @@ set mat=5
 "set directory=~/.vim/tmp       " Temporary files will go
 set undolevels=1500             " maximum number of changes that can be undone
 set undoreload=15000            " maximum lines to save for undo on buffer reload.
+" Turn off swap files
+"set noswapfile
+"set nobackup
+"set nowb
 
 " -----------------------------------------------------------------------------
 " Status line definition
@@ -129,6 +134,7 @@ endif
 " No blinking cursor. See http://www.linuxpowertop.org/known.php
 "
 let &guicursor = &guicursor . ",a:blinkon0"
+set gcr=a:blinkon0
 
 " -----------------------------------------------------------------------------
 " View changes after the last save

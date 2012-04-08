@@ -1,11 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/zero/.vim'
-let g:netrw_dirhist_2='/home/zero/Github/rails-bootstrap/config'
-let g:netrw_dirhist_3='/home/zero/.vim/bundle/vim-powerline/autoload/Powerline/Segments'
-let g:netrw_dirhist_4='/home/zero/Desktop/Sinatra/views/layout.haml'
-let g:netrw_dirhist_5='/home/zero/Github/base'
-let g:netrw_dirhist_6='/home/zero/.vim/bundle/snipmate'
-let g:netrw_dirhist_7='/home/zero/.vim/autoload/tlib'
-let g:netrw_dirhist_8='/home/zero/.vim/autoload/neocomplcache'
-let g:netrw_dirhist_9='/home/zero/Github/komfu/src'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/home/zero/Desktop/chat/src'
+let g:netrw_dirhist_2='/home/zero/Desktop/chat/src/api'
