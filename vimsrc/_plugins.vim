@@ -123,11 +123,16 @@ let g:snips_author = 'Bozhidar Dryanovski'
 " -----------------------------------------------------------------------------
 let g:acp_enableAtStartup = 0 
 let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_camel_case_completion=1
 let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_enable_underbar_completion = 1
 " Set minimum syntax keyword length.
 let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_auto_completion_start_length=3
 set completeopt+=longest
+
+let g:neocomplcache_max_list=5 "default is 100
+
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
