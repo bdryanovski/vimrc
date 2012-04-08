@@ -153,24 +153,6 @@ set foldnestmax=10            " deepest fold
 set foldlevel=1
 set nofoldenable                 " don't start with folded lines
 
-
-" -----------------------------------------------------------------------------
-" Add the closing brace only at the end of the line
-" -----------------------------------------------------------------------------
-function! ConditionalPairMap(open, close)
-  let line = getline('.')
-  let col = col('.')
-  if col < col('$') || stridx(line, a:close, col + 1) != -1
-    return a:open
-  else
-    return a:open . a:close . repeat("\<left>", len(a:close))
-  endif
-endf
-
-inoremap <expr> ( ConditionalPairMap('(', ')')
-inoremap <expr> { ConditionalPairMap('{', '}')
-inoremap <expr> [ ConditionalPairMap('[', ']')
-
 " -----------------------------------------------------------------------------
 " Only do this part if compiled with support for autocommands
 " -----------------------------------------------------------------------------
