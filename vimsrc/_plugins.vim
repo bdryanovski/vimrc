@@ -195,8 +195,8 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#252222 ctermbg=236
 " -----------------------------------------------------------------------------
 " Plugin: notes (vim-notes)
 " -----------------------------------------------------------------------------
-let g:notes_directory = $VIMHOME.'\todos'
+let g:notes_directory = $VIMHOME.'/todos'
 let g:notes_suffix = '.md'
-let g:notes_title_sync='change_title'
 let g:notes_smart_quotes=0
+let g:notes_title_sync='no'
 
