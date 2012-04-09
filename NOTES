@@ -3,6 +3,6 @@
 git submodule add git://repo .vim/bundler/repo
 git submodule init
 git submodule update 
-
+git submodule foreach git pull origin master 
 
 
