@@ -87,7 +87,7 @@ colorscheme solarized
 " VIM UI
 " -----------------------------------------------------------------------------
 set tabpagemax=15                       " show only 15 tabs.
-
+set guitablabel=%!expand(\"\%:t\")i
 
 " -----------------------------------------------------------------------------
 " Code xx column line - very useful I think?
