@@ -62,10 +62,14 @@ nnoremap <leader>bb :BufExplorer<cr>
 " Plugin: NERDTree - keys to toggle NERDTree
 " -----------------------------------------------------------------------------
 nnoremap <leader>d :NERDTreeToggle<cr>
-let NERDChristmasTree = 1
-let NERDTreeMinimalUI=1
-let NERDTreeDirArrows=1
+if has("unix")
+    " Under win32 || win64 this setting hides up dir link. That's BAD
+    " @todo: find a way to fix this under Windows.
+    let NERDTreeMinimalUI=1
+endif
 let g:NERDTreeWinSize=25
+let NERDChristmasTree = 1
+let NERDTreeDirArrows=1
 let NERDTreeHighlightCursorline = 1
 let NERDTreeMapActivateNode='<CR>'
 
@@ -163,17 +167,20 @@ let g:Powerline_symbols = 'compatible'
 " -----------------------------------------------------------------------------
 " Plugin: Syntastic
 " -----------------------------------------------------------------------------
-let g:syntastic_check_on_open=1
-let g:syntastic_echo_current_error=1
-let g:syntastic_enable_balloons=1
-let g:syntastic_auto_jump=1
-let g:syntastic_mode_map = { 'mode': 'active',
-                            \ 'active_filetypes': ['ruby','php','coffeescript']}
-let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+if exists("g:loaded_syntastic_plugin")
 
-if has("win32") || has("win64")
-  let s:php_executable=""
-  let makeprg=php_executble . " -l %"
+    let g:syntastic_check_on_open=1
+    let g:syntastic_echo_current_error=1
+    let g:syntastic_enable_balloons=1
+    let g:syntastic_auto_jump=1
+    let g:syntastic_mode_map = { 'mode': 'active',
+                            \ 'active_filetypes': ['ruby','php','coffeescript']}
+    let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+
+    if has("win32") || has("win64")
+        let s:php_executable=""
+        let makeprg=php_executble . " -l %"
+    endif
 endif
 " -----------------------------------------------------------------------------
 " Plugin: vim-indent-guides 
