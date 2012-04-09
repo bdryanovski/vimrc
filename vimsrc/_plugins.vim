@@ -192,3 +192,11 @@ let g:indent_guides_guide_size  = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#3e5446 ctermbg=8
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#252222 ctermbg=236
 
+" -----------------------------------------------------------------------------
+" Plugin: notes (vim-notes)
+" -----------------------------------------------------------------------------
+let g:notes_directory = $VIMHOME.'\todos'
+let g:notes_suffix = '.md'
+let g:notes_title_sync='change_title'
+let g:notes_smart_quotes=0
+
