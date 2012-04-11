@@ -126,24 +126,44 @@ let g:snips_author = 'Bozhidar Dryanovski'
 " Plugin: neocomplcache
 " -----------------------------------------------------------------------------
 let g:acp_enableAtStartup = 0 
-let g:neocomplcache_enable_at_startup = 0
-"let g:neocomplcache_enable_camel_case_completion=1
-"let g:neocomplcache_enable_smart_case = 1
-"let g:neocomplcache_enable_underbar_completion = 1
-"Set minimum syntax keyword length.
-"let g:neocomplcache_min_syntax_length = 3
-"let g:neocomplcache_auto_completion_start_length=3
-"set completeopt+=menu
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_max_list=20
+let g:neocomplcache_max_menu_width=15
+let g:neocomplcache_max_keyword_width=50
+let g:neocomplcache_auto_completion_start_length=4
+let g:neocomplcache_manual_completion_start_length=2
+let g:neocomplcache_min_keyword_length=3
+let g:neocomplcache_min_syntax_length=3
+let g:neocomplcache_enable_auto_select=0
+"let g:neocomplcache_enable_ignore_case=1
+let g:neocomplcache_enable_camel_case_completion=0
+let g:neocomplcache_enable_smart_case=1
+let g:neocomplcache_enable_underbar_completion=0
+let g:neocomplcache_enable_fuzzy_completion=0 " too heavy
+"let g:neocomplcache_disable_auto_complete=1 " 1 if you want to use manual mode
+let g:neocomplcache_enable_wildcard=0 "like *
 
-"let g:neocomplcache_max_list=3 "default is 100
+" If you want to use this settings you must have vim >= 7.3.319
+"let g:neocomplcache_enable_cursor_hold_i=1 " relative with updatetime event 
+"let g:neocomplcache_cursor_hold_i_time=100
 
+let g:neocomplcache_enable_auto_delimiter=0
+"let g:neocomplcache_enable_caching_message=1
+"let g:neocomplcache_caching_limit_file_size=50000
+let g:neocomplcache_snippets_dir=$VIMHOME +'/snippets'
+let g:neocomplcache_max_list=3 "default is 100
+
+" <TAB>: completion. 
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>" 
+
+set completeopt+=menu
 
 " Enable omni completion.
-"autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-"autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-"autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 
 " -----------------------------------------------------------------------------
