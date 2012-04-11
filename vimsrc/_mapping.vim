@@ -193,6 +193,20 @@ nnoremap __ :split \|<Space>
 vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
 " -----------------------------------------------------------------------------
+" Shortcuts
+" -----------------------------------------------------------------------------
+
+" Change working directory to that of the current file
+cmap cwd lcd %:p:h
+cmap cd. lcd %:p:h
+
+" Stupid me when holding shift 
+cmap W w
+cmap WQ wq
+cmap wQ wq
+cmap Q q
+
+" -----------------------------------------------------------------------------
 " Commands:
 " -----------------------------------------------------------------------------
 
