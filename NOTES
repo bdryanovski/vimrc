@@ -5,4 +5,6 @@ git submodule init
 git submodule update 
 git submodule foreach git pull origin master 
 
-
+# Notes for feature self
+  * work more with tmux
+  * or try byobu
