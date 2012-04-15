@@ -78,11 +78,6 @@ nnoremap <leader>bb :BufExplorer<cr>
 " Plugin: NERDTree - keys to toggle NERDTree
 " -----------------------------------------------------------------------------
 nnoremap <leader>d :NERDTreeToggle<cr>
-if has("unix")
-  " Under win32 || win64 this setting hides up dir link. That's BAD
-  " @todo: find a way to fix this under Windows.
-  let NERDTreeMinimalUI=1
-endif
 
 let g:NERDTreeWinSize=25
 let NERDChristmasTree = 1
