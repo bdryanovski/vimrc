@@ -5,22 +5,22 @@
 " -----------------------------------------------------------------------------
 " Source: Adding autocorrect file for most command misspel words
 " -----------------------------------------------------------------------------
-"source $VIMHOME/vimsrc/autocorrect.vim
+source $VIMHOME/vimsrc/autocorrect.vim
 
 " -----------------------------------------------------------------------------
 " Plugin: tabular.vim 
 " -----------------------------------------------------------------------------
 if exists(":Tabularize")
-  nmap <Leader>a= :Tabularize /=<CR>
-  vmap <Leader>a= :Tabularize /=<CR>
-  nmap <Leader>a: :Tabularize /:<CR>
-  vmap <Leader>a: :Tabularize /:<CR>
-  nmap <Leader>a:: :Tabularize /:\zs<CR>
-  vmap <Leader>a:: :Tabularize /:\zs<CR>
-  nmap <Leader>a, :Tabularize /,<CR>
-  vmap <Leader>a, :Tabularize /,<CR>
-  nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-  vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+  nmap <leader>w= :Tabularize /=<CR>
+  vmap <leader>w= :Tabularize /=<CR>
+  nmap <leader>w: :Tabularize /:<CR>
+  vmap <leader>w: :Tabularize /:<CR>
+  nmap <leader>w:: :Tabularize /:\zs<CR>
+  vmap <leader>w:: :Tabularize /:\zs<CR>
+  nmap <leader>w, :Tabularize /,<CR>
+  vmap <leader>w, :Tabularize /,<CR>
+  nmap <leader>w<Bar> :Tabularize /<Bar><CR>
+  vmap <leader>w<Bar> :Tabularize /<Bar><CR>
 
   " The following function automatically aligns when typing a
   " supported character

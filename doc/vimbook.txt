@@ -1,5 +1,45 @@
 *vimbook.txt*             For Vim version 7.3        Last change: 2012 March 3
 
+-------------------------------------------------------------------------------
+Shortcuts - Defined into the _mapping
+-------------------------------------------------------------------------------
+vv                  : Mark the how line
+<leader>s           : Replace the word under the cursor
+gl                  : SVN Blame (in vmode)
+__                  : Split and execute command
+Ctrl + U            : Uparcase current word
+<leader>t           : New empty tab
+<leader>T           : Open the current split into new tab
+<leader>1 ... <leader>9 : Open tab by index
+<leader><leader>2   : Set tabs 2, 4, 8
+<leader><space>     : Remove Highlight
+<leader>bb          : BufExplorer
+<leader>d           : NERDTree togle
+Ctrl + p            : ctrlp search in files
+
+-------------------------------------------------------------------------------
+F Keys 
+-------------------------------------------------------------------------------
+
+F1                  : <ESC>
+F2                  : BufExplorer 
+F3                  : NERDTree toggle
+F4                  : Clear syntax highlight
+F5                  : Tagbar toggle
+F6                  : Search for word under the cursor into all files 
+F7                  :
+F8                  : Set spell check to english 
+F9                  : Stop spell checking
+F10                 : Read this manual
+F11                 : 
+F12                 : Edit .vimrc
+Shift+F12           : Reload the .vimrc
+
+-------------------------------------------------------------------------------
+Custom Commands 
+-------------------------------------------------------------------------------
+GREP                : Search in file for the word under the cursor
+
 
 -------------------------------------------------------------------------------
 Absolutely essential
