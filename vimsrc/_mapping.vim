@@ -55,6 +55,7 @@ map <F3> :NERDTreeToggle<CR>
 " Clear syntax highlighting
 map <F4> :noh<CR> 
 map <F5> :TagbarToggle<CR>
+map <F6> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
 " Set they keys to turn on/off the spell check
 map <F8> <Esc>:setlocal spell spelllang=en_us<CR>
 map <F9> <Esc>:setlocal nospell<CR>
@@ -193,6 +194,14 @@ nnoremap __ :split \|<Space>
 vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
 " -----------------------------------------------------------------------------
+" Searching & Replace
+" -----------------------------------------------------------------------------
+
+" Replace the word under the cursor (leader + s)
+nnoremap <leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
+
+
+" -----------------------------------------------------------------------------
 " Shortcuts
 " -----------------------------------------------------------------------------
 
@@ -216,3 +225,8 @@ nnoremap vv _vg_
 " Delete file with VIM
 command! -complete=file -nargs=1 Remove :echo 'Remove: '.'<f-args>'.' '.(delete(<f-args>) == 0 ? 'SUCCEEDED' : 'FAILED')
 
+" http://vim.wikia.com/wiki/VimTip483
+" You can define a command allowing you to type :GREP to search for the current
+" word under the cursor, with the results presented in the quickfix window as a
+" 'list occurrences' search.
+command GREP :execute 'vimgrep /'.expand('<cword>').'/gj '.expand('%') | copen
