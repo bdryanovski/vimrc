@@ -8,4 +8,5 @@
 Thumbs.db
 
 # Ignore directories
+sessions/**
 sessions/
