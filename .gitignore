@@ -1,0 +1,11 @@
+# Ignore some backups
+*~
+*.swp
+*.bak
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Ignore directories
+sessions/
