@@ -1,7 +1,7 @@
 if has("unix")
-  set guifont=Monaco\ 12      " set font
+  set guifont=Monaco\ 10      " set font
 elseif has("win32")
-  set guifont=Droid_Sans_Mono:h11
+  set guifont=Droid_Sans_Mono:h10
 end
 set columns=80                          " characters per line = 80
 set guioptions-=T                       " no toolbar
