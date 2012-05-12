@@ -42,6 +42,13 @@ filetype plugin indent on             " enable filetype use
 setlocal ofu=syntaxcomplete#Complete  " enable syntax based omni completion
 
 " -----------------------------------------------------------------------------
+" Hacks
+" -----------------------------------------------------------------------------
+
+" This is a hack for the nasty screen flash/blink
+set vb t_vb=
+
+" -----------------------------------------------------------------------------
 " Set the leader key
 " -----------------------------------------------------------------------------
 let mapleader = ","

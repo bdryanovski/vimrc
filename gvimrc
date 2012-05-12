@@ -10,3 +10,11 @@ set guioptions+=m
 set guioptions-=L                       " no left scrollbar when v.split
 
 "colorscheme molokai  " monokai
+"
+
+" -----------------------------------------------------------------------------
+" Hacks
+" -----------------------------------------------------------------------------
+
+" This is a hack for the nasty vim screen flash/blink
+set vb t_vb=
