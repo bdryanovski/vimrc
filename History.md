@@ -1,7 +1,25 @@
 
-n.n.n / 2012-04-15 
+n.n.n / 2012-05-13 
 ==================
 
+  * Removing unused plugins
+  * Working on neocomplcache again. now with less limit_file_size and max_list
+  * Hack: fix the problem with screen flash/blink when I was typing...
+  * Adding some documentation about <leader>f
+  * Change fontsize to 10 and adding <leader>f to search the word under the cursor
+  * Updating .gitignore
+  * .gitignore file added
+  * Updating submodules
+  * Jshint plugin
+  * Working on a documentation on the vim shortcuts and again using autocomple vim file
+  * Merge branch 'master' of github.com:bdryanovski/vimrc
+  * Adding some search & replace functions
+  * Refactoring the readme, the part with the submodule used
+  * Refactoring the readme, the part with the submodule used
+  * Refactoring the readme, the part with the submodule used
+  * Removing some unused files and mappings
+  * Fixing the NERDTree UI problem found early into Windows env.
+  * Refreshing the old Hisotry log
   * Adding taskpaper plugin for vim
   * Now really we have ctrlp
   * Adding ctrlp plugin it's so awsome
