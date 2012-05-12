@@ -5,6 +5,11 @@ git submodule init
 git submodule update 
 git submodule foreach git pull origin master 
 
+# Git remove submodule
+git rm --cached /path/to/module
+git config -f .git/config --remove-section submodule.path_to_module
+git config -f .gitmodules --remove-section submodule.path_to_module
+
 # Notes for feature self
   * work more with tmux
   * or try byobu
