@@ -258,7 +258,9 @@ if exists("g:loaded_syntastic_plugin")
   let g:syntastic_enable_balloons=1
   let g:syntastic_auto_jump=1
   let g:syntastic_mode_map = { 'mode': 'active',
-        \ 'active_filetypes': ['ruby','php','coffeescript']}
+                             \ 'active_filetypes': ['ruby','php','coffeescript'],
+                             \ 'passive_filetypes': ['less']
+  }
   let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 
   if has("win32") || has("win64")
