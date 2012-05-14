@@ -213,6 +213,11 @@ if has("autocmd")
       autocmd GUIEnter * simalt ~x
     endif
 
+    " Hacking the system bell and flash
+    set noerrorbells visualbell t_vb=
+    autocmd GUIEnter * set visualbell t_vb=
+    
+
     " Custom filetypes settings: Python, Shell, JSON, Vagrant, CloudFormation
     au FileType python,sh set tabstop=4 shiftwidth=4 softtabstop=4
     au BufRead,BufNewFile *.json setfiletype javascript
