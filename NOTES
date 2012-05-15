@@ -10,6 +10,13 @@ git rm --cached /path/to/module
 git config -f .git/config --remove-section submodule.path_to_module
 git config -f .gitmodules --remove-section submodule.path_to_module
 
+# Color schemes  1/10
+# Schema        | JavaScript | Coffee-Script | Ruby | PHP | HTML | CSS-LESS
+* Rails Envy    |            |               |      |     |      |        
+* Solarized     |            |               |      |     |      |
+* Monokai       |            |               |      |     |      |
+
+
 # Notes for feature self
   * work more with tmux
   * or try byobu
