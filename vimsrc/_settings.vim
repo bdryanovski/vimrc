@@ -88,7 +88,8 @@ set statusline+=%-14.([%l/%L],%c%V%)     " cursor info
 syntax enable
 set background=dark
 " colorscheme molokai "railscasts_alt
-colorscheme solarized
+" colorscheme solarized
+colorscheme RailsEnvy
 
 " -----------------------------------------------------------------------------
 " VIM UI
