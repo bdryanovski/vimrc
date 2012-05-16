@@ -54,12 +54,14 @@ map <F2> :BufExplorer<CR>
 map <F3> :NERDTreeToggle<CR>
 " Clear syntax highlighting
 map <F4> :noh<CR> 
+" Currently work only on *nix
 map <F5> :TagbarToggle<CR>
 map <F6> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
 " Set they keys to turn on/off the spell check
 map <F8> <Esc>:setlocal spell spelllang=en_us<CR>
 map <F9> <Esc>:setlocal nospell<CR>
 map <F10> :help vimbook.txt<CR>
+map <S-F10> :tabnew $VIMHOME/doc/vimbook.txt<CR>
 map <F12> :edit $VIMHOME/vimrc.vim"<CR>
 map <S-F12> :source $VIMHOME/vimrc.vim<CR>
 
