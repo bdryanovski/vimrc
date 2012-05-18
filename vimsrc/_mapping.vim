@@ -1,6 +1,13 @@
 " --------------------------------------------------------------------
 " Map VIM custom keys 
 " --------------------------------------------------------------------
+
+"
+" Insert new line 
+" 
+map <S-Enter> O<ESC> " without going into insert mode
+map <Enter> o <ESC>
+
 "
 " Quick insert of newline in normal mode
 " ctrl = put new line after the cursor
@@ -160,6 +167,13 @@ inoremap <C-Y> <C-O><C-R>
 " -----------------------------------------------------------------------------
 "  Moving into split view
 " -----------------------------------------------------------------------------
+
+"
+" Vertical and horizontal split then hop to a new buffer
+" 
+:noremap <leader>v :vsp^M^W^W<C-R>
+:noremap <leader>h :split^M^W^W<C-R>
+
 
 "
 " Option A : Smart way to move btw. windows

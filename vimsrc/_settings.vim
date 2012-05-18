@@ -21,6 +21,7 @@ set wildmenu                          " use command-line completion menu,...
 set wildmode=longest:full             " with wildmode
 set bs=indent,eol,start               " allow backspacing over everything
 set autoindent                        " enable auto-indentation
+set si                                " enable smartindent (local to buffer)
 set ts=2                              " tabs are 2 space
 set tabstop=2                         " no. of spaces for tab in file
 set shiftwidth=2                      " no. of spaces for step in autoindent
@@ -91,6 +92,13 @@ set background=dark
 colorscheme solarized
 
 " -----------------------------------------------------------------------------
+" Windows settings
+" -----------------------------------------------------------------------------
+
+set equalalways " Multiple windows, when created, are equal in size
+set splitbelow splitright
+
+" -----------------------------------------------------------------------------
 " VIM UI
 " -----------------------------------------------------------------------------
 set tabpagemax=15                       " show only 15 tabs.
@@ -136,6 +144,8 @@ if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
 endif
+
+
 
 "
 " No blinking cursor. See http://www.linuxpowertop.org/known.php
