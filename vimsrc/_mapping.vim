@@ -249,3 +249,14 @@ command! -complete=file -nargs=1 Remove :echo 'Remove: '.'<f-args>'.' '.(delete(
 " word under the cursor, with the results presented in the quickfix window as a
 " 'list occurrences' search.
 command GREP :execute 'vimgrep /'.expand('<cword>').'/gj '.expand('%') | copen
+
+
+" -----------------------------------------------------------------------------
+" Unit testing by framework
+" -----------------------------------------------------------------------------
+
+"
+" PHPUnit with custom configuration.
+"
+
+nnoremap <leader>u :exe '!phpunit --configuration ' . g:phpunit_config . ' %:p'<CR>

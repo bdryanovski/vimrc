@@ -16,3 +16,8 @@ set sw=4 ai
 set tabstop=4              " No. of spaces for tab in file
 set shiftwidth=4           " No. of spaces for step in autoindent
 set softtabstop=4          " No. of spaces for tab when editing 
+
+" -----------------------------------------------------------------------------
+" PHPUnit settings
+" -----------------------------------------------------------------------------
+let g:phpunit_config = 'D:\xampp\htdocs\backend\development\scripts\unit_tests\phpunit-bozhidar.xml'
