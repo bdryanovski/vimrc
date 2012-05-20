@@ -15,7 +15,11 @@ git config -f .gitmodules --remove-section submodule.path_to_module
 * Rails Envy    |            |               |      |     |      |        
 * Solarized     |            |               |      |     |      |
 * Monokai       |            |               |      |     |      |
+* IR_black      | 4          |               |      | 5   |      |                 
 
+# Bash tricks
+<Ctrl+e>        - Move the cursor to the end of the line.
+cd -            - Return you to the previous directory.
 
 # Notes for feature self
   * work more with tmux
