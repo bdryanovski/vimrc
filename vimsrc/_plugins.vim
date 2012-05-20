@@ -11,16 +11,16 @@ source $VIMHOME/vimsrc/autocorrect.vim
 " Plugin: tabular.vim 
 " -----------------------------------------------------------------------------
 if exists(":Tabularize")
-  nmap <leader>w= :Tabularize /=<CR>
-  vmap <leader>w= :Tabularize /=<CR>
-  nmap <leader>w: :Tabularize /:<CR>
-  vmap <leader>w: :Tabularize /:<CR>
-  nmap <leader>w:: :Tabularize /:\zs<CR>
-  vmap <leader>w:: :Tabularize /:\zs<CR>
-  nmap <leader>w, :Tabularize /,<CR>
-  vmap <leader>w, :Tabularize /,<CR>
-  nmap <leader>w<Bar> :Tabularize /<Bar><CR>
-  vmap <leader>w<Bar> :Tabularize /<Bar><CR>
+  nnoremap <leader>w= :Tabularize /=<CR>
+  vnoremap <leader>w= :Tabularize /=<CR>
+  nnoremap <leader>w: :Tabularize /:<CR>
+  vnoremap <leader>w: :Tabularize /:<CR>
+  nnoremap <leader>w:: :Tabularize /:\zs<CR>
+  vnoremap <leader>w:: :Tabularize /:\zs<CR>
+  nnoremap <leader>w, :Tabularize /,<CR>
+  vnoremap <leader>w, :Tabularize /,<CR>
+  nnoremap <leader>w<Bar> :Tabularize /<Bar><CR>
+  vnoremap <leader>w<Bar> :Tabularize /<Bar><CR>
 
   " The following function automatically aligns when typing a
   " supported character
@@ -126,7 +126,7 @@ function! ToggleScratch()
   endif
 endfunction
 
-map <leader>s :call ToggleScratch()<CR>
+noremap <leader>s :call ToggleScratch()<CR>
 
 " -----------------------------------------------------------------------------
 " Plugin: Rails - turn off rails related things in statusbar

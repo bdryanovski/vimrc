@@ -5,8 +5,8 @@
 "
 " Insert new line 
 " 
-map <S-Enter> O<ESC> " without going into insert mode
-map <Enter> o <ESC>
+noremap <S-Enter> O<ESC> " without going into insert mode
+noremap <Enter> o <ESC>
 
 "
 " Quick insert of newline in normal mode
@@ -20,7 +20,7 @@ nnoremap <silent> <S-CR> :.-1put =''<CR>
 "
 " Map w!! to write file with sudo, when forgot to open with sudo.
 "
-cmap w!! w !sudo tee % >/dev/null
+cnoremap w!! w !sudo tee % >/dev/null
 
 "
 " bckspace in Visual mode deletes selection
@@ -50,40 +50,40 @@ nnoremap <leader><space> :noh <CR>
 "
 " Paste in insert and command modes
 "
-imap <C-p> <Esc>pa
-cmap <C-p> <C-r>"
+inoremap <C-p> <Esc>pa
+cnoremap <C-p> <C-r>"
 
 " -----------------------------------------------------------------------------
 " Map F-keys
 " -----------------------------------------------------------------------------
-map <F1> <ESC>
-map <F2> :BufExplorer<CR>
-map <F3> :NERDTreeToggle<CR>
+noremap <F1> <ESC>
+noremap <F2> :BufExplorer<CR>
+noremap <F3> :NERDTreeToggle<CR>
 " Clear syntax highlighting
-map <F4> :noh<CR> 
+noremap <F4> :noh<CR> 
 " Currently work only on *nix
-map <F5> :TagbarToggle<CR>
-map <F6> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+noremap <F5> :TagbarToggle<CR>
+noremap <F6> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
 " Set they keys to turn on/off the spell check
-map <F8> <Esc>:setlocal spell spelllang=en_us<CR>
-map <F9> <Esc>:setlocal nospell<CR>
-map <F10> :help vimbook.txt<CR>
-map <S-F10> :tabnew $VIMHOME/doc/vimbook.txt<CR>
-map <F12> :edit $VIMHOME/vimrc.vim"<CR>
-map <S-F12> :source $VIMHOME/vimrc.vim<CR>
+noremap <F8> <Esc>:setlocal spell spelllang=en_us<CR>
+noremap <F9> <Esc>:setlocal nospell<CR>
+noremap <F10> :help vimbook.txt<CR>
+noremap <S-F10> :tabnew $VIMHOME/doc/vimbook.txt<CR>
+noremap <F12> :edit $VIMHOME/vimrc.vim"<CR>
+noremap <S-F12> :source $VIMHOME/vimrc.vim<CR>
 
 " -----------------------------------------------------------------------------
 " Mapping and using tabs
 " -----------------------------------------------------------------------------
-map <leader>1 :tabn 1<CR>
-map <leader>2 :tabn 2<CR>
-map <leader>3 :tabn 3<CR>
-map <leader>4 :tabn 4<CR>
-map <leader>5 :tabn 5<CR>
-map <leader>6 :tabn 6<CR>
-map <leader>7 :tabn 7<CR>
-map <leader>8 :tabn 8<CR>
-map <leader>9 :tabn 9<CR>
+noremap <leader>1 :tabn 1<CR>
+noremap <leader>2 :tabn 2<CR>
+noremap <leader>3 :tabn 3<CR>
+noremap <leader>4 :tabn 4<CR>
+noremap <leader>5 :tabn 5<CR>
+noremap <leader>6 :tabn 6<CR>
+noremap <leader>7 :tabn 7<CR>
+noremap <leader>8 :tabn 8<CR>
+noremap <leader>9 :tabn 9<CR>
 
 "
 " Open new tab more easily:
@@ -111,11 +111,11 @@ vnoremap <C-C> "+y
 vnoremap <C-Insert> "+y
 
 " CTRL-V and SHIFT-Insert are Paste
-map <C-V>		"+gP
-map <S-Insert>		"+gP
+noremap <C-V>		"+gP
+noremap <S-Insert>		"+gP
 
-cmap <C-V>		<C-R>+
-cmap <S-Insert>		<C-R>+
+cnoremap <C-V>		<C-R>+
+cnoremap <S-Insert>		<C-R>+
 
 " Pasting blockwise and linewise selections is not possible in Insert and
 " Visual mode without the +virtualedit feature.  They are pasted as if they
@@ -125,8 +125,8 @@ cmap <S-Insert>		<C-R>+
 exe 'inoremap <script> <C-V>' paste#paste_cmd['i']
 exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
 
-imap <S-Insert>		<C-V>
-vmap <S-Insert>		<C-V>
+inoremap <S-Insert>		<C-V>
+vnoremap <S-Insert>		<C-V>
 
 " Use CTRL-Q to do what CTRL-V used to do
 " TODO: not working under xterm under unix
@@ -171,25 +171,25 @@ inoremap <C-Y> <C-O><C-R>
 "
 " Vertical and horizontal split then hop to a new buffer
 " 
-:noremap <leader>v :vsp^M^W^W<C-R>
-:noremap <leader>h :split^M^W^W<C-R>
+noremap <leader>v :vsp^M^W^W<C-R>
+noremap <leader>h :split^M^W^W<C-R>
 
 
 "
 " Option A : Smart way to move btw. windows
 "
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
 
 "
 " Option B : Moving through splits:
 "
-nmap gh <C-w>h
-nmap gj <C-w>j
-nmap gk <C-w>k
-nmap gl <C-w>l
+nnoremap gh <C-w>h
+nnoremap gj <C-w>j
+nnoremap gk <C-w>k
+nnoremap gl <C-w>l
 
 
 " -----------------------------------------------------------------------------
@@ -207,7 +207,7 @@ nnoremap <C-u> mzgUiw`z
 nnoremap __ :split \|<Space>
 
 " SVN Blame
-vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+vnoremap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
 " -----------------------------------------------------------------------------
 " Searching & Replace
@@ -225,14 +225,14 @@ nnoremap <leader>f *<CR>
 " -----------------------------------------------------------------------------
 
 " Change working directory to that of the current file
-cmap cwd lcd %:p:h
-cmap cd. lcd %:p:h
+cnoremap cwd lcd %:p:h
+cnoremap cd. lcd %:p:h
 
 " Stupid me when holding shift 
-cmap W w
-cmap WQ wq
-cmap wQ wq
-cmap Q q
+cnoremap W w
+cnoremap WQ wq
+cnoremap wQ wq
+cnoremap Q q
 
 " Easily mark a single line in charactger-wise visual mode
 nnoremap vv _vg_
