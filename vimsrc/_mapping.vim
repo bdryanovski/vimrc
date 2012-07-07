@@ -1,22 +1,6 @@
 " --------------------------------------------------------------------
 " Map VIM custom keys 
 " --------------------------------------------------------------------
-
-"
-" Insert new line 
-" 
-noremap <S-Enter> O<ESC> " without going into insert mode
-noremap <Enter> o <ESC>
-
-"
-" Quick insert of newline in normal mode
-" ctrl = put new line after the cursor
-" shift + ctrl = put new line before cursor
-" TODO: Not working under unix, check win32
-"
-nnoremap <silent> <CR> :put=''<CR> 
-nnoremap <silent> <S-CR> :.-1put =''<CR>
-
 "
 " Map w!! to write file with sudo, when forgot to open with sudo.
 "
@@ -64,6 +48,7 @@ noremap <F4> :noh<CR>
 " Currently work only on *nix
 noremap <F5> :TagbarToggle<CR>
 noremap <F6> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+" noremap <F7> empty
 " Set they keys to turn on/off the spell check
 noremap <F8> <Esc>:setlocal spell spelllang=en_us<CR>
 noremap <F9> <Esc>:setlocal nospell<CR>
@@ -94,7 +79,6 @@ nnoremap <leader>T :tabedit %<cr>gT:quit<cr>
 " -----------------------------------------------------------------------------
 "  Comman UI key binding
 " -----------------------------------------------------------------------------
-
 "
 " Use CTRL-S for saving, also in Insert mode
 "
@@ -171,9 +155,8 @@ inoremap <C-Y> <C-O><C-R>
 "
 " Vertical and horizontal split then hop to a new buffer
 " 
-noremap <leader>v :vsp^M^W^W<C-R>
+noremap <leader>v :vspM^W^W<C-R>
 noremap <leader>h :split^M^W^W<C-R>
-
 
 "
 " Option A : Smart way to move btw. windows
@@ -191,10 +174,15 @@ nnoremap gj <C-w>j
 nnoremap gk <C-w>k
 nnoremap gl <C-w>l
 
-
 " -----------------------------------------------------------------------------
 "  Shortkeys for some useful text transformations
 " -----------------------------------------------------------------------------
+
+"
+" Remap the Home key just the way I like it.
+"
+nnoremap <Home> ^
+inoremap <Home> <Esc>^i
 
 "
 " Upcase current word
@@ -248,7 +236,7 @@ command! -complete=file -nargs=1 Remove :echo 'Remove: '.'<f-args>'.' '.(delete(
 " You can define a command allowing you to type :GREP to search for the current
 " word under the cursor, with the results presented in the quickfix window as a
 " 'list occurrences' search.
-command GREP :execute 'vimgrep /'.expand('<cword>').'/gj '.expand('%') | copen
+" command GREP :execute 'vimgrep /'.expand('<cword>').'/gj '.expand('%') | copen
 
 
 " -----------------------------------------------------------------------------

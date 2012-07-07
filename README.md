@@ -32,7 +32,6 @@ copy C:/Users/xxx/vimfiles/vimrc.vim C:/Users/xxx/_vimrc
 * [submodule "bundle/twitvim"](https://github.com/vim-scripts/TwitVim.git) 
 * [submodule "bundle/vim-octopress"](https://github.com/tangledhelix/vim-octopress.git) 
 * [submodule "bundle/jade"](https://github.com/digitaltoad/vim-jade.git) 
-* [submodule "bundle/stylus"](https://github.com/wavded/vim-stylus.git) 
 * [submodule "bundle/session"](https://github.com/xolox/vim-session.git) 
 * [submodule "bundle/solarized"](https://github.com/altercation/vim-colors-solarized.git) 
 * [submodule "bundle/smartinput"](https://github.com/kana/vim-smartinput.git) 
@@ -41,6 +40,5 @@ copy C:/Users/xxx/vimfiles/vimrc.vim C:/Users/xxx/_vimrc
 * [submodule "bundle/html_auto_close_tag"](https://github.com/vim-scripts/HTML-AutoCloseTag.git) 
 * [submodule "bundle/PIV"](https://github.com/spf13/PIV.git) 
 * [submodule "bundle/ctrlp"](https://github.com/kien/ctrlp.vim.git) 
-* [submodule "bundle/taskpaper"](https://github.com/davidoc/taskpaper.vim.git) 
 
 

@@ -15,8 +15,6 @@ set t_Co=256                          " uses 256 colors
 set ignorecase                        " case insensitive patterns,..
 set cursorline
 set smartcase                         " when only lowercase is used
-" TODO: do I really need that ?
-"set pastetoggle=<F2>                 " F2 toggles indenting when pasting
 set wildmenu                          " use command-line completion menu,...
 set wildmode=longest:full             " with wildmode
 set bs=indent,eol,start               " allow backspacing over everything
@@ -59,7 +57,7 @@ let mapleader = ","
 " In VIEW mode.
 " -----------------------------------------------------------------------------
 set showmatch             " show matching brackets/parenthesis
-set mat=5
+set mat=5                 " Blink 5 second 
 
 " -----------------------------------------------------------------------------
 " Backup and Files
@@ -113,9 +111,9 @@ set guitablabel=%!expand(\"\%:t\")i
 "match OverLength /\%>100v.\+/
 
 if exists('+colorcolumn')
-  set colorcolumn=80
+  set colorcolumn=150
 else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>150v.\+', -1)
 endif
 
 
@@ -146,8 +144,6 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-
-
 "
 " No blinking cursor. See http://www.linuxpowertop.org/known.php
 "
@@ -175,7 +171,7 @@ nnoremap <leader>? :DiffSaved<cr>
 set foldmethod=syntax         " folding based on the indent
 set foldnestmax=10            " deepest fold 
 set foldlevel=1
-set nofoldenable                 " don't start with folded lines
+set nofoldenable              " don't start with folded lines
 
 " -----------------------------------------------------------------------------
 " Only do this part if compiled with support for autocommands
@@ -197,6 +193,7 @@ if has("autocmd")
 
     " don't write swapfile on most commonly used directories for NFS mounts or USB sticks
     autocmd BufNewFile,BufReadPre /media/*,/mnt/* set directory=~/tmp,/var/tmp,/tmp
+    autocmd BufRead,BufNewFile *.json set filetype=javascript
 
     " Switch to working directory of the open file
     autocmd BufEnter * silent! lcd %:p:h
