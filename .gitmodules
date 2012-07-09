@@ -64,3 +64,6 @@
 [submodule "bundle/jshint"]
 	path = bundle/jshint
 	url = https://github.com/walm/jshint.vim.git
+[submodule "bundle/hemisu_color"]
+	path = bundle/hemisu_color
+	url = https://github.com/noahfrederick/Hemisu.git
