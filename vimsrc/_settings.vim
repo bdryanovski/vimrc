@@ -111,9 +111,9 @@ set guitablabel=%!expand(\"\%:t\")i
 "match OverLength /\%>100v.\+/
 
 if exists('+colorcolumn')
-  set colorcolumn=150
+  set colorcolumn=100
 else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>150v.\+', -1)
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>100v.\+', -1)
 endif
 
 
