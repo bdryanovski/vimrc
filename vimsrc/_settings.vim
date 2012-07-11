@@ -5,7 +5,7 @@ set encoding=utf-8
 set fileencodings=utf-8               " encoding always must be utf-8
 set fileformats=unix,dos              " Setting file format try first unix
 set nocompatible                      " don't try to be strictly vi-like
-set modelines=0                       " don't use modelines (for security)
+set modelines=1                       " for now use it //don't use modelines (for security) 
 set viminfo='20,\"50                  " use a viminfo file,...
 set history=1500                      " limit history
 set ruler                             " show the cursor position
@@ -215,6 +215,10 @@ if has("autocmd")
     autocmd BufEnter httpd*.conf  set filetype=apache
     autocmd BufRead *.jhtml       set filetype=jhtml
     autocmd BufNewFile,BufRead *.markdown,*.textile,*.md setfiletype octopress
+
+    " Arduino
+  	autocmd Filetype arduino set errorformat^=\%-G%.%#/path/to/Arduino/IDE/%.%#
+    autocmd BufRead,BufNewFile *.pde setfiletype arduino 
 
     " Maximise on open on Windows
     if has('win32')

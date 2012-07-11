@@ -4,10 +4,10 @@
 
 ### Linux
 ```
-git clone http://bdryanovski@github.com/bdryanovski/vimrc.git $HOME/.vimrc
-cd $HOME/.vimrc
+git clone http://bdryanovski@github.com/bdryanovski/vimrc.git $HOME/.vim
+cd $HOME/.vim
 git submodule update --init
-ln $HOME/.vimrc/vimrc.vim $HOME/.vimrc
+ln $HOME/.vim/vimrc.vim $HOME/.vimrc
 ```
 
 ### Windows
