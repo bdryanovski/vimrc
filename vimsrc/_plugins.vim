@@ -92,24 +92,10 @@ let NERDTreeKeepTreeInNewTab=1
 let NERDTreeIgnore=['\.pyc','\~$','\.swo$','\.swp$','\.git','\.hg','\.svn','\.bzr']
 
 " -----------------------------------------------------------------------------
-" Plugin: Gist settings
-" -----------------------------------------------------------------------------
-let g:gist_clip_command = 'xclip -sqlection clipboard'
-let g:gist_detect_filetype = 1    " Detect file type
-let g:gist_open_browser_after_post = 0
-let g:gist_browser_command = 'mozilla %URL% &'
-let g:gist_put_url_to_clipboard_after_post = 0
-
-" Auth
-let g:github_user = 'bdryanovski'
-let g:github_token = '17a354605cb3d28d449a7973e1a30050'
-
-" -----------------------------------------------------------------------------
 "  Plugin: twitvim.vim
 " -----------------------------------------------------------------------------
 
-let twitvim_consumer_key = '52Y9KlFRhtC2urjZvDeG6g'
-let twitvim_consumer_secret = 'dNligTIT7yxRkJKe0swKlTlC6z9HY9lC4a1jppl2j4'
+" Auth settings located into `_auth.vim` file
 
 " -----------------------------------------------------------------------------
 " Plugin: vim-pasta 
