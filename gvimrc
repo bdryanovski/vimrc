@@ -3,7 +3,8 @@ if has("unix")
 elseif has("win32")
   set guifont=Droid_Sans_Mono:h10
 end
-set columns=80                          " characters per line = 80
+
+set columns=100                         " characters per line = 100
 set guioptions-=T                       " no toolbar
 set guioptions-=r                       " no right scrollbar
 set guioptions+=m
