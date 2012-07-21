@@ -67,3 +67,9 @@
 [submodule "bundle/hemisu_color"]
 	path = bundle/hemisu_color
 	url = https://github.com/noahfrederick/Hemisu.git
+[submodule "bundle/taglist"]
+	path = bundle/taglist
+	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "bundle/vim-easytags"]
+	path = bundle/vim-easytags
+	url = https://github.com/xolox/vim-easytags.git
