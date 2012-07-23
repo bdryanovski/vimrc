@@ -57,11 +57,16 @@ let Tlist_Close_On_Select = 1
 " Plugin: easy-tags
 " -----------------------------------------------------------------------------
 
-let g:easytags_file = '~/.vim/tags'
-set tags=./tags
+let g:easytags_file = '~/.vim/tags/default.tags'
+set tags=./.tags;./tags;~/.vim/tags/default.tags;~/.vimtags
 let g:easytags_dynamic_files=1
-"let g:easytags_by_filetype=1
+let g:easytags_by_filetype=1
 let g:easytags_always_enabled=0
+let g:easytags_suppress_ctags_warning=1
+let g:easytags_on_cursorhold=0
+let g:easytags_updatetime_autodisable=1
+let g:easytags_auto_update=0
+let g:easytags_auto_highlight=0
 
 
 " -----------------------------------------------------------------------------
