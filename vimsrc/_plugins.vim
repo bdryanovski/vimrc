@@ -8,6 +8,20 @@
 source $VIMHOME/vimsrc/autocorrect.vim
 
 " -----------------------------------------------------------------------------
+" Plugin: Headlights
+" -----------------------------------------------------------------------------
+let g:headlights_use_plugin_menu = 0 
+let g:headlights_smart_menus = 1
+let g:headlights_show_commands = 1 
+let g:headlights_show_mappings = 1 
+let g:headlights_show_abbreviations = 0 
+let g:headlights_show_functions = 0 
+let g:headlights_show_highlights = 0 
+let g:headlights_show_files = 0 
+let g:headlights_show_load_order = 0
+let g:headlights_debug_mode = 0 
+
+" -----------------------------------------------------------------------------
 " Plugin: tabular.vim 
 " -----------------------------------------------------------------------------
 if exists(":Tabularize")
