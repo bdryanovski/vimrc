@@ -7,6 +7,10 @@
 .DS_Store
 Thumbs.db
 
+# Stupid files.
+.netrwhist
+.VimballRecord
+
 # Ignore directories
 sessions/**
 sessions/
