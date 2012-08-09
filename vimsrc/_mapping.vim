@@ -54,8 +54,8 @@ noremap <F8> <Esc>:setlocal spell spelllang=en_us<CR>
 noremap <F9> <Esc>:setlocal nospell<CR>
 noremap <F10> :help vimbook.txt<CR>
 noremap <S-F10> :tabnew $VIMHOME/doc/vimbook.txt<CR>
-noremap <F12> :edit $VIMHOME/vimrc.vim"<CR>
-noremap <S-F12> :source $VIMHOME/vimrc.vim<CR>
+noremap <F12> :edit $MYVIMRC<CR>
+noremap <S-F12> :source $MYVIMRC<CR>
 
 " -----------------------------------------------------------------------------
 " Mapping and using tabs
