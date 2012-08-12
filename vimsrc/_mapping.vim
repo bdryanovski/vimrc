@@ -248,3 +248,12 @@ command! -complete=file -nargs=1 Remove :echo 'Remove: '.'<f-args>'.' '.(delete(
 "
 
 nnoremap <leader>u :exe '!phpunit --configuration ' . g:phpunit_config . ' %:p'<CR>
+
+" -----------------------------------------------------------------------------
+" Language specific mapping
+" -----------------------------------------------------------------------------
+
+" PHP Section:
+
+" wrap <?= ?> arround visually selected text
+vmap st "zdi<?= <C-R>z ?>"<Esc> 
