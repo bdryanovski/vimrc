@@ -76,6 +76,14 @@ noremap <leader>9 :tabn 9<CR>
 nnoremap <leader>t :tabnew<cr>
 nnoremap <leader>T :tabedit %<cr>gT:quit<cr>
 
+" tab navigation like firefox
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+inoremap <C-tab>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
+
 " -----------------------------------------------------------------------------
 "  Comman UI key binding
 " -----------------------------------------------------------------------------
