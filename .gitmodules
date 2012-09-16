@@ -82,3 +82,6 @@
 [submodule "bundle/badwolf"]
 	path = bundle/badwolf
 	url = https://github.com/sjl/badwolf.git
+[submodule "bundle/vim-ruby-sinatra"]
+	path = bundle/vim-ruby-sinatra
+	url = https://github.com/hallison/vim-ruby-sinatra.git
