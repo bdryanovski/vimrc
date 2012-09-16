@@ -18,9 +18,9 @@ vnoremap <BS> d
 "nnoremap <leader>4 <esc>:set expandtab tabstop=4 softtabstop=4 shiftwidth=4<cr>
 "nnoremap <leader>8 <esc>:set expandtab tabstop=8 softtabstop=8 shiftwidth=8<cr>
 " hard tabbing at 2, for and 8 spaces of width "
-nnoremap <leader><leader>2 <esc>:set noexpandtab tabstop=2 softtabstop=2 shiftwidth=2<cr>
-nnoremap <leader><leader>4 <esc>:set noexpandtab tabstop=4 softtabstop=4 shiftwidth=4<cr>
-nnoremap <leader><leader>8 <esc>:set noexpandtab tabstop=8 softtabstop=8 shiftwidth=8<cr>
+"nnoremap <leader><leader>2 <esc>:set noexpandtab tabstop=2 softtabstop=2 shiftwidth=2<cr>
+"nnoremap <leader><leader>4 <esc>:set noexpandtab tabstop=4 softtabstop=4 shiftwidth=4<cr>
+"nnoremap <leader><leader>8 <esc>:set noexpandtab tabstop=8 softtabstop=8 shiftwidth=8<cr>
 
 "
 " Remove highlighting search results
@@ -183,6 +183,17 @@ nnoremap gk <C-w>k
 nnoremap gl <C-w>l
 
 " -----------------------------------------------------------------------------
+" Move line up/down
+" -----------------------------------------------------------------------------
+"source $VIMHOME/vimsrc/_move_line.vim
+nnoremap <c-j> :m+<CR>==
+nnoremap <c-k> :m-2<CR>==
+inoremap <c-j> <Esc>:m+<CR>==gi
+inoremap <c-k> <Esc>:m-2<CR>==gi
+vnoremap <c-j> :m'>+<CR>gv=gv
+vnoremap <c-k> :m-2<CR>gv=gv
+
+" -----------------------------------------------------------------------------
 "  Shortkeys for some useful text transformations
 " -----------------------------------------------------------------------------
 
@@ -245,7 +256,6 @@ command! -complete=file -nargs=1 Remove :echo 'Remove: '.'<f-args>'.' '.(delete(
 " word under the cursor, with the results presented in the quickfix window as a
 " 'list occurrences' search.
 " command GREP :execute 'vimgrep /'.expand('<cword>').'/gj '.expand('%') | copen
-
 
 " -----------------------------------------------------------------------------
 " Unit testing by framework

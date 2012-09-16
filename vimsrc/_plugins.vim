@@ -25,7 +25,7 @@ let g:headlights_debug_mode = 0
 " Plugin: smartinput
 " -----------------------------------------------------------------------------
 
-" Language: Ruby , when you type | after do , insert |cursor|
+" Language: Rauby , when you type | after do , insert |cursor|
 call smartinput#map_to_trigger('i', '<bar>', '<Bar>', '<Bar>')
 call smartinput#define_rule({
   \   'at': '\({\|\<do\>\)\s*\%#',
@@ -299,7 +299,11 @@ au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 " -----------------------------------------------------------------------------
 " Plugin: Powerline
 " -----------------------------------------------------------------------------
-let g:Powerline_symbols = 'compatible'
+if has("win32") || has("win64")
+  let g:Powerline_symbols = 'compatible'
+else
+  let g:Powerline_symbols = 'fancy'
+endif
 
 " -----------------------------------------------------------------------------
 " Plugin: tagbar
