@@ -38,6 +38,77 @@ set autochdir                         " Change working dir to the open file
 "set listchars=trail:⋅,nbsp:⋅,tab:▷⋅   " for tabs and trailing spaces
 "set relativenumber                    " relative line numbers (>= Vim 7.3)
 
+" -----------------------------------------------------------------------------
+" Settings for Pathogen
+" -----------------------------------------------------------------------------
+"filetype off                          " disable filetype use. Enabled later
+"call pathogen#runtime_append_all_bundles()
+"call pathogen#helptags()
+
+" -----------------------------------------------------------------------------
+" Settings for Vundle
+" -----------------------------------------------------------------------------
+
+filetype off
+
+" Load the Vundle
+set rtp+=$VIMHOME/vundle.git/
+call vundle#rc()
+
+" Global packages.
+
+  Bundle 'gmarik/vundle'
+  Bundle 'scrooloose/nerdtree'
+  Bundle 'Lokaltog/vim-powerline'
+  Bundle 'widox/vim-buffer-explorer-plugin'
+  Bundle 'tsaleh/vim-matchit'
+  Bundle 'vim-scripts/scratch.vim'
+  Bundle 'vim-scripts/vcscommand.vim'
+  Bundle 'kchmck/vim-coffee-script'
+  Bundle 'sickill/vim-pasta'
+  Bundle 'mattn/zencoding-vim'
+  Bundle 'tpope/vim-fugitive'
+  Bundle 'tpope/vim-markdown'
+  Bundle 'tpope/vim-rails'
+  Bundle 'groenewege/vim-less'
+  Bundle 'gmarik/github-search.vim'
+  Bundle 'vim-ruby/vim-ruby'
+  Bundle 'nathanaelkane/vim-indent-guides'
+  Bundle 'msanders/snipmate.vim'
+  Bundle 'jelera/vim-javascript-syntax'
+  Bundle 'godlygeek/tabular'
+  Bundle 'vim-scripts/TwitVim'
+  Bundle 'tangledhelix/vim-octopress'
+  Bundle 'digitaltoad/vim-jade'
+  Bundle 'xolox/vim-session'
+
+  " Themes
+  Bundle 'altercation/vim-colors-solarized'
+  Bundle 'noahfrederick/Hemisu'
+  Bundle 'sjl/badwolf'
+
+  Bundle 'kana/vim-smartinput'
+  Bundle 'scrooloose/syntastic'
+  Bundle 'Shougo/neocomplcache'
+  Bundle 'vim-scripts/HTML-AutoCloseTag'
+  Bundle 'kien/ctrlp.vim'
+  Bundle 'walm/jshint.vim'
+  Bundle 'mihai-rotaru/vimwiki'
+  Bundle 'wojtekmach/vim-rename'
+  Bundle 'hallison/vim-ruby-sinatra'
+
+if has("unix")
+    Bundle 'vim-scripts/taglist.vim'
+    Bundle 'xolox/vim-easytags'
+    Bundle 'mbadran/headlights'
+endif 
+
+if has("win32") || has("win64")
+    " Non for the moment
+endif
+
+" -----------------------------------------------------------------------------
+
 filetype plugin indent on             " enable filetype use
 setlocal ofu=syntaxcomplete#Complete  " enable syntax based omni completion
 
@@ -132,13 +203,6 @@ autocmd BufWritePost $VIMHOME/doc/* :helptags $VIMHOME/doc
 " -----------------------------------------------------------------------------
 au BufWritePost vimrc.vim so $VIMHOME/vimrc.vim
 
-
-" -----------------------------------------------------------------------------
-" Settings for Pathogen
-" -----------------------------------------------------------------------------
-filetype off                          " disable filetype use. Enabled later
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
 
 " -----------------------------------------------------------------------------
 " Switch syntax highlighting on, when the terminal has colors
