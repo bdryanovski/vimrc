@@ -11,6 +11,9 @@ Thumbs.db
 .netrwhist
 .VimballRecord
 
+# Git ignore VIM bundle dir
+bundle/**
+bundle/
 # Ignore directories
 sessions/**
 sessions/
