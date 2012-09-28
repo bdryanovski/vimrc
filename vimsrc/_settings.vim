@@ -77,8 +77,8 @@ call vundle#rc()
   Bundle 'gmarik/github-search.vim'
   Bundle 'vim-scripts/TwitVim'
   Bundle 'scrooloose/syntastic'
-  Bundle 'mutewinter/swap-parameters.git'
   Bundle 'Rykka/colorv.vim'
+  Bundle 'tpope/vim-surround.git'
 
   " Control Version Systems
   Bundle 'tpope/vim-fugitive'
@@ -115,6 +115,8 @@ call vundle#rc()
   Bundle 'hallison/vim-ruby-sinatra'
 
 if has("unix")
+    Bundle 'mutewinter/swap-parameters.git'
+
     " ctags 
     Bundle 'vim-scripts/taglist.vim'
     Bundle 'xolox/vim-easytags'
