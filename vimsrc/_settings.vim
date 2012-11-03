@@ -286,7 +286,6 @@ if has("autocmd")
 
     " don't write swapfile on most commonly used directories for NFS mounts or USB sticks
     autocmd BufNewFile,BufReadPre /media/*,/mnt/* set directory=~/tmp,/var/tmp,/tmp
-    autocmd BufRead,BufNewFile *.json set filetype=javascript
 
     " Switch to working directory of the open file
     autocmd BufEnter * silent! lcd %:p:h
@@ -298,20 +297,23 @@ if has("autocmd")
     autocmd BufEnter *.rb  compiler ruby
 
     " If editing Gemfile, then run it after save
-    autocmd BufEnter Gemfile RunCommand !bundle install
+    " autocmd BufEnter Gemfile RunCommand !bundle install
 
     " Syntax highlight for files that don't end with *.rb extension - Adding
     " syntax = ruby  
-    au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
+    au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set filetype=ruby
 
-    autocmd BufEnter *access.log* set filetype=httplog
-    autocmd BufEnter httpd*.conf  set filetype=apache
-    autocmd BufRead *.jhtml       set filetype=jhtml
-    autocmd BufNewFile,BufRead *.markdown,*.textile,*.md setfiletype octopress
+    autocmd BufEnter *access.log*                        set filetype=httplog
+    autocmd BufEnter httpd*.conf                         set filetype=apache
+    autocmd BufRead *.jhtml                              set filetype=jhtml
+    autocmd BufRead,BufNewFile nginx.conf                set filetype=nginx
+    autocmd BufNewFile,BufRead *.markdown,*.textile,*.md set filetype=octopress
+    autocmd BufRead,BufNewFile *.json                    set filetype=javascript
+    autocmd BufRead,BufNewFile Vagrantfile               set filetype=ruby
 
     " Arduino
   	" autocmd Filetype arduino set errorformat^=\%-G%.%#/path/to/Arduino/IDE/%.%#
-    autocmd BufRead,BufNewFile *.pde set filetype=arduino 
+    autocmd BufRead,BufNewFile *.pde                     set filetype=arduino 
 
 
     " Maximise on open on Windows
@@ -322,12 +324,11 @@ if has("autocmd")
     " Hacking the system bell and flash
     set noerrorbells visualbell t_vb=
     autocmd GUIEnter * set visualbell t_vb=
-    
 
     " Custom filetypes settings: Python, Shell, JSON, Vagrant, CloudFormation
     au FileType python,sh set tabstop=4 shiftwidth=4 softtabstop=4
-    au BufRead,BufNewFile *.json setfiletype javascript
-    au BufRead,BufNewFile Vagrantfile setfiletype ruby
     "au BufRead,BufNewFile *.template setfiletype javascript
+    au FileType javascript call JavaScriptFold()
+
   augroup END
 endif
