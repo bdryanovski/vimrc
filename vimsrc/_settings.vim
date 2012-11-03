@@ -100,6 +100,7 @@ call vundle#rc()
   Bundle 'leshill/vim-json'
   Bundle 'tpope/vim-rake'
   Bundle 'jc00ke/vim-tomdoc'
+  Bundle 'tclem/vim-arduino'
 
   " Themes and UI
   Bundle 'Lokaltog/vim-powerline'
@@ -307,8 +308,9 @@ if has("autocmd")
     autocmd BufNewFile,BufRead *.markdown,*.textile,*.md setfiletype octopress
 
     " Arduino
-  	autocmd Filetype arduino set errorformat^=\%-G%.%#/path/to/Arduino/IDE/%.%#
-    autocmd BufRead,BufNewFile *.pde setfiletype arduino 
+  	" autocmd Filetype arduino set errorformat^=\%-G%.%#/path/to/Arduino/IDE/%.%#
+    autocmd BufRead,BufNewFile *.pde set filetype=arduino 
+
 
     " Maximise on open on Windows
     if has('win32')

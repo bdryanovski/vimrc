@@ -12,4 +12,3 @@ elseif has("win32") || has("win64")
    source $VIMHOME/gvimrc
    
 endif
-   
