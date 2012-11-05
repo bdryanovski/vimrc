@@ -49,8 +49,7 @@
 "    as object member variables, but PHP only recognizes the first
 "    object member variable ($foo->someVar).
 "
-"
-"
+
 if exists("b:current_syntax")
   finish
 endif
