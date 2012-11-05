@@ -2,7 +2,7 @@
 
 if has("unix")
   
-   let $VIMHOME = $HOME. "/.vim/"
+   let $VIMHOME = $HOME. "/.vim"
    source $VIMHOME/vimsrc/unixrc.vim
    
 elseif has("win32") || has("win64")

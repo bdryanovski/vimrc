@@ -268,6 +268,17 @@ command! -complete=file -nargs=1 Remove :echo 'Remove: '.'<f-args>'.' '.(delete(
 nnoremap <leader>u :exe '!phpunit --configuration ' . g:phpunit_config . ' %:p'<CR>
 
 " -----------------------------------------------------------------------------
+" Template keymapping
+" -----------------------------------------------------------------------------
+
+"Jump between %VAR% placeholders in Normal mode with
+" <Ctrl-p>
+nnoremap <c-p> /%\u.\{-1,}%<cr>c/%/e<cr>
+"Jump between %VAR% placeholders in Insert mode with
+" <Ctrl-p>
+inoremap <c-p> <ESC>/%\u.\{-1,}%<cr>c/%/e<cr>
+
+" -----------------------------------------------------------------------------
 " Language specific mapping
 " -----------------------------------------------------------------------------
 
