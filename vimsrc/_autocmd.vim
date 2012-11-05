@@ -30,16 +30,19 @@ if has("autocmd")
 
     " Syntax highlight for files that don't end with *.rb extension - Adding
     " syntax = ruby  
-    au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
+    au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set filetype=ruby
 
-    autocmd BufEnter *access.log* set filetype=httplog
-    autocmd BufEnter httpd*.conf  set filetype=apache
-    autocmd BufRead *.jhtml       set filetype=jhtml
-    autocmd BufNewFile,BufRead *.markdown,*.textile,*.md setfiletype octopress
+    autocmd BufEnter *access.log*                        set filetype=httplog
+    autocmd BufEnter httpd*.conf                         set filetype=apache
+    autocmd BufRead *.jhtml                              set filetype=jhtml
+    autocmd BufNewFile,BufRead nginx.conf                set filetype=nginx
+    autocmd BufNewFile,BufRead *.markdown,*.textile,*.md set filetype=octopress
+    autocmd BufNewFile,BufRead *.json                    set filetype=javascript
+    autocmd BufNewFile,BufRead Vagrantfile               set filetype=ruby
 
     " Arduino
-  	autocmd Filetype arduino set errorformat^=\%-G%.%#/path/to/Arduino/IDE/%.%#
-    autocmd BufRead,BufNewFile *.pde setfiletype arduino 
+  	"autocmd Filetype arduino set errorformat^=\%-G%.%#/path/to/Arduino/IDE/%.%#
+    autocmd BufRead,BufNewFile *.pde                    set filetype=arduino 
 
     " Maximise on open on Windows
     if has('win32')
@@ -50,17 +53,24 @@ if has("autocmd")
     set noerrorbells visualbell t_vb=
     autocmd GUIEnter * set visualbell t_vb=
     
-
     " Custom filetypes settings: Python, Shell, JSON, Vagrant, CloudFormation
     au FileType python,sh set tabstop=4 shiftwidth=4 softtabstop=4
-    au BufRead,BufNewFile *.json setfiletype javascript
-    au BufRead,BufNewFile Vagrantfile setfiletype ruby
     "au BufRead,BufNewFile *.template setfiletype javascript
+    au FileType javascript call JavaScriptFold()
 
     " Load package.json template when we star a new project.
     autocmd! BufNewFile package.json silent! 0r $VIMHOME/skel/tmpl.package.json
 
-    " Loading templates
+    "
+    " Function: Loading templates from $VIMHOME/skel/**
+    "
+    " The idea is simple load predefined skeleton files when creating for the
+    " first time file with that extenstion.
+    "
+    " Example:
+    "   # vim index.html
+    "   # => will search for tmpl.html into $VIMHOME/skel/** and if we found
+    "   # => it it will load it into the Vim buffer
     "
     function! LoadTemplate()
       silent! 0r $VIMHOME/skel/tmpl.%:e
