@@ -73,8 +73,8 @@ noremap <leader>9 :tabn 9<CR>
 "
 " Open new tab more easily:
 "
-nnoremap <leader>t :tabnew<cr>
-nnoremap <leader>T :tabedit %<cr>gT:quit<cr>
+"nnoremap <leader>t :tabnew<cr>
+"nnoremap <leader>T :tabedit %<cr>gT:quit<cr>
 
 " tab navigation like firefox
 nnoremap <C-S-tab> :tabprevious<CR>
