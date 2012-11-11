@@ -101,6 +101,7 @@ call vundle#rc()
   Bundle 'tpope/vim-rake'
   Bundle 'jc00ke/vim-tomdoc'
   Bundle 'tclem/vim-arduino'
+  Bundle 'henrik/vim-ruby-runner'
 
   " Themes and UI
   Bundle 'Lokaltog/vim-powerline'
