@@ -17,7 +17,7 @@ if has("autocmd")
     autocmd BufNewFile,BufReadPre /media/*,/mnt/* set directory=~/tmp,/var/tmp,/tmp
 
     " Switch to working directory of the open file
-    autocmd BufEnter * silent! lcd %:p:h
+    " autocmd BufEnter * silent! lcd %:p:h
 
     " Setting compilers
     autocmd BufEnter *.php compiler php
