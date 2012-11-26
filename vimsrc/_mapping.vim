@@ -221,7 +221,7 @@ vnoremap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<")
 " -----------------------------------------------------------------------------
 
 " Replace the word under the cursor (leader + s)
-nnoremap <leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
+nnoremap <leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 " Same as <shift>* or <shift># - Highlight the word under the cursor
 nnoremap <leader>f *<CR>
@@ -277,6 +277,7 @@ nnoremap <c-p> /%\u.\{-1,}%<cr>c/%/e<cr>
 "Jump between %VAR% placeholders in Insert mode with
 " <Ctrl-p>
 inoremap <c-p> <ESC>/%\u.\{-1,}%<cr>c/%/e<cr>
+
 
 " -----------------------------------------------------------------------------
 " Language specific mapping

@@ -22,27 +22,39 @@ let g:headlights_show_load_order = 0
 let g:headlights_debug_mode = 0 
 
 " -----------------------------------------------------------------------------
+" Plugin: splitjoin
+" -----------------------------------------------------------------------------
+let g:splitjoin_split_mapping = ''
+let g:splitjoin_join_mapping = ''
+let g:splitjoin_ruby_curly_braces = 1
+let g:splitjoin_coffee_suffix_if_clause = 1
+let g:splitjoin_normalize_whitespace = 1
+let g:splitjoin_align = 1
+
+nnoremap sj :SplitjoinJoin<cr>
+nnoremap sk :SplitjoinSplit<cr>
+" -----------------------------------------------------------------------------
 " Plugin: smartinput
 " -----------------------------------------------------------------------------
 
 " Language: Rauby , when you type | after do , insert |cursor|
 call smartinput#map_to_trigger('i', '<bar>', '<Bar>', '<Bar>')
 call smartinput#define_rule({
-  \   'at': '\({\|\<do\>\)\s*\%#',
-  \   'char': '<Bar>',
-  \   'input': '<Bar><Bar><Left>',
-  \   'filetype': ['ruby'],
-  \ })
+      \   'at': '\({\|\<do\>\)\s*\%#',
+      \   'char': '<Bar>',
+      \   'input': '<Bar><Bar><Left>',
+      \   'filetype': ['ruby'],
+      \ })
 
 " Language: Ruby , autocomplite #{var} in string
 call smartinput#map_to_trigger('i', '#', '#', '#')
 call smartinput#define_rule({
-  \   'at': '\%#',
-  \   'char': '#',
-  \   'input': '#{}<Left>',
-  \   'filetype': ['ruby'],
-  \   'syntax': ['Constant', 'Special'],
-  \ })
+      \   'at': '\%#',
+      \   'char': '#',
+      \   'input': '#{}<Left>',
+      \   'filetype': ['ruby'],
+      \   'syntax': ['Constant', 'Special'],
+      \ })
 
 " -----------------------------------------------------------------------------
 " Plugin: tabular.vim 
@@ -203,10 +215,10 @@ endif
 
 "let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-  \ 'file': '\.exe$\|\.so$\|\.dll$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+      \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+      \ 'file': '\.exe$\|\.so$\|\.dll$',
+      \ 'link': 'some_bad_symbolic_links',
+      \ }
 
 " -----------------------------------------------------------------------------
 " PIV
@@ -320,9 +332,9 @@ if exists("g:loaded_syntastic_plugin")
   let g:syntastic_enable_balloons=1
   let g:syntastic_auto_jump=1
   let g:syntastic_mode_map = { 'mode': 'active',
-                             \ 'active_filetypes': ['ruby','php','coffeescript'],
-                             \ 'passive_filetypes': ['less', 'vim'] }
-  
+        \ 'active_filetypes': ['ruby','php','coffeescript'],
+        \ 'passive_filetypes': ['less', 'vim'] }
+
   let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 
   if has("win32") || has("win64")
