@@ -23,6 +23,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'Rykka/colorv.vim'
 Bundle 'tpope/vim-surround.git'
 Bundle 'AndrewRadev/splitjoin.vim.git'
+Bundle 'AndrewRadev/switch.vim.git'
 
 " Control Version Systems
 Bundle 'tpope/vim-fugitive'
@@ -46,12 +47,14 @@ Bundle 'tpope/vim-rake'
 Bundle 'jc00ke/vim-tomdoc'
 Bundle 'tclem/vim-arduino'
 Bundle 'henrik/vim-ruby-runner'
+Bundle 'tpope/vim-endwise.git'
 
 " Themes and UI
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'noahfrederick/Hemisu'
 Bundle 'sjl/badwolf'
+Bundle 'vim-scripts/summerfruit256.vim.git'
 
 Bundle 'kana/vim-smartinput'
 Bundle 'vim-scripts/HTML-AutoCloseTag'
