@@ -36,7 +36,6 @@ nnoremap sk :SplitjoinSplit<cr>
 " -----------------------------------------------------------------------------
 " Plugin: smartinput
 " -----------------------------------------------------------------------------
-
 " Language: Rauby , when you type | after do , insert |cursor|
 call smartinput#map_to_trigger('i', '<bar>', '<Bar>', '<Bar>')
 call smartinput#define_rule({
@@ -59,17 +58,16 @@ call smartinput#define_rule({
 " -----------------------------------------------------------------------------
 " Plugin: tabular.vim 
 " -----------------------------------------------------------------------------
-if exists(":Tabularize")
-  nnoremap <leader>w= :Tabularize /=<CR>
-  vnoremap <leader>w= :Tabularize /=<CR>
-  nnoremap <leader>w: :Tabularize /:<CR>
-  vnoremap <leader>w: :Tabularize /:<CR>
-  nnoremap <leader>w:: :Tabularize /:\zs<CR>
-  vnoremap <leader>w:: :Tabularize /:\zs<CR>
-  nnoremap <leader>w, :Tabularize /,<CR>
-  vnoremap <leader>w, :Tabularize /,<CR>
-  nnoremap <leader>w<Bar> :Tabularize /<Bar><CR>
-  vnoremap <leader>w<Bar> :Tabularize /<Bar><CR>
+  nnoremap <leader>a= :Tabularize /=<CR>
+  vnoremap <leader>a= :Tabularize /=<CR>
+  nnoremap <leader>a: :Tabularize /:<CR>
+  vnoremap <leader>a: :Tabularize /:<CR>
+  nnoremap <leader>a:: :Tabularize /:\zs<CR>
+  vnoremap <leader>a:: :Tabularize /:\zs<CR>
+  nnoremap <leader>a, :Tabularize /,<CR>
+  vnoremap <leader>a, :Tabularize /,<CR>
+  nnoremap <leader>a<Bar> :Tabularize /<Bar><CR>
+  vnoremap <leader>a<Bar> :Tabularize /<Bar><CR>
 
   " The following function automatically aligns when typing a
   " supported character
@@ -86,7 +84,6 @@ if exists(":Tabularize")
     endif
   endfunction
 
-endif
 
 " -----------------------------------------------------------------------------
 " Plugin: taglist
