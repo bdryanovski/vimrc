@@ -266,7 +266,7 @@ let g:neocomplcache_max_list=3 "default is 100
 " Caching keymap 
 nnoremap <silent> <Space>ne :<C-u>NeoComplCacheCachingBuffer<CR>:echo "Caching done."<CR>
 
-set completeopt=menu,preview,longest
+set completeopt=menu,menuone,longest
 " <CR>: close popup 
 " <s-CR>: close popup and save indent.
 "inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "\<CR>"
