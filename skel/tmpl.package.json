@@ -1,36 +1,29 @@
 {
   "name": "%NAME%",
-  "preferGlobal": "false",
-  "version": "0.1",
-  "author": "Bozhidar Dryanovski <bozhdiar.dryanovski@gmail.com>",
-  "description": "May be next time...",
-  "contributors": [ 
+  "version": "0.0.3",
+  "description": "%DESC%",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "predeploy": "echo This will be run before deploying the app",
+    "postdeploy": "echo This will be run after deploying the app",
+    "test": "cake test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "%URL%"
+  },
+  "keywords": [
+  ],
+  "author": "Bozhidar Dryanovski <bozhidar.dryanovski@gmail.com>",
+  "contributors": [
     {
       "name": "Bozhidar Dryanovski",
       "email": "bozhidar.dryanovski@gmail.com"
-    } 
+    }
   ],
-  "bin": {},
-  "scripts": {
-    "start": "node server.js",
-    "test": "",
-    "predeploy": "echo This will be run before deploying the app",
-    "postdeploy": "echo This will be run after deploying the app"
+  "devDependencies": {
   },
-  "main": "",
-  "repository": {
-    "type": "git",
-    "url": "%GITHUB%"
-  },
-  "keywords": [],
-  "dependencies" : {
-    "colors"   :  "*",
-  },
-  "analyze": false,
-  "devDependencies": {},
-  "bundleDependencies": [],  
   "license": "MIT",
-  "engines": {
-    "node": ">=0.6"
-  }
+  "readmeFilename": "README.md"
 }
