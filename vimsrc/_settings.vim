@@ -34,8 +34,8 @@ set nowrap                            " don't wrap lines
 set autoread                          " auto reload file on change.
 set visualbell                        " No sounds
 set autochdir                         " Change working dir to the open file
-"set list                              " show non-print characters,...
-"set listchars=trail:⋅,nbsp:⋅,tab:▷⋅   " for tabs and trailing spaces
+set list                              " show non-print characters,...
+set listchars=trail:⋅,nbsp:⋅,tab:▷⋅   " for tabs and trailing spaces
 "set relativenumber                    " relative line numbers (>= Vim 7.3)
 
 " -----------------------------------------------------------------------------

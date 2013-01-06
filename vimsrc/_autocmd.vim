@@ -29,7 +29,7 @@ if has("autocmd")
     " autocmd BufEnter Gemfile RunCommand !bundle install
 
     " Syntax highlight for files that don't end with *.rb extension - Adding
-    " syntax = ruby  
+    " syntax = ruby
     au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set filetype=ruby
 
     autocmd BufEnter *access.log*                        set filetype=httplog
@@ -41,8 +41,8 @@ if has("autocmd")
     autocmd BufNewFile,BufRead Vagrantfile               set filetype=ruby
 
     " Arduino
-  	"autocmd Filetype arduino set errorformat^=\%-G%.%#/path/to/Arduino/IDE/%.%#
-    autocmd BufRead,BufNewFile *.pde                    set filetype=arduino 
+    "autocmd Filetype arduino set errorformat^=\%-G%.%#/path/to/Arduino/IDE/%.%#
+    autocmd BufRead,BufNewFile *.pde                    set filetype=arduino
 
     " Maximise on open on Windows
     if has('win32')
@@ -52,7 +52,7 @@ if has("autocmd")
     " Hacking the system bell and flash
     set noerrorbells visualbell t_vb=
     autocmd GUIEnter * set visualbell t_vb=
-    
+
     " Custom filetypes settings: Python, Shell, JSON, Vagrant, CloudFormation
     au FileType python,sh set tabstop=4 shiftwidth=4 softtabstop=4
     "au BufRead,BufNewFile *.template setfiletype javascript
@@ -79,6 +79,6 @@ if has("autocmd")
     endfunction
 
     autocmd! BufNewFile * call LoadTemplate()
-   
+
   augroup END
 endif
