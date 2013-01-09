@@ -163,7 +163,6 @@ let NERDTreeQuitOnOpen=1
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 let NERDTreeHighlightCursorline = 1
-let NERDTreeMapActivateNode='<CR>'
 let NERDTreeKeepTreeInNewTab=1
 let NERDTreeIgnore=['\.pyc','\~$','\.swo$','\.swp$','\.git','\.hg','\.svn','\.bzr']
 
