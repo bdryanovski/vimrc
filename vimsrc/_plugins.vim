@@ -167,6 +167,19 @@ let NERDTreeMapActivateNode='<CR>'
 let NERDTreeKeepTreeInNewTab=1
 let NERDTreeIgnore=['\.pyc','\~$','\.swo$','\.swp$','\.git','\.hg','\.svn','\.bzr']
 
+" Add color into the tree based on the filetype
+" NERDTress File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg)
+ exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+ exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:bg .' guifg='. a:fg
+endfunction
+
+call NERDTreeHighlightFile('jade', 'green', 'black')
+call NERDTreeHighlightFile('html', 'green', 'black')
+call NERDTreeHighlightFile('styl', 'green', 'black')
+call NERDTreeHighlightFile('css', 'green', 'black')
+call NERDTreeHighlightFile('coffee', 'cyan', 'black')
+
 " -----------------------------------------------------------------------------
 "  Plugin: twitvim.vim
 " -----------------------------------------------------------------------------
