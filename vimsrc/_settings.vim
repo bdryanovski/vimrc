@@ -7,7 +7,7 @@ set fileformats=unix,dos              " Setting file format try first unix
 set nocompatible                      " don't try to be strictly vi-like
 set modelines=1                       " for now use it //don't use modelines (for security) 
 set viminfo='20,\"50                  " use a viminfo file,...
-set history=1500                      " limit history
+set history=1000                      " limit history
 set ruler                             " show the cursor position
 set title                             " show title
 set incsearch                         " find as entering pattern
@@ -37,6 +37,9 @@ set autochdir                         " Change working dir to the open file
 set list                              " show non-print characters,...
 set listchars=trail:⋅,nbsp:⋅,tab:▷⋅   " for tabs and trailing spaces
 "set relativenumber                    " relative line numbers (>= Vim 7.3)
+set hidden                            " You can have unwritten changes to a file and open new one without losing anything.
+set backspace=indent,eol,start        " allow backspace over everything in insert mode.
+
 
 " -----------------------------------------------------------------------------
 " Settings for Pathogen
@@ -94,6 +97,7 @@ set mat=5                 " Blink 5 second
 "set directory=~/.vim/tmp       " Temporary files will go
 set undolevels=1500             " maximum number of changes that can be undone
 set undoreload=15000            " maximum lines to save for undo on buffer reload.
+set wildignore=*.swp,*.bak,*.puc,*.class
 " Turn off swap files
 "set noswapfile
 "set nobackup
