@@ -68,6 +68,10 @@ call smartinput#define_rule({
   vnoremap <leader>a, :Tabularize /,<CR>
   nnoremap <leader>a<Bar> :Tabularize /<Bar><CR>
   vnoremap <leader>a<Bar> :Tabularize /<Bar><CR>
+ nnoremap <leader>a# :Tabularize /#<CR>
+ vnoremap <leader>a# :Tabularize /#<CR>
+
+
 
   " The following function automatically aligns when typing a
   " supported character
