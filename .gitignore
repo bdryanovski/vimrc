@@ -11,6 +11,9 @@ Thumbs.db
 .netrwhist
 .VimballRecord
 
+# Ignore backups
+backup/
+
 # Git ignore VIM bundle dir
 bundle/**
 bundle/
