@@ -242,6 +242,9 @@ let g:PIVAutoClose=0
 " -----------------------------------------------------------------------------
 " Plugin: Snipmate configuration
 " -----------------------------------------------------------------------------
+" Loading helper function used into the snippets itself.
+source $VIMHOME/snippets/support_functions.vim
+"
 let g:snippets_dir = expand($VIMHOME.'/snippets/')
 let g:snips_author = 'Bozhidar Dryanovski'
 
