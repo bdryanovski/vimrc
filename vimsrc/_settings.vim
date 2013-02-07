@@ -92,16 +92,15 @@ set mat=5                 " Blink 5 second
 " -----------------------------------------------------------------------------
 " Backup and Files
 " -----------------------------------------------------------------------------
-"set backup                     " enable creation of backup files
-"set backupdir=~/.vim/backups   " Where to store the backups
-"set directory=~/.vim/tmp       " Temporary files will go
 set undolevels=1500             " maximum number of changes that can be undone
 set undoreload=15000            " maximum lines to save for undo on buffer reload.
 set wildignore=*.swp,*.bak,*.puc,*.class
-" Turn off swap files
-"set noswapfile
-"set nobackup
-"set nowb
+" backup to ~/.tmp
+set backup
+set backupdir=~/.vim/backup,~/tmp,/var/tmp
+set backupskip=/tmp/*,~/*,/media/*
+set directory=~/.vim/backup,~/tmp,/var/tmp
+set writebackup
 
 " -----------------------------------------------------------------------------
 " Status line definition
