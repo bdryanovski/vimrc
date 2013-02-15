@@ -209,6 +209,11 @@ inoremap <Home> <Esc>^i
 nnoremap <C-u> mzgUiw`z
 
 "
+" Reselect selected text
+"
+nnoremap <leader>v V`]
+
+"
 " Split and execute any command:
 "
 nnoremap __ :split \|<Space>
