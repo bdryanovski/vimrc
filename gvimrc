@@ -4,14 +4,19 @@ elseif has("win32")
   "set guifont=Droid_Sans_Mono:h10
 end
 
-set columns=100                         " characters per line = 100
+" Make gvim set some usefull size when it's start
+set lines=88
+set columns=110                         " characters per line = 100
+winpos 0 0
+
 set guioptions-=T                       " no toolbar
 set guioptions-=r                       " no right scrollbar
 set guioptions+=m
 set guioptions-=L                       " no left scrollbar when v.split
 
 "colorscheme molokai  " monokai
-colorscheme GitHub
+set background=light
+colorscheme solarized
 "
 
 " -----------------------------------------------------------------------------
