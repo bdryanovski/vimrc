@@ -229,7 +229,7 @@ vnoremap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<")
 nnoremap <leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 " Same as <shift>* or <shift># - Highlight the word under the cursor
-nnoremap <leader>f *<CR>
+"nnoremap <leader>f *<CR>
 
 
 " -----------------------------------------------------------------------------

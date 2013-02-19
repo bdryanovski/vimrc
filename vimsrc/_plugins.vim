@@ -10,16 +10,16 @@ source $VIMHOME/vimsrc/autocorrect.vim
 " -----------------------------------------------------------------------------
 " Plugin: Headlights
 " -----------------------------------------------------------------------------
-let g:headlights_use_plugin_menu = 0 
+let g:headlights_use_plugin_menu = 0
 let g:headlights_smart_menus = 1
-let g:headlights_show_commands = 1 
-let g:headlights_show_mappings = 1 
-let g:headlights_show_abbreviations = 0 
-let g:headlights_show_functions = 0 
-let g:headlights_show_highlights = 0 
-let g:headlights_show_files = 0 
+let g:headlights_show_commands = 1
+let g:headlights_show_mappings = 1
+let g:headlights_show_abbreviations = 0
+let g:headlights_show_functions = 0
+let g:headlights_show_highlights = 0
+let g:headlights_show_files = 0
 let g:headlights_show_load_order = 0
-let g:headlights_debug_mode = 0 
+let g:headlights_debug_mode = 0
 
 " -----------------------------------------------------------------------------
 " Plugin: ragtag
@@ -64,37 +64,37 @@ call smartinput#define_rule({
       \ })
 
 " -----------------------------------------------------------------------------
-" Plugin: tabular.vim 
+" Plugin: tabular.vim
 " -----------------------------------------------------------------------------
-  nnoremap <leader>a= :Tabularize /=<CR>
-  vnoremap <leader>a= :Tabularize /=<CR>
-  nnoremap <leader>a: :Tabularize /:<CR>
-  vnoremap <leader>a: :Tabularize /:<CR>
-  nnoremap <leader>a:: :Tabularize /:\zs<CR>
-  vnoremap <leader>a:: :Tabularize /:\zs<CR>
-  nnoremap <leader>a, :Tabularize /,<CR>
-  vnoremap <leader>a, :Tabularize /,<CR>
-  nnoremap <leader>a<Bar> :Tabularize /<Bar><CR>
-  vnoremap <leader>a<Bar> :Tabularize /<Bar><CR>
- nnoremap <leader>a# :Tabularize /#<CR>
- vnoremap <leader>a# :Tabularize /#<CR>
+nnoremap <leader>a= :Tabularize /=<CR>
+vnoremap <leader>a= :Tabularize /=<CR>
+nnoremap <leader>a: :Tabularize /:<CR>
+vnoremap <leader>a: :Tabularize /:<CR>
+nnoremap <leader>a:: :Tabularize /:\zs<CR>
+vnoremap <leader>a:: :Tabularize /:\zs<CR>
+nnoremap <leader>a, :Tabularize /,<CR>
+vnoremap <leader>a, :Tabularize /,<CR>
+nnoremap <leader>a<Bar> :Tabularize /<Bar><CR>
+vnoremap <leader>a<Bar> :Tabularize /<Bar><CR>
+nnoremap <leader>a# :Tabularize /#<CR>
+vnoremap <leader>a# :Tabularize /#<CR>
 
 
 
-  " The following function automatically aligns when typing a
-  " supported character
-  inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+" The following function automatically aligns when typing a
+" supported character
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
-  function! s:align()
-    let p = '^\s*|\s.*\s|\s*$'
-    if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-      let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-      let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-      Tabularize/|/l1
-      normal! 0
-      call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-    endif
-  endfunction
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
 
 
 " -----------------------------------------------------------------------------
@@ -147,7 +147,7 @@ let ruby_no_expensive = 1
 let ruby_operators    = 1
 
 " -----------------------------------------------------------------------------
-" Plugin: Solarized 
+" Plugin: Solarized
 " -----------------------------------------------------------------------------
 
 let g:solarized_termcolors=256
@@ -181,8 +181,8 @@ let NERDTreeIgnore=['\.pyc','\~$','\.swo$','\.swp$','\.git','\.hg','\.svn','\.bz
 " Add color into the tree based on the filetype
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg)
- exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
- exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:bg .' guifg='. a:fg
+  exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:bg .' guifg='. a:fg
 endfunction
 
 call NERDTreeHighlightFile('jade', 'green', 'black')
@@ -198,7 +198,7 @@ call NERDTreeHighlightFile('coffee', 'cyan', 'black')
 " Auth settings located into `_auth.vim` file
 
 " -----------------------------------------------------------------------------
-" Plugin: vim-pasta 
+" Plugin: vim-pasta
 " -----------------------------------------------------------------------------
 let g:pasta_enabled_filetypes = ['ruby', 'javascript', 'css', 'coffee', 'php']
 
@@ -228,7 +228,7 @@ let g:ctrlp_working_path_mode=2
 
 if has("win32") || has("win64")
   set wildignore+=tmp\*,*.swp,*.zip,*.exe   " Windows
-  let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows 
+  let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
 else
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip  " MacOSX/Linux
   let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
@@ -256,7 +256,7 @@ let g:snips_author = 'Bozhidar Dryanovski'
 " -----------------------------------------------------------------------------
 " Plugin: neocomplcache
 " -----------------------------------------------------------------------------
-"let g:acp_enableAtStartup = 0 
+"let g:acp_enableAtStartup = 0
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_max_list=5
 let g:neocomplcache_max_menu_width=15
@@ -278,7 +278,7 @@ let g:neocomplcache_enable_quick_match=0
 let g:neocomplcache_enable_caching_message=1
 
 " If you want to use this settings you must have vim >= 7.3.319
-"let g:neocomplcache_enable_cursor_hold_i=1 " relative with updatetime event 
+"let g:neocomplcache_enable_cursor_hold_i=1 " relative with updatetime event
 "let g:neocomplcache_cursor_hold_i_time=100
 
 let g:neocomplcache_enable_auto_delimiter=0
@@ -287,14 +287,14 @@ let g:neocomplcache_caching_limit_file_size=500
 let g:neocomplcache_snippets_dir=$VIMHOME +'/snippets'
 let g:neocomplcache_max_list=3 "default is 100
 
-" Caching keymap 
+" Caching keymap
 nnoremap <silent> <Space>ne :<C-u>NeoComplCacheCachingBuffer<CR>:echo "Caching done."<CR>
 
 set completeopt=menu,menuone,longest
-" <CR>: close popup 
+" <CR>: close popup
 " <s-CR>: close popup and save indent.
 "inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "\<CR>"
-"inoremap <expr><s-CR> pumvisible() ? neocomplcache#close_popup() "\<CR>" : "\<CR>" 
+"inoremap <expr><s-CR> pumvisible() ? neocomplcache#close_popup() "\<CR>" : "\<CR>"
 " <TAB>: completion.
 "inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
@@ -364,7 +364,7 @@ if exists("g:loaded_syntastic_plugin")
   endif
 endif
 " -----------------------------------------------------------------------------
-" Plugin: vim-indent-guides 
+" Plugin: vim-indent-guides
 " -----------------------------------------------------------------------------
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 1
@@ -373,3 +373,38 @@ let g:indent_guides_guide_size  = 1
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#3e5446 ctermbg=8
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#252222 ctermbg=236
 
+
+" -----------------------------------------------------------------------------
+" Folding code blocks
+" -----------------------------------------------------------------------------
+
+set foldenable
+
+hi Folded guibg=red guifg=Red cterm=bold ctermbg=DarkGrey ctermfg=lightblue
+hi FoldColumn guibg=grey78 gui=Bold guifg=DarkBlue
+set foldcolumn=2
+set foldclose=
+set foldmethod=indent
+set foldnestmax=10
+set foldlevel=0
+set fillchars=vert:\|,fold:\
+set foldminlines=1
+" Toggle fold state between closed and opened.
+"
+" If there is no fold at current line, just moves forward.
+" If it is present, reverse it's state.
+fu! ToggleFold()
+  if foldlevel('.') == 0
+    normal! l
+  else
+    if foldclosed('.') < 0
+      . foldclose
+    else
+      . foldopen
+    endif
+  endif
+  echo
+endf
+
+" Map this function to Space key.
+noremap <space> :call ToggleFold()<CR>
