@@ -224,7 +224,7 @@ let g:rails_statusline=0
 " ctrlp
 " -----------------------------------------------------------------------------
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_working_path_mode=2
+let g:ctrlp_working_path_mode='ra'
 
 if has("win32") || has("win64")
   set wildignore+=tmp\*,*.swp,*.zip,*.exe   " Windows

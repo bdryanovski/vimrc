@@ -76,6 +76,10 @@ if has("unix")
 
   " Linux me will use Command-T
   Bundle 'wincent/Command-T'
+
+  " Experimenting with ctrlp
+  Bundle 'kien/ctrlp.vim'
+
 endif 
 
 if has("win32") || has("win64")
