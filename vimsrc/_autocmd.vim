@@ -39,6 +39,7 @@ if has("autocmd")
     autocmd BufNewFile,BufRead *.markdown,*.textile,*.md set filetype=octopress
     autocmd BufNewFile,BufRead *.json                    set filetype=javascript
     autocmd BufNewFile,BufRead Vagrantfile               set filetype=ruby
+    autocmd BufNewFile,BufRead *_spec.rb                 set filetype=rspec.ruby
 
     " Arduino
     "autocmd Filetype arduino set errorformat^=\%-G%.%#/path/to/Arduino/IDE/%.%#
