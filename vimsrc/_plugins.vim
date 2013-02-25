@@ -227,19 +227,19 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode='ra'
 
 if has("win32") || has("win64")
-  set wildignore+=tmp\*,*.swp,*.zip,*.exe   " Windows
+  set wildignore+=.git/*,tmp\*,*.swp,*.zip,*.exe   " Windows
   let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
 else
-  set wildignore+=*/tmp/*,*.so,*.swp,*.zip  " MacOSX/Linux
+  set wildignore+=.git/*,*/tmp/*,*.so,*.swp,*.zip  " MacOSX/Linux
   let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
 endif
 
-"let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-      \ 'file': '\.exe$\|\.so$\|\.dll$',
-      \ 'link': 'some_bad_symbolic_links',
-      \ }
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+"let g:ctrlp_custom_ignore = {
+      "\ 'dir':  '\.git$\|\.hg$\|\.svn$',
+      "\ 'file': '\.exe$\|\.so$\|\.dll$',
+      "\ 'link': 'some_bad_symbolic_links',
+      "\ }
 
 " -----------------------------------------------------------------------------
 " PIV
@@ -379,7 +379,7 @@ let g:indent_guides_guide_size  = 1
 " -----------------------------------------------------------------------------
 " Plugin: Switch.vim
 " -----------------------------------------------------------------------------
-autocmd FileType ruby let g:switch_definitions = [ ['if', 'unless'] ]
+autocmd FileType ruby let g:switch_definitions = [ ['if', 'unless'], ['ASC', 'DESC'] ]
 
 " -----------------------------------------------------------------------------
 " Folding code blocks
