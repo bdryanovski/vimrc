@@ -1,5 +1,5 @@
 " --------------------------------------------------------------------
-" Map VIM custom keys 
+" Map VIM custom keys
 " --------------------------------------------------------------------
 "
 " Map w!! to write file with sudo, when forgot to open with sudo.
@@ -12,7 +12,7 @@ cnoremap w!! w !sudo tee % >/dev/null
 vnoremap <BS> d
 
 "
-" soft tabbing at 2, 4 and 8 spaces of width 
+" soft tabbing at 2, 4 and 8 spaces of width
 "
 "nnoremap <leader>2 <esc>:set expandtab tabstop=2 softtabstop=2 shiftwidth=2<cr>
 "nnoremap <leader>4 <esc>:set expandtab tabstop=4 softtabstop=4 shiftwidth=4<cr>
@@ -44,11 +44,12 @@ noremap <F1> <ESC>
 noremap <F2> :BufExplorer<CR>
 noremap <F3> :NERDTreeToggle<CR>
 " Clear syntax highlighting
-noremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR> 
+noremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " Currently work only on *nix
 noremap <F5> :TagbarToggle<CR>
 noremap <F6> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
-" noremap <F7> empty
+" F7 - Reformatting the code and return to the last position used
+noremap <F7> mzgg-G`z
 " Set they keys to turn on/off the spell check
 noremap <F8> <Esc>:setlocal spell spelllang=en_us<CR>
 noremap <F9> <Esc>:setlocal nospell<CR>
@@ -56,19 +57,22 @@ noremap <F10> :help vimbook.txt<CR>
 noremap <S-F10> :tabnew $VIMHOME/doc/vimbook.txt<CR>
 noremap <F12> :edit $MYVIMRC<CR>
 noremap <S-F12> :source $MYVIMRC<CR>
-
+"
 " -----------------------------------------------------------------------------
 " Mapping and using tabs
 " -----------------------------------------------------------------------------
-noremap <leader>1 :tabn 1<CR>
-noremap <leader>2 :tabn 2<CR>
-noremap <leader>3 :tabn 3<CR>
-noremap <leader>4 :tabn 4<CR>
-noremap <leader>5 :tabn 5<CR>
-noremap <leader>6 :tabn 6<CR>
-noremap <leader>7 :tabn 7<CR>
-noremap <leader>8 :tabn 8<CR>
-noremap <leader>9 :tabn 9<CR>
+"noremap <leader>1 :tabn 1<CR>
+"noremap <leader>2 :tabn 2<CR>
+"noremap <leader>3 :tabn 3<CR>
+"noremap <leader>4 :tabn 4<CR>
+"noremap <leader>5 :tabn 5<CR>
+"noremap <leader>6 :tabn 6<CR>
+"noremap <leader>7 :tabn 7<CR>
+"noremap <leader>8 :tabn 8<CR>
+"noremap <leader>9 :tabn 9<CR>
+
+" NOTE: nice functionality but i don't need it that much.
+" Talking about the :tabn mapping
 
 "
 " Open new tab more easily:
@@ -103,11 +107,11 @@ vnoremap <C-C> "+y
 vnoremap <C-Insert> "+y
 
 " CTRL-V and SHIFT-Insert are Paste
-noremap <C-V>		"+gP
-noremap <S-Insert>		"+gP
+noremap <C-V> "+gP
+noremap <S-Insert> "+gP
 
-cnoremap <C-V>		<C-R>+
-cnoremap <S-Insert>		<C-R>+
+cnoremap <C-V> <C-R>+
+cnoremap <S-Insert> <C-R>+
 
 " Pasting blockwise and linewise selections is not possible in Insert and
 " Visual mode without the +virtualedit feature.  They are pasted as if they
@@ -117,12 +121,12 @@ cnoremap <S-Insert>		<C-R>+
 exe 'inoremap <script> <C-V>' paste#paste_cmd['i']
 exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
 
-inoremap <S-Insert>		<C-V>
-vnoremap <S-Insert>		<C-V>
+inoremap <S-Insert> <C-V>
+vnoremap <S-Insert> <C-V>
 
 " Use CTRL-Q to do what CTRL-V used to do
 " TODO: not working under xterm under unix
-noremap <C-Q>		<C-V>
+noremap <C-Q> <C-V>
 
 " CTRL-A is Select all
 noremap <C-A> gggH<C-O>G
@@ -162,9 +166,9 @@ inoremap <C-Y> <C-O><C-R>
 
 "
 " Vertical and horizontal split then hop to a new buffer
-" 
-noremap <leader>v :vspM^W^W<C-R>
-noremap <leader>h :split^M^W^W<C-R>
+"
+noremap <leader>v :vsp<C-R>
+noremap <leader>h :split<C-R>
 
 "
 " Option A : Smart way to move btw. windows
@@ -205,7 +209,7 @@ inoremap <Home> <Esc>^i
 
 "
 " Upcase current word
-" 
+"
 nnoremap <C-u> mzgUiw`z
 
 "
@@ -240,7 +244,7 @@ nnoremap <leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 cnoremap cwd lcd %:p:h
 cnoremap cd. lcd %:p:h
 
-" Stupid me when holding shift 
+" Stupid me when holding shift
 cnoremap W w
 cnoremap WQ wq
 cnoremap wQ wq
@@ -291,7 +295,7 @@ inoremap <c-p> <ESC>/%\u.\{-1,}%<cr>c/%/e<cr>
 " PHP Section:
 
 " wrap <?= ?> arround visually selected text
-vmap st "zdi<?= <C-R>z ?>"<Esc> 
+vmap st "zdi<?= <C-R>z ?>"<Esc>
 
 " -----------------------------------------------------------------------------
 " Plugin: Switch
