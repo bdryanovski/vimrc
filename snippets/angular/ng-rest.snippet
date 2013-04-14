@@ -1,0 +1,13 @@
+/*
+ * REST API:
+ */
+app.factory("${1:Post}", function($resource) {
+	return $resource('/${2}', { ${3} },
+	{
+		'create':  { method: 'POST' },
+		'index':   { method: 'GET', isArray: true },
+		'show':    { method: 'GET', isArray: false },
+		'update':  { method: 'PUT' },
+		'destroy': { method: 'DELETE' }
+	});
+}); // End REST API for : $1
