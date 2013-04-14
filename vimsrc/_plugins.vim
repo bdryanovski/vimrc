@@ -8,20 +8,6 @@
 source $VIMHOME/vimsrc/autocorrect.vim
 
 " -----------------------------------------------------------------------------
-" Plugin: Headlights
-" -----------------------------------------------------------------------------
-let g:headlights_use_plugin_menu = 0
-let g:headlights_smart_menus = 1
-let g:headlights_show_commands = 1
-let g:headlights_show_mappings = 1
-let g:headlights_show_abbreviations = 0
-let g:headlights_show_functions = 0
-let g:headlights_show_highlights = 0
-let g:headlights_show_files = 0
-let g:headlights_show_load_order = 0
-let g:headlights_debug_mode = 0
-
-" -----------------------------------------------------------------------------
 " Plugin: ragtag
 " -----------------------------------------------------------------------------
 "
@@ -98,36 +84,6 @@ endfunction
 
 
 " -----------------------------------------------------------------------------
-" Plugin: taglist
-" -----------------------------------------------------------------------------
-" set the names of flags
-let tlist_php_settings = 'php;c:class;f:function;d:constant'
-" close all folds except for current file
-let Tlist_File_Fold_Auto_Close = 1
-" make tlist pane active when opened
-let Tlist_GainFocus_On_ToggleOpen = 1
-" width of window
-let Tlist_WinWidth = 40
-" close tlist when a selection is made
-let Tlist_Close_On_Select = 1
-
-" -----------------------------------------------------------------------------
-" Plugin: easy-tags
-" -----------------------------------------------------------------------------
-
-let g:easytags_file = '~/.vim/tags/default.tags'
-set tags=./.tags;./tags;~/.vim/tags/default.tags;~/.vimtags
-let g:easytags_dynamic_files=1
-let g:easytags_by_filetype=1
-let g:easytags_always_enabled=0
-let g:easytags_suppress_ctags_warning=1
-let g:easytags_on_cursorhold=0
-let g:easytags_updatetime_autodisable=1
-let g:easytags_auto_update=0
-let g:easytags_auto_highlight=0
-
-
-" -----------------------------------------------------------------------------
 " Plugin: Ruby speedup
 " -----------------------------------------------------------------------------
 let g:ruby_path                      = ''
@@ -162,6 +118,13 @@ let g:solarized_contrast='high'
 " Plugin: BufExplorer - easier invoke keys
 " -----------------------------------------------------------------------------
 nnoremap <leader>bb :BufExplorer<cr>
+
+" Hide the help
+"
+let g:bufExplorerDefaultHelp=0
+let g:bufExplorerShowRelativePath=1  " Show relative paths.
+let g:bufExplorerSplitBelow=0        " Split new window above current.
+
 
 " -----------------------------------------------------------------------------
 " Plugin: NERDTree - keys to toggle NERDTree
@@ -203,25 +166,12 @@ call NERDTreeHighlightFile('coffee', 'cyan', 'black')
 let g:pasta_enabled_filetypes = ['ruby', 'javascript', 'css', 'coffee', 'php']
 
 " -----------------------------------------------------------------------------
-" Plugin: Scratch - define invoke function
-" -----------------------------------------------------------------------------
-function! ToggleScratch()
-  if expand('%') == g:ScratchBufferName
-    quit
-  else
-    Sscratch
-  endif
-endfunction
-
-noremap <leader>s :call ToggleScratch()<CR>
-
-" -----------------------------------------------------------------------------
 " Plugin: Rails - turn off rails related things in statusbar
 " -----------------------------------------------------------------------------
 let g:rails_statusline=0
 
 " -----------------------------------------------------------------------------
-" ctrlp
+" Plugin: ctrlp
 " -----------------------------------------------------------------------------
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode='ra'
@@ -242,7 +192,7 @@ let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
       "\ }
 
 " -----------------------------------------------------------------------------
-" PIV
+" Plugin: PIV
 " -----------------------------------------------------------------------------
 let g:DisableAutoPHPFolding=0
 let g:PIVAutoClose=0
@@ -340,11 +290,6 @@ if has("win32") || has("win64")
 else
   let g:Powerline_symbols = 'fancy'
 endif
-
-" -----------------------------------------------------------------------------
-" Plugin: tagbar
-" -----------------------------------------------------------------------------
-" see key mapping section
 
 " -----------------------------------------------------------------------------
 " Plugin: Syntastic

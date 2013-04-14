@@ -10,7 +10,6 @@ Bundle 'msanders/snipmate.vim'
 Bundle 'widox/vim-buffer-explorer-plugin'
 Bundle 'tsaleh/vim-matchit'
 "Bundle 'xolox/vim-session'                             " Not in use anymore
-"Bundle 'vim-scripts/scratch.vim'
 Bundle 'sickill/vim-pasta'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'godlygeek/tabular'
@@ -37,7 +36,6 @@ Bundle 'vim-ruby/vim-ruby'
 "Bundle 'digitaltoad/vim-jade'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'tpope/vim-ragtag.git'
 "Bundle 'tangledhelix/vim-octopress'
 Bundle 'tpope/vim-rails'
 Bundle 'aaronj1335/underscore-templates.vim'
@@ -68,11 +66,6 @@ Bundle 'hallison/vim-ruby-sinatra'
 
 if has("unix")
   Bundle 'mutewinter/swap-parameters.git'
-
-  " ctags 
-  "Bundle 'vim-scripts/taglist.vim'
-  "Bundle 'xolox/vim-easytags'
-  "Bundle 'mbadran/headlights'
 
   " Linux me will use Command-T
   Bundle 'wincent/Command-T'

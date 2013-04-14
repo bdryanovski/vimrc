@@ -5,7 +5,7 @@ set encoding=utf-8
 set fileencodings=utf-8               " encoding always must be utf-8
 set fileformats=unix,dos              " Setting file format try first unix
 set nocompatible                      " don't try to be strictly vi-like
-set modelines=1                       " for now use it //don't use modelines (for security) 
+set modelines=1                       " for now use it //don't use modelines (for security)
 set viminfo='20,\"50                  " use a viminfo file,...
 set history=1000                      " limit history
 set ruler                             " show the cursor position
@@ -83,7 +83,7 @@ let mapleader = ","
 " In VIEW mode.
 " -----------------------------------------------------------------------------
 set showmatch             " show matching brackets/parenthesis
-set mat=5                 " Blink 5 second 
+set mat=5                 " Blink 5 second
 
 " -----------------------------------------------------------------------------
 "  ctags
@@ -193,7 +193,7 @@ nnoremap <leader>? :DiffSaved<cr>
 " -----------------------------------------------------------------------------
 " set nofoldenable            "dont fold by default
 set foldmethod=syntax         " folding based on the indent
-set foldnestmax=10            " deepest fold 
+set foldnestmax=10            " deepest fold
 set foldlevel=1
 set nofoldenable              " don't start with folded lines
 
