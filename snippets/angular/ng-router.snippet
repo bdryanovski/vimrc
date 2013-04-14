@@ -1,0 +1,13 @@
+/*
+ * Angular Router
+ */
+angular.module('${1}',[]).config(['$routeProvider', function($routeProvider) {
+	$routeProvider
+		.when(
+			'/${2}',
+			{
+				templateUrl: '${3}',
+				controller: ${4}
+			})
+		.otherwise( {redirectTo: '/'} )
+}]); // End of $1 router
