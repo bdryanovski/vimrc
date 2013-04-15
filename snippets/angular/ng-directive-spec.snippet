@@ -1,0 +1,20 @@
+'use strict';
+
+/*
+ * Application: $2
+ * Spec for Directive: $1
+ */
+
+describe('Directive: ${1:myDirective}', function () {
+
+  beforeEach(module('${2:App}'));
+
+  var element;
+
+  it('should make hidden element visible', inject(function ($rootScope, $compile) {
+    element = angular.element('<$1></$1>');
+    element = $compile(element)($rootScope);
+    expect(element.text()).toBe('this is the $1 directive');
+  }));
+
+});
