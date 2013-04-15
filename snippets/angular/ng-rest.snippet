@@ -2,6 +2,7 @@
  * REST API:
  */
 app.factory("${1:Post}", function($resource) {
+
 	return $resource('/${2}', { ${3} },
 	{
 		'create':  { method: 'POST' },
@@ -10,4 +11,5 @@ app.factory("${1:Post}", function($resource) {
 		'update':  { method: 'PUT' },
 		'destroy': { method: 'DELETE' }
 	});
+
 }); // End REST API for : $1

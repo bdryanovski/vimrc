@@ -1,39 +1,19 @@
 /*
- * Directive: $1
+ * Module: $1
+ * Directive: $2
+ * Description:
  */
-app.directive('${1:view}', function factory(injectables) {
 
-  var directiveDefinitionObject = {
+angular.module('${1:App}').directive('${2:myDirective}', function () {
 
-    priority: 0,
+  return {
     template: '<div></div>',
-    templateUrl: 'directive.html',
     replace: false,
-    transclude: false,
-    restrict: 'A',
-    //scope: false,
-
-    compile: function compile(tElement, tAttrs, transclude)
-		{
-      return {
-        pre: function preLink(scope, iElement, iAttrs, controller)
-				{
-					// code ...
-				},
-        post: function postLink(scope, iElement, iAttrs, controller)
-				{
-					// code ...
-				}
-      }
-    },
-
-    link: function postLink(scope, iElement, iAttrs) 
-		{
-			// code ...
-		}
-
+    restrict: '${3:E}',
+    link: function postLink(scope, element, attrs) {
+      element.text('this is the myDirective directive');
+      ${4:// ...}
+    }
   };
 
-  return directiveDefinitionObject;
-
-}); // End of $1 direction
+}); // End of $2 Directive
