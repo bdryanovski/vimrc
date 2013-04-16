@@ -61,15 +61,15 @@ noremap <S-F12> :source $MYVIMRC<CR>
 " -----------------------------------------------------------------------------
 " Mapping and using tabs
 " -----------------------------------------------------------------------------
-"noremap <leader>1 :tabn 1<CR>
-"noremap <leader>2 :tabn 2<CR>
-"noremap <leader>3 :tabn 3<CR>
-"noremap <leader>4 :tabn 4<CR>
-"noremap <leader>5 :tabn 5<CR>
-"noremap <leader>6 :tabn 6<CR>
-"noremap <leader>7 :tabn 7<CR>
-"noremap <leader>8 :tabn 8<CR>
-"noremap <leader>9 :tabn 9<CR>
+noremap <leader>1 :tabn 1<CR>
+noremap <leader>2 :tabn 2<CR>
+noremap <leader>3 :tabn 3<CR>
+noremap <leader>4 :tabn 4<CR>
+noremap <leader>5 :tabn 5<CR>
+noremap <leader>6 :tabn 6<CR>
+noremap <leader>7 :tabn 7<CR>
+noremap <leader>8 :tabn 8<CR>
+noremap <leader>9 :tabn 9<CR>
 
 " NOTE: nice functionality but i don't need it that much.
 " Talking about the :tabn mapping
