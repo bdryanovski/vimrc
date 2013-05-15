@@ -29,6 +29,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/vcscommand.vim'
 
 " Syntax Highlighting and Language specifically
+Bundle 'othree/javascript-libraries-syntax.vim.git'
 "Bundle 'duwanis/tomdoc.vim'
 Bundle 'tpope/vim-markdown'
 "Bundle 'groenewege/vim-less'
