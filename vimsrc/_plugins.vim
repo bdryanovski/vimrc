@@ -185,7 +185,7 @@ if has("win32") || has("win64")
   set wildignore+=.git/*,tmp\*,*.swp,*.zip,*.exe   " Windows
   let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
 else
-  set wildignore+=.git/*,*/tmp/*,*.so,*.swp,*.zip  " MacOSX/Linux
+  set wildignore+=.git/*,*/tmp/*,*.so,*.swp,*.zip,*/node_modules/* " MacOSX/Linux
   let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
 endif
 
