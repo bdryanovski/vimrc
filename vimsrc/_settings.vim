@@ -40,7 +40,8 @@ set listchars=trail:⋅,nbsp:⋅,tab:▷⋅   " for tabs and trailing spaces
 "set relativenumber                    " relative line numbers (>= Vim 7.3)
 set hidden                            " You can have unwritten changes to a file and open new one without losing anything.
 set backspace=indent,eol,start        " allow backspace over everything in insert mode.
-
+set exrc                              " enable per-directory .vimrc files
+set secure                            " disable unsafe commands in local .vimrc files
 
 " -----------------------------------------------------------------------------
 " Settings for Pathogen

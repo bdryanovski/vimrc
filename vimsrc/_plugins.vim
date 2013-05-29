@@ -185,17 +185,20 @@ if has("win32") || has("win64")
   set wildignore+=.git/*,tmp\*,*.swp,*.zip,*.exe   " Windows
   let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
 else
-  set wildignore+=.git/*,*/tmp/*,*.so,*.swp,*.zip,*/node_modules/* " MacOSX/Linux
+  set wildignore+=.git/*,*/tmp/*,*.so,*.swp,*.zip,*node_modules* " MacOSX/Linux
   let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
 endif
 
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+"let g:ctrlp_custom_ignore = '\v[\/](\.(git|hg|svn)|node_modules)$'
 "let g:ctrlp_custom_ignore = {
       "\ 'dir':  '\.git$\|\.hg$\|\.svn$',
       "\ 'file': '\.exe$\|\.so$\|\.dll$',
       "\ 'link': 'some_bad_symbolic_links',
       "\ }
-
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp\|node_modules$',
+  \ 'file': '\.exe$\|\.so$\|\.dat\|.swp$'
+  \ }
 " -----------------------------------------------------------------------------
 " Plugin: PIV
 " -----------------------------------------------------------------------------
