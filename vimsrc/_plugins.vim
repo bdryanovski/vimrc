@@ -286,8 +286,6 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 " Plugin: Coffe-Script
 " -----------------------------------------------------------------------------
 let coffee_make_options = "--bare"
-au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
-au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 "au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 
 " -----------------------------------------------------------------------------
@@ -309,8 +307,8 @@ if exists("g:loaded_syntastic_plugin")
   let g:syntastic_enable_balloons=1
   let g:syntastic_auto_jump=1
   let g:syntastic_mode_map = { 'mode': 'active',
-        \ 'active_filetypes': ['ruby','php','coffeescript'],
-        \ 'passive_filetypes': ['less', 'vim'] }
+        \ 'active_filetypes': ['ruby','php'],
+        \ 'passive_filetypes': ['less', 'vim', 'coffeescript'] }
 
   let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 

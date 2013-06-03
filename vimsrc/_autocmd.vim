@@ -30,7 +30,7 @@ if has("autocmd")
 
     " Syntax highlight for files that don't end with *.rb extension - Adding
     " syntax = ruby
-    au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set filetype=ruby
+    autocmd BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set filetype=ruby
 
     autocmd BufEnter *access.log*                        set filetype=httplog
     autocmd BufEnter httpd*.conf                         set filetype=apache
@@ -40,6 +40,8 @@ if has("autocmd")
     autocmd BufNewFile,BufRead *.json                    set filetype=javascript
     autocmd BufNewFile,BufRead Vagrantfile               set filetype=ruby
     autocmd BufNewFile,BufRead *_spec.rb                 set filetype=rspec.ruby
+    autocmd BufNewFile,BufReadPost *.coffee              set foldmethod=indent nofoldenable
+    autocmd BufNewFile,BufReadPost *.coffee              set shiftwidth=2 expandtab
 
     " Arduino
     "autocmd Filetype arduino set errorformat^=\%-G%.%#/path/to/Arduino/IDE/%.%#
@@ -55,9 +57,9 @@ if has("autocmd")
     autocmd GUIEnter * set visualbell t_vb=
 
     " Custom filetypes settings: Python, Shell, JSON, Vagrant, CloudFormation
-    au FileType python,sh set tabstop=4 shiftwidth=4 softtabstop=4
+    autocmd FileType python,sh set tabstop=4 shiftwidth=4 softtabstop=4
     "au BufRead,BufNewFile *.template setfiletype javascript
-    au FileType javascript call JavaScriptFold()
+    autocmd FileType javascript call JavaScriptFold()
 
     " Load package.json template when we star a new project.
     autocmd! BufNewFile package.json silent! 0r $VIMHOME/skel/tmpl.package.json
