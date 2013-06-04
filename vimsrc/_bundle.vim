@@ -23,6 +23,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-surround.git'
 Bundle 'AndrewRadev/splitjoin.vim.git'
 Bundle 'AndrewRadev/switch.vim.git'
+Bundle 'tomtom/tcomment_vim.git'
 
 " Control Version Systems
 Bundle 'tpope/vim-fugitive'
