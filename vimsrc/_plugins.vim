@@ -331,6 +331,7 @@ let g:indent_guides_guide_size  = 1
 " Plugin: Switch.vim
 " -----------------------------------------------------------------------------
 autocmd FileType ruby let g:switch_definitions = [ ['if', 'unless'], ['ASC', 'DESC'] ]
+autocmd FileType html,javascript let g:switch_definitions = [['slow', 'normal', 'fast']]
 
 " -----------------------------------------------------------------------------
 " Folding code blocks
