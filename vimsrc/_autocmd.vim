@@ -25,6 +25,12 @@ if has("autocmd")
     autocmd BufEnter *.cpp compiler gcc
     autocmd BufEnter *.rb  compiler ruby
 
+    " Relative numbers
+    autocmd FocusLost * set number
+    autocmd FocusGained * set relativenumber
+    "autocmd InsertEnter * set number
+    "autocmd InsertLeave * set relativenumber
+
     " If editing Gemfile, then run it after save
     " autocmd BufEnter Gemfile RunCommand !bundle install
 
