@@ -26,8 +26,8 @@ if has("autocmd")
     autocmd BufEnter *.rb  compiler ruby
 
     " Relative numbers
-    autocmd FocusLost * set number
-    autocmd FocusGained * set relativenumber
+    "autocmd FocusLost * set number
+    "autocmd FocusGained * set relativenumber
     "autocmd InsertEnter * set number
     "autocmd InsertLeave * set relativenumber
 
