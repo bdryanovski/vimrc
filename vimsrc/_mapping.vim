@@ -63,7 +63,8 @@ noremap <F6> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
 " F7 - Reformatting the code and return to the last position used
 noremap <F7> mzgg-G`z
 " Set they keys to turn on/off the spell check
-noremap <F8> <Esc>:setlocal spell spelllang=en_us<CR>
+"noremap <F8> <Esc>:setlocal spell spelllang=en_us<CR>
+noremap <F8> :GundoToggle<CR>
 noremap <F9> <Esc>:setlocal nospell<CR>
 noremap <F10> :help vimbook.txt<CR>
 noremap <S-F10> :tabnew $VIMHOME/doc/vimbook.txt<CR>

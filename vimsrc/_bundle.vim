@@ -24,6 +24,7 @@ Bundle 'tpope/vim-surround.git'
 Bundle 'AndrewRadev/splitjoin.vim.git'
 Bundle 'AndrewRadev/switch.vim.git'
 Bundle 'tomtom/tcomment_vim.git'
+Bundle 'sjl/gundo.vim.git'
 
 " Control Version Systems
 Bundle 'tpope/vim-fugitive'
@@ -55,7 +56,7 @@ Bundle 'tpope/vim-endwise.git'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'noahfrederick/Hemisu'
-"Bundle 'sjl/badwolf'
+Bundle 'sjl/badwolf'
 "Bundle 'vim-scripts/summerfruit256.vim.git'
 "Bundle 'nanotech/jellybeans.vim.git'
 
