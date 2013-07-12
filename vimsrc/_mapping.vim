@@ -101,6 +101,18 @@ inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 
+" Mapping for the tabs
+"
+nnoremap <leader>tn :tabnew<cr>
+nnoremap <leader>to :tabonly<cr>
+nnoremap <leader>tc :tabclose<cr>
+nnoremap <leader>tm :tabmove
+
+" Opens a new tab with the current buffer's path
+" Super sueful when editing files in the same directory
+"
+nnoremap <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+
 " -----------------------------------------------------------------------------
 "  Comman UI key binding
 " -----------------------------------------------------------------------------
@@ -219,6 +231,7 @@ vnoremap <c-k> :m-2<CR>gv=gv
 "
 nnoremap <Home> ^
 inoremap <Home> <Esc>^i
+nnoremap 0 ^
 
 "
 " Upcase current word
@@ -235,8 +248,20 @@ nnoremap <leader>v V`]
 "
 nnoremap __ :split \|<Space>
 
-" SVN Blame
-vnoremap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+" Switch CWD to the directory of the open buffer
+nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+" Remove the Windows ^M - when the encodings gets messed up
+noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+
+" -----------------------------------------------------------------------------
+" Moving arround
+" -----------------------------------------------------------------------------
+
+" Treat long lines as break lines ( useful when moving around in them)
+nnoremap j gj
+nnoremap k gk
+
 
 " -----------------------------------------------------------------------------
 " Searching & Replace
@@ -248,6 +273,9 @@ nnoremap <leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 " Same as <shift>* or <shift># - Highlight the word under the cursor
 "nnoremap <leader>f *<CR>
 
+" Map <space> to (search) and Ctrl-Space to ? (backwards search)
+nnoremap <space> /
+nnoremap <c-space> ?
 
 " -----------------------------------------------------------------------------
 " Shortcuts

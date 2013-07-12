@@ -3,7 +3,7 @@
 " -----------------------------------------------------------------------------
 set encoding=utf-8
 set fileencodings=utf-8               " encoding always must be utf-8
-set fileformats=unix,dos              " Setting file format try first unix
+set fileformats=unix,dos,mac          " Setting file format try first unix
 set nocompatible                      " don't try to be strictly vi-like
 set modelines=1                       " for now use it //don't use modelines (for security)
 set viminfo='20,\"50                  " use a viminfo file,...
@@ -27,6 +27,8 @@ set softtabstop=2                     " no. of spaces for tab when editing
 set expandtab                         " expand tabs into spaces
 set smarttab                          " smart tabulation and backspace
 set laststatus=2                      " always show statusline
+set lbr                               " enable line break
+set tw=500                            " break line after 500 characters
 set mouse=a                           " enable mouse in all modes
 set number                            " show line numbers OR,...
 set showmode                          " always show what mode we'r
@@ -42,6 +44,11 @@ set hidden                            " You can have unwritten changes to a file
 set backspace=indent,eol,start        " allow backspace over everything in insert mode.
 set exrc                              " enable per-directory .vimrc files
 set secure                            " disable unsafe commands in local .vimrc files
+set so=7                              " Set 7 lines to the cursor - when moving vertically using j/k
+set cmdheight=2                       " Height of the command bar
+set lazyredraw                        " Don't redraw while executing macros (good performance config)
+
+
 
 " -----------------------------------------------------------------------------
 " Settings for Pathogen
@@ -115,7 +122,7 @@ set statusline+=%-14.([%l/%L],%c%V%)     " cursor info
 syntax enable
 set background=dark
 " colorscheme molokai "railscasts_alt
-colorscheme solarized
+colorscheme badwolf 
 
 " -----------------------------------------------------------------------------
 " Windows settings
