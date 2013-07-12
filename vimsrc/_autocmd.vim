@@ -38,6 +38,7 @@ if has("autocmd")
     " syntax = ruby
     autocmd BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set filetype=ruby
 
+    autocmd BufEnter *.tpl                               set filetype=html
     autocmd BufEnter *access.log*                        set filetype=httplog
     autocmd BufEnter httpd*.conf                         set filetype=apache
     autocmd BufRead *.jhtml                              set filetype=jhtml
