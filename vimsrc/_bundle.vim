@@ -27,6 +27,7 @@ Bundle 'AndrewRadev/switch.vim.git'
 Bundle 'tomtom/tcomment_vim.git'
 Bundle 'sjl/gundo.vim.git'
 Bundle 'ervandew/screen.git'
+Bundle 'airblade/vim-gitgutter.git'
 
 " Control Version Systems
 Bundle 'tpope/vim-fugitive'
