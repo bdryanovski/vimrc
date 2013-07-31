@@ -99,6 +99,15 @@ set mat=5                 " Blink 5 second
 set undolevels=1500             " maximum number of changes that can be undone
 set undoreload=15000            " maximum lines to save for undo on buffer reload.
 set wildignore=*.swp,*.bak,*.puc,*.class
+
+" -----------------------------------------------------------------------------
+" Make undo persistant even after the file is closed
+" -----------------------------------------------------------------------------
+if has("persistent_undo")
+  set undodir=~/.vim/undo
+  set undofile
+endif
+
 " backup to ~/.tmp
 set backup
 set backupdir=~/.vim/backup,~/tmp,/var/tmp
