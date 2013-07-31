@@ -332,6 +332,7 @@ let g:indent_guides_guide_size  = 1
 " -----------------------------------------------------------------------------
 autocmd FileType ruby let g:switch_definitions = [ ['if', 'unless'], ['ASC', 'DESC'] ]
 autocmd FileType html,javascript let g:switch_definitions = [['slow', 'normal', 'fast']]
+autocmd FileType coffee let g:switch_definitions = [ ['if', 'unless'], ['and', 'or']]
 
 " -----------------------------------------------------------------------------
 " Folding code blocks
