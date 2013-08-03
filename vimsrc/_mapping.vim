@@ -343,3 +343,11 @@ vmap st "zdi<?= <C-R>z ?>"<Esc>
 " -----------------------------------------------------------------------------
 
 nnoremap - :Switch<cr>
+
+" -----------------------------------------------------------------------------
+" Plugin: vim-rspec
+" -----------------------------------------------------------------------------
+map <Leader>tt :call RunCurrentSpecFile()<CR>
+map <Leader>ss :call RunNearestSpec()<CR>
+map <Leader>ll :call RunLastSpec()<CR>
+map <Leader>aa :call RunAllSpecs()<CR>
