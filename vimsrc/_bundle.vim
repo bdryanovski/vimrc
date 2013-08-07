@@ -55,6 +55,7 @@ Bundle 'kingbin/vim-arduino.git'
 "Bundle 'henrik/vim-ruby-runner'
 Bundle 'tpope/vim-endwise.git'
 "Bundle 'danchoi/ri.vim.git'
+Bundle 'Keithbsmiley/rspec.vim'
 
 " Themes and UI
 Bundle 'Lokaltog/vim-powerline'
