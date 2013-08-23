@@ -13,7 +13,6 @@ Bundle 'tsaleh/vim-matchit'
 Bundle 'sickill/vim-pasta'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'godlygeek/tabular'
-Bundle 'mhinz/vim-startify'
 Bundle 'thoughtbot/vim-rspec'
 
 " Extra features
