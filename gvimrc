@@ -1,5 +1,5 @@
 if has("unix")
-  "set guifont=Monaco\ 10      " set font
+  set guifont=Monospace\ 10      " set font
 elseif has("win32")
   "set guifont=Droid_Sans_Mono:h10
 end
@@ -16,7 +16,8 @@ set guioptions-=L                       " no left scrollbar when v.split
 
 "colorscheme molokai  " monokai
 set background=light
-colorscheme hemisu
+"colorscheme hemisu
+colorscheme GitHub
 "
 
 " -----------------------------------------------------------------------------
