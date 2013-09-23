@@ -45,7 +45,7 @@ set backspace=indent,eol,start        " allow backspace over everything in inser
 set exrc                              " enable per-directory .vimrc files
 set secure                            " disable unsafe commands in local .vimrc files
 set so=7                              " Set 7 lines to the cursor - when moving vertically using j/k
-set cmdheight=2                       " Height of the command bar
+set cmdheight=1                       " Height of the command bar
 set lazyredraw                        " Don't redraw while executing macros (good performance config)
 
 
