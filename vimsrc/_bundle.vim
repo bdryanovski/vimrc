@@ -31,7 +31,7 @@ Bundle 'airblade/vim-gitgutter.git'
 
 " Control Version Systems
 Bundle 'tpope/vim-fugitive'
-Bundle 'vim-scripts/vcscommand.vim'
+"Bundle 'vim-scripts/vcscommand.vim'
 
 " Syntax Highlighting and Language specifically
 Bundle 'othree/javascript-libraries-syntax.vim.git'
@@ -44,7 +44,7 @@ Bundle 'jelera/vim-javascript-syntax'
 Bundle 'kchmck/vim-coffee-script'
 "Bundle 'tangledhelix/vim-octopress'
 Bundle 'tpope/vim-rails'
-Bundle 'aaronj1335/underscore-templates.vim'
+"Bundle 'aaronj1335/underscore-templates.vim'
 "Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'leshill/vim-json'
