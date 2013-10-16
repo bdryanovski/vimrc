@@ -17,21 +17,21 @@ Bundle 'thoughtbot/vim-rspec'
 
 " Extra features
 "Bundle 'mattn/zencoding-vim'
-Bundle 'gmarik/github-search.vim'
-Bundle 'vim-scripts/TwitVim'
+"Bundle 'gmarik/github-search.vim'
+"Bundle 'vim-scripts/TwitVim'
 Bundle 'scrooloose/syntastic'
 "Bundle 'Rykka/colorv.vim' " color view/pick/edit/design/scheme tool in Vim
-Bundle 'tpope/vim-surround.git'
+"Bundle 'tpope/vim-surround.git'
 Bundle 'AndrewRadev/splitjoin.vim.git'
 Bundle 'AndrewRadev/switch.vim.git'
 Bundle 'tomtom/tcomment_vim.git'
-Bundle 'sjl/gundo.vim.git'
+"Bundle 'sjl/gundo.vim.git'
 Bundle 'ervandew/screen.git'
 Bundle 'airblade/vim-gitgutter.git'
 
 " Control Version Systems
 Bundle 'tpope/vim-fugitive'
-Bundle 'vim-scripts/vcscommand.vim'
+"Bundle 'vim-scripts/vcscommand.vim'
 
 " Syntax Highlighting and Language specifically
 Bundle 'othree/javascript-libraries-syntax.vim.git'
@@ -50,7 +50,7 @@ Bundle 'itspriddle/vim-jquery'
 Bundle 'leshill/vim-json'
 Bundle 'tpope/vim-rake'
 "Bundle 'jc00ke/vim-tomdoc'
-Bundle 'kingbin/vim-arduino.git'
+"Bundle 'kingbin/vim-arduino.git'
 "Bundle 'henrik/vim-ruby-runner'
 Bundle 'tpope/vim-endwise.git'
 "Bundle 'danchoi/ri.vim.git'
