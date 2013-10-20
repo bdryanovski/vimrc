@@ -148,16 +148,22 @@ let NERDTreeIgnore=['\.pyc','\~$','\.swo$','\.swp$','\.git','\.hg','\.svn','\.bz
 
 " Add color into the tree based on the filetype
 " NERDTress File highlighting
-function! NERDTreeHighlightFile(extension, fg, bg)
+function! NERDTreeHighlightFileExt(extension, fg, bg)
   exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
   exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:bg .' guifg='. a:fg
 endfunction
 
-call NERDTreeHighlightFile('jade', 'green', 'black')
-call NERDTreeHighlightFile('html', 'green', 'black')
-call NERDTreeHighlightFile('styl', 'green', 'black')
-call NERDTreeHighlightFile('css', 'green', 'black')
-call NERDTreeHighlightFile('coffee', 'cyan', 'black')
+function! NERDTreeHighlightFile(regex, fg, bg)
+  exec 'autocmd filetype nerdtree syn match ' . a:regex.' #'. a:regex.'#'
+  exec 'autocmd filetype nerdtree highlight ' . a:regex.' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:bg .' guifg='. a:fg
+endfunction
+
+
+call NERDTreeHighlightFileExt('html', 'green', 'black')
+call NERDTreeHighlightFileExt('css', 'yellow', 'black')
+call NERDTreeHighlightFileExt('coffee', '13', 'black')
+call NERDTreeHighlightFileExt('rb', '35', 'black')
+call NERDTreeHighlightFile('model', 'red', 'black')
 
 " -----------------------------------------------------------------------------
 "  Plugin: twitvim.vim
