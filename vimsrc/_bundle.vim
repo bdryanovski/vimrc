@@ -13,7 +13,7 @@ Bundle 'tsaleh/vim-matchit'
 Bundle 'sickill/vim-pasta'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'godlygeek/tabular'
-Bundle 'thoughtbot/vim-rspec'
+"Bundle 'thoughtbot/vim-rspec'
 
 " Extra features
 "Bundle 'mattn/zencoding-vim'
@@ -26,7 +26,7 @@ Bundle 'AndrewRadev/splitjoin.vim.git'
 Bundle 'AndrewRadev/switch.vim.git'
 Bundle 'tomtom/tcomment_vim.git'
 "Bundle 'sjl/gundo.vim.git'
-Bundle 'ervandew/screen.git'
+"Bundle 'ervandew/screen.git'
 Bundle 'airblade/vim-gitgutter.git'
 
 " Control Version Systems
