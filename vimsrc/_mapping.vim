@@ -101,6 +101,7 @@ inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 
+
 " Mapping for the tabs
 "
 nnoremap <leader>tn :tabnew<cr>
@@ -252,7 +253,7 @@ nnoremap __ :split \|<Space>
 nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+"noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " -----------------------------------------------------------------------------
 " Moving arround
@@ -351,3 +352,10 @@ map <Leader>tt :call RunCurrentSpecFile()<CR>
 map <Leader>ss :call RunNearestSpec()<CR>
 map <Leader>ll :call RunLastSpec()<CR>
 map <Leader>aa :call RunAllSpecs()<CR>
+
+" -----------------------------------------------------------------------------
+" Plugin: NERDTree
+" -----------------------------------------------------------------------------
+
+" Locate the current file into the tree
+nmap <leader>m :NERDTreeToggle<CR>
