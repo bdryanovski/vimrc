@@ -50,7 +50,7 @@ function! NumberToggle()
 endfunc
 
 " -----------------------------------------------------------------------------
-" Map F-keys
+" Map F-keys (fkeys)
 " -----------------------------------------------------------------------------
 noremap <F1> <ESC>
 noremap <F2> :BufExplorer<CR>
@@ -64,7 +64,8 @@ noremap <F6> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
 noremap <F7> mzgg-G`z
 " Set they keys to turn on/off the spell check
 "noremap <F8> <Esc>:setlocal spell spelllang=en_us<CR>
-noremap <F8> :GundoToggle<CR>
+noremap <F8> :TagbarToggle<CR>
+"noremap <F8> :GundoToggle<CR>
 noremap <F9> <Esc>:setlocal nospell<CR>
 noremap <F10> :help vimbook.txt<CR>
 noremap <S-F10> :tabnew $VIMHOME/doc/vimbook.txt<CR>
