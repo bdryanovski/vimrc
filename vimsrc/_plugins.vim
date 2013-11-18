@@ -394,3 +394,10 @@ let g:startify_custom_header = [
 " Plugin: vim-rspec
 " -----------------------------------------------------------------------------
 let g:rspec_command = "!rspec --format documentation --color {spec}"
+
+" -----------------------------------------------------------------------------
+" Plugin: Tagbar
+" -----------------------------------------------------------------------------
+let g:tagbar_compact = 1
+let g:tagbar_autofocus = 1
+"let g:tagbar_autopreview = 1
