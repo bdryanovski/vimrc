@@ -292,6 +292,9 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 " Plugin: Coffe-Script
 " -----------------------------------------------------------------------------
 let coffee_make_options = "--bare"
+let g:coffee_lint_options = "-f ~/.vim/configs/lint.json"
+autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 "au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 
 " -----------------------------------------------------------------------------
@@ -306,23 +309,18 @@ endif
 " -----------------------------------------------------------------------------
 " Plugin: Syntastic
 " -----------------------------------------------------------------------------
-if exists("g:loaded_syntastic_plugin")
+let g:syntastic_check_on_open=1
+let g:syntastic_echo_current_error=1
+let g:syntastic_enable_balloons=1
+let g:syntastic_auto_jump=1
+let g:syntastic_mode_map = { 'mode': 'active',
+      \ 'active_filetypes': ['ruby','php'],
+      \ 'passive_filetypes': ['less', 'vim', 'coffee', 'html'] }
 
-  let g:syntastic_check_on_open=1
-  let g:syntastic_echo_current_error=1
-  let g:syntastic_enable_balloons=1
-  let g:syntastic_auto_jump=1
-  let g:syntastic_mode_map = { 'mode': 'active',
-        \ 'active_filetypes': ['ruby','php'],
-        \ 'passive_filetypes': ['less', 'vim', 'coffeescript'] }
+let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 
-  let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
-
-  if has("win32") || has("win64")
-    let s:php_executable="D:\xampp\php\php.exe"
-    let makeprg=php_executble . " -l %"
-  endif
-endif
+let g:syntastic_coffee_checkers = ['coffeelint']
+let g:syntastic_coffee_coffeelint_args="--csv -f ~/.vim/configs/lint.json"
 " -----------------------------------------------------------------------------
 " Plugin: vim-indent-guides
 " -----------------------------------------------------------------------------
