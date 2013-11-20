@@ -399,3 +399,10 @@ let g:rspec_command = "!rspec --format documentation --color {spec}"
 let g:tagbar_compact = 1
 let g:tagbar_autofocus = 1
 "let g:tagbar_autopreview = 1
+
+" -----------------------------------------------------------------------------
+" Plugin: gitgutter
+" -----------------------------------------------------------------------------
+let g:gitgutter_highlight_lines = 0
+let g:gitgutter_diff_args = '-w'
+let g:gitgutter_eager = 0
