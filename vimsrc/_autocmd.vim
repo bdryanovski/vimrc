@@ -50,6 +50,9 @@ if has("autocmd")
     autocmd BufNewFile,BufReadPost *.coffee              set foldmethod=indent nofoldenable
     autocmd BufNewFile,BufReadPost *.coffee              set shiftwidth=2 expandtab
 
+    " Spell check
+    autocmd BufRead,BufNewFile *.md, *.markdown, *.txt setlocal spell
+
     " Arduino
     "autocmd Filetype arduino set errorformat^=\%-G%.%#/path/to/Arduino/IDE/%.%#
     autocmd BufRead,BufNewFile *.pde                    set filetype=arduino
