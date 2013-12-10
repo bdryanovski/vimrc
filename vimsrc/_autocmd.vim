@@ -104,4 +104,9 @@ if has("autocmd")
   autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
   augroup END
+
+  augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+  augroup END " }
 endif

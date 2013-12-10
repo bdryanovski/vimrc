@@ -29,6 +29,8 @@ Bundle 'tomtom/tcomment_vim.git'
 "Bundle 'ervandew/screen.git'
 Bundle 'airblade/vim-gitgutter.git'
 Bundle 'majutsushi/tagbar'
+Bundle 'Lokaltog/vim-easymotion.git'
+Bundle 'bdryanovski/number-marks.git'
 
 " Control Version Systems
 Bundle 'tpope/vim-fugitive'
