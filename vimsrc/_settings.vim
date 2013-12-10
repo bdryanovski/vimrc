@@ -30,6 +30,7 @@ set laststatus=2                      " always show statusline
 set lbr                               " enable line break
 set tw=500                            " break line after 500 characters
 set mouse=a                           " enable mouse in all modes
+set relativenumber
 set number                            " show line numbers OR,...
 set showmode                          " always show what mode we'r
 set nowrap                            " don't wrap lines
