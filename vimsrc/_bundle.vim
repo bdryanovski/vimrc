@@ -66,6 +66,7 @@ Bundle 'noahfrederick/Hemisu'
 Bundle 'sjl/badwolf'
 "Bundle 'vim-scripts/summerfruit256.vim.git'
 "Bundle 'nanotech/jellybeans.vim.git'
+Bundle  'uguu-org/vim-matrix-screensaver.git'
 
 Bundle 'kana/vim-smartinput'
 Bundle 'vim-scripts/HTML-AutoCloseTag'
