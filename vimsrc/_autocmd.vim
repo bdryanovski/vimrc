@@ -49,6 +49,7 @@ if has("autocmd")
     autocmd BufNewFile,BufRead *_spec.rb                 set filetype=rspec.ruby
     autocmd BufNewFile,BufReadPost *.coffee              set foldmethod=indent nofoldenable
     autocmd BufNewFile,BufReadPost *.coffee              set shiftwidth=2 expandtab
+    autocmd BufNewFile,BufReadPost *.hjs                 set filetype=html
 
     " Spell check
     autocmd BufRead,BufNewFile *.md, *.markdown, *.txt setlocal spell
