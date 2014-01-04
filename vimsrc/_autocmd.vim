@@ -47,6 +47,8 @@ if has("autocmd")
     autocmd BufNewFile,BufRead *.json                    set filetype=javascript
     autocmd BufNewFile,BufRead Vagrantfile               set filetype=ruby
     autocmd BufNewFile,BufRead *_spec.rb                 set filetype=rspec.ruby
+    autocmd BufRead,BufNewFile *.pde                     set filetype=arduino
+    autocmd BufRead,BufNewFile *.ino                     set filetype=arduino
     autocmd BufNewFile,BufReadPost *.coffee              set foldmethod=indent nofoldenable
     autocmd BufNewFile,BufReadPost *.coffee              set shiftwidth=2 expandtab
     autocmd BufNewFile,BufReadPost *.hjs                 set filetype=html
