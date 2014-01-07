@@ -15,9 +15,10 @@ set guioptions+=m
 set guioptions-=L                       " no left scrollbar when v.split
 
 "colorscheme molokai  " monokai
-set background=light
+set background=dark
 "colorscheme hemisu
-colorscheme GitHub
+"colorscheme GitHub
+colorscheme solarized
 "
 
 " -----------------------------------------------------------------------------
