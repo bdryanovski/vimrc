@@ -61,6 +61,7 @@ Bundle 'sudar/vim-arduino-syntax'
 Bundle 'tpope/vim-endwise.git'
 "Bundle 'danchoi/ri.vim.git'
 Bundle 'Keithbsmiley/rspec.vim'
+Bundle 'briancollins/vim-jst.git'
 
 " Themes and UI
 "Bundle 'Lokaltog/vim-powerline'
