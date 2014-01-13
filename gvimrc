@@ -1,5 +1,6 @@
 if has("unix")
   set guifont=Monospace\ 10      " set font
+  set guifont=Inconsolata\ Medium\ 12
 elseif has("win32")
   "set guifont=Droid_Sans_Mono:h10
 end
