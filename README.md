@@ -56,3 +56,9 @@ copy C:/Users/xxx/vimfiles/vimrc.vim C:/Users/xxx/_vimrc
     * `F10` - Read vimbook.txt.  
     * `F11` - <empty>  
     * `F12` - Edit .vimrc  
+
+### Fonts
+
+```bash
+curl -kL https://raw.github.com/cstrap/monaco-font/master/install-font-ubuntu.sh | bash
+```
