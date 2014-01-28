@@ -161,7 +161,7 @@ endfunction
 
 call NERDTreeHighlightFileExt('html', 'green', 'black')
 call NERDTreeHighlightFileExt('css', 'yellow', 'black')
-call NERDTreeHighlightFileExt('coffee', 'blue', 'black')
+call NERDTreeHighlightFileExt('coffee', 'red', 'white')
 call NERDTreeHighlightFileExt('rb', 'cyan', 'black')
 call NERDTreeHighlightFile('model', 'red', 'black')
 

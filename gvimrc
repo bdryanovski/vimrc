@@ -1,7 +1,7 @@
 if has("unix")
   "set guifont=Monospace\ 10      " set font
   "set guifont=Inconsolata\ Medium\ 12
-  set guifont=Monaco\ for\ Powerline\ 10
+  set guifont=Monaco\ for\ Powerline\ 9
 elseif has("win32")
   "set guifont=Droid_Sans_Mono:h10
 end
@@ -13,7 +13,7 @@ winpos 0 0
 
 set guioptions-=T                       " no toolbar
 set guioptions-=r                       " no right scrollbar
-set guioptions+=m
+set guioptions-=m                       " no menu
 set guioptions-=L                       " no left scrollbar when v.split
 
 "colorscheme molokai  " monokai
