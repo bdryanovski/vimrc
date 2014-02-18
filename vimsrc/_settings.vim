@@ -133,7 +133,7 @@ syntax enable
 " colorscheme molokai "railscasts_alt
 "colorscheme badwolf 
 colorscheme hemisu
-set background=light
+set background=dark
 
 " -----------------------------------------------------------------------------
 " Windows settings
