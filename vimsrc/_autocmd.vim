@@ -9,9 +9,9 @@ if has("autocmd")
 
     " When editing a file, always jump to the last cursor position
     autocmd BufReadPost *
-    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-    \   exe "normal! g'\"" |
-    \ endif
+          \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+          \   exe "normal! g'\"" |
+          \ endif
 
     " don't write swapfile on most commonly used directories for NFS mounts or USB sticks
     autocmd BufNewFile,BufReadPre /media/*,/mnt/* set directory=~/tmp,/var/tmp,/tmp
@@ -43,7 +43,7 @@ if has("autocmd")
     autocmd BufEnter httpd*.conf                         set filetype=apache
     autocmd BufRead *.jhtml                              set filetype=jhtml
     autocmd BufNewFile,BufRead nginx.conf                set filetype=nginx
-    autocmd BufNewFile,BufRead *.markdown,*.textile,*.md set filetype=octopress
+    autocmd BufNewFile,BufRead *.markdown,*.textile,*.md set filetype=markdown
     autocmd BufNewFile,BufRead *.json                    set filetype=javascript
     autocmd BufNewFile,BufRead Vagrantfile               set filetype=ruby
     autocmd BufNewFile,BufRead *_spec.rb                 set filetype=rspec.ruby
@@ -52,9 +52,6 @@ if has("autocmd")
     autocmd BufNewFile,BufReadPost *.coffee              set foldmethod=indent nofoldenable
     autocmd BufNewFile,BufReadPost *.coffee              set shiftwidth=2 expandtab
     autocmd BufNewFile,BufReadPost *.hjs                 set filetype=html
-
-    " Spell check
-    autocmd BufRead,BufNewFile *.md, *.markdown, *.txt setlocal spell
 
     " Arduino
     "autocmd Filetype arduino set errorformat^=\%-G%.%#/path/to/Arduino/IDE/%.%#
@@ -74,37 +71,15 @@ if has("autocmd")
     "au BufRead,BufNewFile *.template setfiletype javascript
     autocmd FileType javascript call JavaScriptFold()
 
-    " Load package.json template when we star a new project.
-    autocmd! BufNewFile package.json silent! 0r $VIMHOME/skel/tmpl.package.json
-
-    "
-    " Function: Loading templates from $VIMHOME/skel/**
-    "
-    " The idea is simple load predefined skeleton files when creating for the
-    " first time file with that extenstion.
-    "
-    " Example:
-    "   # vim index.html
-    "   # => will search for tmpl.html into $VIMHOME/skel/** and if we found
-    "   # => it it will load it into the Vim buffer
-    "
-    function! LoadTemplate()
-      silent! 0r $VIMHOME/skel/tmpl.%:e
-      " Highlight %VAR% placeholders with the Todo colour group
-      syn match Todo "%\u\+%" containedIn=ALL
-    endfunction
-
-    autocmd! BufNewFile * call LoadTemplate()
-
     " Delete trailing white space on save, useful for Python and CoffeeScript
-  func! DeleteTrailingWS()
-    exe "normal mz"
-    %s/\s\+$//ge
-    exe "normal `z"
-  endfunc
+    func! DeleteTrailingWS()
+      exe "normal mz"
+      %s/\s\+$//ge
+      exe "normal `z"
+    endfunc
 
-  autocmd BufWrite *.py     :call DeleteTrailingWS()
-  autocmd BufWrite *.coffee :call DeleteTrailingWS()
+    autocmd BufWrite *.py     :call DeleteTrailingWS()
+    autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
   augroup END
 
