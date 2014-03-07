@@ -18,7 +18,7 @@ let g:ragtag_global_maps = 1
 " -----------------------------------------------------------------------------
 " Plugin: javascript-libraries-syntax.vim.git
 " -----------------------------------------------------------------------------
-let g:used_javascript_libs = 'underscore,backbone,jquery,angularjs,requirejs'
+let g:used_javascript_libs = 'underscore,jquery,angularjs,angularui,requirejs'
 
 " -----------------------------------------------------------------------------
 " Plugin: splitjoin
