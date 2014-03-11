@@ -37,18 +37,6 @@ nnoremap <leader><space> :noh <CR>
 inoremap <C-p> <Esc>pa
 cnoremap <C-p> <C-r>"
 
-"
-" Relative numbers toggle
-"
-
-function! NumberToggle()
-  if(&relativenumber ==1)
-    set number
-  else
-    set relativenumber
-  endif
-endfunc
-
 " -----------------------------------------------------------------------------
 " Map F-keys (fkeys)
 " -----------------------------------------------------------------------------
@@ -58,14 +46,10 @@ noremap <F3> :NERDTreeToggle<CR>
 " Clear syntax highlighting
 noremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " Currently work only on *nix
-noremap <F5> :call NumberToggle()<CR>
-noremap <F6> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
-" F7 - Reformatting the code and return to the last position used
-noremap <F7> mzgg-G`z
-" Set they keys to turn on/off the spell check
-"noremap <F8> <Esc>:setlocal spell spelllang=en_us<CR>
+noremap <F5> <ESC>
+noremap <F6> <ESC>
+noremap <F7> <ESC>
 noremap <F8> :TagbarToggle<CR>
-"noremap <F8> :GundoToggle<CR>
 noremap <F9> <Esc>:setlocal nospell<CR>
 noremap <F10> :help vimbook.txt<CR>
 noremap <S-F10> :tabnew $VIMHOME/doc/vimbook.txt<CR>
