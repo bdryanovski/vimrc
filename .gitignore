@@ -20,3 +20,5 @@ bundle/
 # Ignore directories
 sessions/**
 sessions/
+# Stupid
+colors/ir_black.vim
