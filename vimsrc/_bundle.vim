@@ -61,6 +61,9 @@ Bundle 'walm/jshint.vim'
 Bundle 'wojtekmach/vim-rename'
 Bundle 'hallison/vim-ruby-sinatra'
 
+" Timetracking
+Bundle 'PAntoine/TimeKeeper'
+
 if has("unix")
   Bundle 'mutewinter/swap-parameters.git'
 

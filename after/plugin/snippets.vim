@@ -8,5 +8,7 @@ if exists('*ExtractSnipsFile')
 
   " Custom Polymer snippets
   call ExtractSnips(g:snippets_dir . 'polymer/', 'html')
+  call ExtractSnips(g:snippets_dir . 'polymer-javascript', 'javascript')
+  call ExtractSnips(g:snippets_dir . 'polymer-javascript', 'html')
 endif
 

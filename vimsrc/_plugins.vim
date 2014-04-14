@@ -438,3 +438,8 @@ let g:tagbar_autofocus = 1
 let g:gitgutter_highlight_lines = 0
 let g:gitgutter_diff_args = '-w'
 let g:gitgutter_eager = 0
+
+" -----------------------------------------------------------------------------
+" Plugin: TimeKeeper
+" -----------------------------------------------------------------------------
+let g:TimeKeeperStartOnLoad = 1
