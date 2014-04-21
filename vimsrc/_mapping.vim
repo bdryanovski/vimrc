@@ -46,7 +46,7 @@ noremap <F3> :NERDTreeToggle<CR>
 " Clear syntax highlighting
 noremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " Currently work only on *nix
-noremap <F5> <ESC>
+noremap <silent><F5> :call TimeKeeper_ToggleTaskWindow()<CR>
 noremap <F6> <ESC>
 noremap <F7> <ESC>
 noremap <F8> :TagbarToggle<CR>
