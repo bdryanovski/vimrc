@@ -132,8 +132,9 @@ set statusline+=%-14.([%l/%L],%c%V%)     " cursor info
 syntax enable
 " colorscheme molokai "railscasts_alt
 "colorscheme badwolf 
-colorscheme hemisu
+" colorscheme hemisu
 set background=dark
+colorscheme molokai
 
 " -----------------------------------------------------------------------------
 " Windows settings
