@@ -442,4 +442,4 @@ let g:gitgutter_eager = 0
 " -----------------------------------------------------------------------------
 " Plugin: TimeKeeper
 " -----------------------------------------------------------------------------
-let g:TimeKeeperStartOnLoad = 1
+" let g:TimeKeeperStartOnLoad = 1
