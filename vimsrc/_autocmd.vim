@@ -88,3 +88,8 @@ if has("autocmd")
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
   augroup END " }
 endif
+
+function! PlaySound()
+  silent! exec '!mpg123 -q ~/.vim/sounds/beep-21.mp3 &'
+endfunction
+autocmd CursorMovedI * call PlaySound()
