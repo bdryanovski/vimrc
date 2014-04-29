@@ -6,6 +6,13 @@
 "
 cnoremap w!! w !sudo tee % >/dev/null
 
+" -----------------------------------------------------------------------------
+" Dissable arrow keys - only in <esc> mode, but they will work in Edit Mode
+" -----------------------------------------------------------------------------
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
 "
 " bckspace in Visual mode deletes selection
 "

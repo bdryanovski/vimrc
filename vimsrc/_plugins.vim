@@ -187,13 +187,8 @@ let g:rails_statusline=0
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode='ra'
 
-if has("win32") || has("win64")
-  set wildignore+=.git/*,tmp\*,*.swp,*.zip,*.exe   " Windows
-  let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
-else
-  set wildignore+=.git/*,*/tmp/*,*.so,*.swp,*.zip,*node_modules* " MacOSX/Linux
-  let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
-endif
+set wildignore+=.git/*,*/tmp/*,*.so,*.swp,*.zip,*node_modules* " MacOSX/Linux
+let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
 
 "let g:ctrlp_custom_ignore = '\v[\/](\.(git|hg|svn)|node_modules)$'
 "let g:ctrlp_custom_ignore = {
