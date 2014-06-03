@@ -55,7 +55,7 @@ Bundle 'noahfrederick/Hemisu'
 "Bundle 'junegunn/goyo.vim.git'
 Bundle 'bilalq/lite-dfm'
 
-Bundle 'kana/vim-smartinput'
+" Bundle 'kana/vim-smartinput'
 Bundle 'vim-scripts/HTML-AutoCloseTag'
 Bundle 'walm/jshint.vim'
 Bundle 'wojtekmach/vim-rename'

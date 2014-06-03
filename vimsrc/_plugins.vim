@@ -36,24 +36,25 @@ nnoremap sk :SplitjoinSplit<cr>
 " Plugin: smartinput
 " -----------------------------------------------------------------------------
 " Language: Rauby , when you type | after do , insert |cursor|
-call smartinput#map_to_trigger('i', '<bar>', '<Bar>', '<Bar>')
-call smartinput#define_rule({
-      \   'at': '\({\|\<do\>\)\s*\%#',
-      \   'char': '<Bar>',
-      \   'input': '<Bar><Bar><Left>',
-      \   'filetype': ['ruby'],
-      \ })
-
-" Language: Ruby , autocomplite #{var} in string
-call smartinput#map_to_trigger('i', '#', '#', '#')
-call smartinput#define_rule({
-      \   'at': '\%#',
-      \   'char': '#',
-      \   'input': '#{}<Left>',
-      \   'filetype': ['ruby'],
-      \   'syntax': ['Constant', 'Special'],
-      \ })
-
+"
+" call smartinput#map_to_trigger('i', '<bar>', '<Bar>', '<Bar>')
+" call smartinput#define_rule({
+"       \   'at': '\({\|\<do\>\)\s*\%#',
+"       \   'char': '<Bar>',
+"       \   'input': '<Bar><Bar><Left>',
+"       \   'filetype': ['ruby'],
+"       \ })
+"
+" " Language: Ruby , autocomplite #{var} in string
+" call smartinput#map_to_trigger('i', '#', '#', '#')
+" call smartinput#define_rule({
+"       \   'at': '\%#',
+"       \   'char': '#',
+"       \   'input': '#{}<Left>',
+"       \   'filetype': ['ruby'],
+"       \   'syntax': ['Constant', 'Special'],
+"       \ })
+"
 " -----------------------------------------------------------------------------
 " Plugin: tabular.vim
 " -----------------------------------------------------------------------------
@@ -188,7 +189,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode='ra'
 
 set wildignore+=.git/*,*/tmp/*,*.so,*.swp,*.zip,*node_modules* " MacOSX/Linux
-" let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
 
 "let g:ctrlp_custom_ignore = '\v[\/](\.(git|hg|svn)|node_modules)$'
 "let g:ctrlp_custom_ignore = {

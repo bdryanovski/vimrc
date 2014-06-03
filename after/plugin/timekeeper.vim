@@ -1,1 +1,0 @@
-call TimeKeeper_StartTracking()
