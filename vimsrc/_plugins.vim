@@ -37,24 +37,24 @@ nnoremap sk :SplitjoinSplit<cr>
 " -----------------------------------------------------------------------------
 " Language: Rauby , when you type | after do , insert |cursor|
 "
-" call smartinput#map_to_trigger('i', '<bar>', '<Bar>', '<Bar>')
-" call smartinput#define_rule({
-"       \   'at': '\({\|\<do\>\)\s*\%#',
-"       \   'char': '<Bar>',
-"       \   'input': '<Bar><Bar><Left>',
-"       \   'filetype': ['ruby'],
-"       \ })
-"
-" " Language: Ruby , autocomplite #{var} in string
-" call smartinput#map_to_trigger('i', '#', '#', '#')
-" call smartinput#define_rule({
-"       \   'at': '\%#',
-"       \   'char': '#',
-"       \   'input': '#{}<Left>',
-"       \   'filetype': ['ruby'],
-"       \   'syntax': ['Constant', 'Special'],
-"       \ })
-"
+call smartinput#map_to_trigger('i', '<bar>', '<Bar>', '<Bar>')
+call smartinput#define_rule({
+      \   'at': '\({\|\<do\>\)\s*\%#',
+      \   'char': '<Bar>',
+      \   'input': '<Bar><Bar><Left>',
+      \   'filetype': ['ruby'],
+      \ })
+
+" Language: Ruby , autocomplite #{var} in string
+call smartinput#map_to_trigger('i', '#', '#', '#')
+call smartinput#define_rule({
+      \   'at': '\%#',
+      \   'char': '#',
+      \   'input': '#{}<Left>',
+      \   'filetype': ['ruby'],
+      \   'syntax': ['Constant', 'Special'],
+      \ })
+
 " -----------------------------------------------------------------------------
 " Plugin: tabular.vim
 " -----------------------------------------------------------------------------
