@@ -13,6 +13,7 @@ Bundle 'sickill/vim-pasta'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'godlygeek/tabular'
 "Bundle 'thoughtbot/vim-rspec'
+Bundle 'sheerun/vim-polyglot.git'
 
 " Extra features
 Bundle 'scrooloose/syntastic'
