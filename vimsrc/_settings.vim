@@ -65,11 +65,13 @@ set lazyredraw                        " Don't redraw while executing macros (goo
 filetype off
 
 " Load the Vundle
-set rtp+=$VIMHOME/vundle.git/
-call vundle#rc()
+set rtp+=~/.vim/Vundle.vim
+call vundle#begin()
 
 " Vim plugins list
 source $VIMHOME/vimsrc/_bundle.vim
+
+call vundle#end()
 
 " -----------------------------------------------------------------------------
 
