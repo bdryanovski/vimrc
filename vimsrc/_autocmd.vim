@@ -69,7 +69,7 @@ if has("autocmd")
     " Custom filetypes settings: Python, Shell, JSON, Vagrant, CloudFormation
     autocmd FileType python,sh set tabstop=4 shiftwidth=4 softtabstop=4
     "au BufRead,BufNewFile *.template setfiletype javascript
-    autocmd FileType javascript call JavaScriptFold()
+    " autocmd FileType javascript call JavaScriptFold()
 
     " Delete trailing white space on save, useful for Python and CoffeeScript
     func! DeleteTrailingWS()
