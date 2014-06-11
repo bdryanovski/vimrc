@@ -49,10 +49,9 @@ Bundle 'briancollins/vim-jst.git'
 Bundle 'bling/vim-airline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'noahfrederick/Hemisu'
-" Bundle 'sjl/badwolf'
+"Bundle 'sjl/badwolf'
 "Bundle 'vim-scripts/summerfruit256.vim.git'
 "Bundle 'nanotech/jellybeans.vim.git'
-" Bundle 'uguu-org/vim-matrix-screensaver.git'
 "Bundle 'junegunn/goyo.vim.git'
 Bundle 'bilalq/lite-dfm'
 
@@ -75,8 +74,3 @@ if has("unix")
   Bundle 'kien/ctrlp.vim'
 
 endif 
-
-if has("win32") || has("win64")
-  Bundle 'kien/ctrlp.vim'
-endif
-

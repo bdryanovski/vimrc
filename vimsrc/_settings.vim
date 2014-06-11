@@ -49,15 +49,6 @@ set so=7                              " Set 7 lines to the cursor - when moving 
 set cmdheight=1                       " Height of the command bar
 set lazyredraw                        " Don't redraw while executing macros (good performance config)
 
-
-
-" -----------------------------------------------------------------------------
-" Settings for Pathogen
-" -----------------------------------------------------------------------------
-"filetype off                          " disable filetype use. Enabled later
-"call pathogen#runtime_append_all_bundles()
-"call pathogen#helptags()
-
 " -----------------------------------------------------------------------------
 " Settings for Vundle
 " -----------------------------------------------------------------------------

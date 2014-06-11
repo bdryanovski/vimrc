@@ -25,15 +25,6 @@ if has("autocmd")
     autocmd BufEnter *.cpp compiler gcc
     autocmd BufEnter *.rb  compiler ruby
 
-    " Relative numbers
-    "autocmd FocusLost * set number
-    "autocmd FocusGained * set relativenumber
-    "autocmd InsertEnter * set number
-    "autocmd InsertLeave * set relativenumber
-
-    " If editing Gemfile, then run it after save
-    " autocmd BufEnter Gemfile RunCommand !bundle install
-
     " Syntax highlight for files that don't end with *.rb extension - Adding
     " syntax = ruby
     autocmd BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set filetype=ruby
@@ -57,19 +48,12 @@ if has("autocmd")
     "autocmd Filetype arduino set errorformat^=\%-G%.%#/path/to/Arduino/IDE/%.%#
     autocmd BufRead,BufNewFile *.pde                    set filetype=arduino
 
-    " Maximise on open on Windows
-    if has('win32')
-      autocmd GUIEnter * simalt ~x
-    endif
-
     " Hacking the system bell and flash
     set noerrorbells visualbell t_vb=
     autocmd GUIEnter * set visualbell t_vb=
 
     " Custom filetypes settings: Python, Shell, JSON, Vagrant, CloudFormation
     autocmd FileType python,sh set tabstop=4 shiftwidth=4 softtabstop=4
-    "au BufRead,BufNewFile *.template setfiletype javascript
-    " autocmd FileType javascript call JavaScriptFold()
 
     " Delete trailing white space on save, useful for Python and CoffeeScript
     func! DeleteTrailingWS()
@@ -87,6 +71,7 @@ if has("autocmd")
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
   augroup END " }
+
 endif
 
 function! PlaySound()
