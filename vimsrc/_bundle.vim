@@ -29,6 +29,9 @@ Bundle 'bdryanovski/number-marks.git'
 " Control Version Systems
 Bundle 'tpope/vim-fugitive'
 
+" Time tracking
+Bundle 'wakatime/vim-wakatime'
+
 " Syntax Highlighting and Language specifically
 Bundle 'othree/javascript-libraries-syntax.vim.git'
 Bundle 'tpope/vim-markdown'
