@@ -47,6 +47,9 @@ Bundle 'tpope/vim-endwise.git'
 Bundle 'Keithbsmiley/rspec.vim'
 Bundle 'briancollins/vim-jst.git'
 
+Bundle 'maksimr/vim-jsbeautify'
+Bundle 'einars/js-beautify'
+
 " Themes and UI
 "Bundle 'Lokaltog/vim-powerline'
 Bundle 'bling/vim-airline'
