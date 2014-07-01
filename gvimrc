@@ -20,10 +20,10 @@ set guioptions-=L                       " no left scrollbar when v.split
 " set background=light
 " colorscheme molokai-alt
 set background=dark
-colorscheme base16-monokai
+" colorscheme base16-monokai
 "colorscheme hemisu
 "colorscheme GitHub
-"colorscheme solarized
+colorscheme solarized
 "
 
 " -----------------------------------------------------------------------------
