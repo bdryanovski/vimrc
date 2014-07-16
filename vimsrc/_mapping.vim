@@ -19,17 +19,6 @@ cnoremap w!! w !sudo tee % >/dev/null
 vnoremap <BS> d
 
 "
-" soft tabbing at 2, 4 and 8 spaces of width
-"
-"nnoremap <leader>2 <esc>:set expandtab tabstop=2 softtabstop=2 shiftwidth=2<cr>
-"nnoremap <leader>4 <esc>:set expandtab tabstop=4 softtabstop=4 shiftwidth=4<cr>
-"nnoremap <leader>8 <esc>:set expandtab tabstop=8 softtabstop=8 shiftwidth=8<cr>
-" hard tabbing at 2, for and 8 spaces of width "
-"nnoremap <leader><leader>2 <esc>:set noexpandtab tabstop=2 softtabstop=2 shiftwidth=2<cr>
-"nnoremap <leader><leader>4 <esc>:set noexpandtab tabstop=4 softtabstop=4 shiftwidth=4<cr>
-"nnoremap <leader><leader>8 <esc>:set noexpandtab tabstop=8 softtabstop=8 shiftwidth=8<cr>
-
-"
 " Remove highlighting search results
 "
 nnoremap <leader><space> :noh <CR>
@@ -51,13 +40,12 @@ noremap <F1> <ESC>
 noremap <F2> :BufExplorer<CR>
 noremap <F3> :NERDTreeToggle<CR>
 " Clear syntax highlighting
-noremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
-" Currently work only on *nix
-noremap <silent><F5> :call TimeKeeper_ToggleTaskWindow()<CR>
+noremap <F4> <ESC>
+noremap <F5> <ESC>
 noremap <F6> <ESC>
 noremap <F7> <ESC>
 noremap <F8> :TagbarToggle<CR>
-noremap <F9> <Esc>:setlocal nospell<CR>
+noremap <F9> <Esc>
 noremap <F10> :help vimbook.txt<CR>
 noremap <S-F10> :tabnew $VIMHOME/doc/vimbook.txt<CR>
 noremap <F12> :edit $MYVIMRC<CR>
@@ -75,15 +63,6 @@ noremap <leader>6 :tabn 6<CR>
 noremap <leader>7 :tabn 7<CR>
 noremap <leader>8 :tabn 8<CR>
 noremap <leader>9 :tabn 9<CR>
-
-" NOTE: nice functionality but i don't need it that much.
-" Talking about the :tabn mapping
-
-"
-" Open new tab more easily:
-"
-"nnoremap <leader>t :tabnew<cr>
-"nnoremap <leader>T :tabedit %<cr>gT:quit<cr>
 
 " tab navigation like firefox
 nnoremap <C-S-tab> :tabprevious<CR>
@@ -189,20 +168,6 @@ inoremap <C-Y> <C-O><C-R>
 " -----------------------------------------------------------------------------
 
 "
-" Vertical and horizontal split then hop to a new buffer
-"
-noremap <leader>v :vsp<C-R>
-noremap <leader>h :split<C-R>
-
-"
-" Option A : Smart way to move btw. windows
-"
-noremap <C-j> <C-W>j
-noremap <C-k> <C-W>k
-noremap <C-h> <C-W>h
-noremap <C-l> <C-W>l
-
-"
 " Option B : Moving through splits:
 "
 nnoremap gh <C-w>h
@@ -250,9 +215,6 @@ nnoremap __ :split \|<Space>
 " Switch CWD to the directory of the open buffer
 nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-" Remove the Windows ^M - when the encodings gets messed up
-"noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-
 " -----------------------------------------------------------------------------
 " Moving arround
 " -----------------------------------------------------------------------------
@@ -260,7 +222,6 @@ nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
 " Treat long lines as break lines ( useful when moving around in them)
 nnoremap j gj
 nnoremap k gk
-
 
 " -----------------------------------------------------------------------------
 " Searching & Replace
@@ -292,68 +253,3 @@ cnoremap Q q
 
 " Easily mark a single line in charactger-wise visual mode
 nnoremap vv _vg_
-
-" -----------------------------------------------------------------------------
-" Commands:
-" -----------------------------------------------------------------------------
-
-" Delete file with VIM
-command! -complete=file -nargs=1 Remove :echo 'Remove: '.'<f-args>'.' '.(delete(<f-args>) == 0 ? 'SUCCEEDED' : 'FAILED')
-
-" http://vim.wikia.com/wiki/VimTip483
-" You can define a command allowing you to type :GREP to search for the current
-" word under the cursor, with the results presented in the quickfix window as a
-" 'list occurrences' search.
-" command GREP :execute 'vimgrep /'.expand('<cword>').'/gj '.expand('%') | copen
-
-" -----------------------------------------------------------------------------
-" Unit testing by framework
-" -----------------------------------------------------------------------------
-
-"
-" PHPUnit with custom configuration.
-"
-
-nnoremap <leader>u :exe '!phpunit --configuration ' . g:phpunit_config . ' %:p'<CR>
-
-" -----------------------------------------------------------------------------
-" Template keymapping
-" -----------------------------------------------------------------------------
-
-"Jump between %VAR% placeholders in Normal mode with
-" <Ctrl-p>
-nnoremap <c-p> /%\u.\{-1,}%<cr>c/%/e<cr>
-"Jump between %VAR% placeholders in Insert mode with
-" <Ctrl-p>
-inoremap <c-p> <ESC>/%\u.\{-1,}%<cr>c/%/e<cr>
-
-
-" -----------------------------------------------------------------------------
-" Language specific mapping
-" -----------------------------------------------------------------------------
-
-" PHP Section:
-
-" wrap <?= ?> arround visually selected text
-vmap st "zdi<?= <C-R>z ?>"<Esc>
-
-" -----------------------------------------------------------------------------
-" Plugin: Switch
-" -----------------------------------------------------------------------------
-
-nnoremap - :Switch<cr>
-
-" -----------------------------------------------------------------------------
-" Plugin: vim-rspec
-" -----------------------------------------------------------------------------
-map <Leader>tt :call RunCurrentSpecFile()<CR>
-map <Leader>ss :call RunNearestSpec()<CR>
-map <Leader>ll :call RunLastSpec()<CR>
-map <Leader>aa :call RunAllSpecs()<CR>
-
-" -----------------------------------------------------------------------------
-" Plugin: NERDTree
-" -----------------------------------------------------------------------------
-
-" Locate the current file into the tree
-nmap <leader>m :NERDTreeToggle<CR>

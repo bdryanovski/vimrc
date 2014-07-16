@@ -27,26 +27,20 @@ if has("autocmd")
 
     " Syntax highlight for files that don't end with *.rb extension - Adding
     " syntax = ruby
-    autocmd BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set filetype=ruby
+    autocmd BufRead,BufNewFile {Gemfile,Rakefile,config.ru,.irbrc} set filetype=ruby
 
     autocmd BufEnter *.tpl                               set filetype=html
     autocmd BufEnter *access.log*                        set filetype=httplog
     autocmd BufEnter httpd*.conf                         set filetype=apache
     autocmd BufRead *.jhtml                              set filetype=jhtml
     autocmd BufNewFile,BufRead nginx.conf                set filetype=nginx
-    autocmd BufNewFile,BufRead *.markdown,*.textile,*.md set filetype=markdown
+    autocmd BufNewFile,BufRead *.markdown,*.md           set filetype=markdown
     autocmd BufNewFile,BufRead *.json                    set filetype=javascript
-    autocmd BufNewFile,BufRead Vagrantfile               set filetype=ruby
     autocmd BufNewFile,BufRead *_spec.rb                 set filetype=rspec.ruby
     autocmd BufRead,BufNewFile *.pde                     set filetype=arduino
     autocmd BufRead,BufNewFile *.ino                     set filetype=arduino
     autocmd BufNewFile,BufReadPost *.coffee              set foldmethod=indent nofoldenable
     autocmd BufNewFile,BufReadPost *.coffee              set shiftwidth=2 expandtab
-    autocmd BufNewFile,BufReadPost *.hjs                 set filetype=html
-
-    " Arduino
-    "autocmd Filetype arduino set errorformat^=\%-G%.%#/path/to/Arduino/IDE/%.%#
-    autocmd BufRead,BufNewFile *.pde                    set filetype=arduino
 
     " Hacking the system bell and flash
     set noerrorbells visualbell t_vb=
@@ -54,6 +48,10 @@ if has("autocmd")
 
     " Custom filetypes settings: Python, Shell, JSON, Vagrant, CloudFormation
     autocmd FileType python,sh set tabstop=4 shiftwidth=4 softtabstop=4
+
+    " Autogenerate the docs
+    autocmd BufWritePost $VIMHOME/doc/* :helptags $VIMHOME/doc
+
 
     " Delete trailing white space on save, useful for Python and CoffeeScript
     func! DeleteTrailingWS()

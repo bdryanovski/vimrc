@@ -123,9 +123,6 @@ set statusline+=%-14.([%l/%L],%c%V%)     " cursor info
 " Set color scheme
 "
 syntax enable
-" colorscheme molokai "railscasts_alt
-"colorscheme badwolf 
-" colorscheme hemisu
 set background=dark
 colorscheme molokai
 
@@ -155,18 +152,6 @@ else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>100v.\+', -1)
 endif
 
-
-" -----------------------------------------------------------------------------
-" Autogenerate the docs
-" -----------------------------------------------------------------------------
-autocmd BufWritePost $VIMHOME/doc/* :helptags $VIMHOME/doc
-
-" -----------------------------------------------------------------------------
-" Automatically reload vimrc when it's saved
-" -----------------------------------------------------------------------------
-au BufWritePost vimrc.vim so $VIMHOME/vimrc.vim
-
-
 " -----------------------------------------------------------------------------
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -181,20 +166,6 @@ endif
 "
 let &guicursor = &guicursor . ",a:blinkon0"
 set gcr=a:blinkon0
-
-" -----------------------------------------------------------------------------
-" View changes after the last save
-" -----------------------------------------------------------------------------
-function! s:DiffWithSaved()
-  let filetype=&ft
-  diffthis
-  vnew | r # | normal! 1Gdd
-  diffthis
-  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
-endfunction
-com! DiffSaved call s:DiffWithSaved()
-
-nnoremap <leader>? :DiffSaved<cr>
 
 " -----------------------------------------------------------------------------
 "  Code folding

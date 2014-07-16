@@ -8,14 +8,6 @@
 source $VIMHOME/vimsrc/autocorrect.vim
 
 " -----------------------------------------------------------------------------
-" Plugin: ragtag
-" -----------------------------------------------------------------------------
-"
-inoremap <M-o>       <Esc>o
-inoremap <C-j>       <Down>
-let g:ragtag_global_maps = 1
-
-" -----------------------------------------------------------------------------
 " Plugin: javascript-libraries-syntax.vim.git
 " -----------------------------------------------------------------------------
 let g:used_javascript_libs = 'underscore,jquery,angularjs,angularui,requirejs'
@@ -32,29 +24,6 @@ let g:splitjoin_align = 1
 
 nnoremap sj :SplitjoinJoin<cr>
 nnoremap sk :SplitjoinSplit<cr>
-" -----------------------------------------------------------------------------
-" Plugin: smartinput
-" -----------------------------------------------------------------------------
-" Language: Rauby , when you type | after do , insert |cursor|
-"
-if exists('smartinput#map_to_trigger')
-  call smartinput#map_to_trigger('i', '<bar>', '<Bar>', '<Bar>')
-  call smartinput#define_rule({
-        \   'at': '\({\|\<do\>\)\s*\%#',
-        \   'char': '<Bar>',
-        \   'input': '<Bar><Bar><Left>',
-        \   'filetype': ['ruby'],
-        \ })
-  " Language: Ruby , autocomplite #{var} in string
-  call smartinput#map_to_trigger('i', '#', '#', '#')
-  call smartinput#define_rule({
-        \   'at': '\%#',
-        \   'char': '#',
-        \   'input': '#{}<Left>',
-        \   'filetype': ['ruby'],
-        \   'syntax': ['Constant', 'Special'],
-        \ })
-endif
 
 " -----------------------------------------------------------------------------
 " Plugin: tabular.vim
@@ -91,25 +60,6 @@ endfunction
 
 
 " -----------------------------------------------------------------------------
-" Plugin: Ruby speedup
-" -----------------------------------------------------------------------------
-let g:ruby_path                      = ''
-let g:rubycomplete_buffer_loading    = 0
-let g:rubycomplete_classes_in_global = 0
-let g:rubycomplete_rails             = 0
-
-"
-" get rid of custom rails syntax highlighting
-"
-let g:rails_syntax = 0
-
-"
-" syntax highlighting:
-"
-let ruby_no_expensive = 1
-let ruby_operators    = 1
-
-" -----------------------------------------------------------------------------
 " Plugin: Solarized
 " -----------------------------------------------------------------------------
 
@@ -124,8 +74,6 @@ let g:solarized_contrast='high'
 " -----------------------------------------------------------------------------
 " Plugin: BufExplorer - easier invoke keys
 " -----------------------------------------------------------------------------
-nnoremap <leader>bb :BufExplorer<cr>
-
 " Hide the help
 "
 let g:bufExplorerDefaultHelp=0
@@ -148,40 +96,10 @@ let NERDTreeHighlightCursorline = 1
 let NERDTreeKeepTreeInNewTab=1
 let NERDTreeIgnore=['\.pyc','\~$','\.swo$','\.swp$','\.git','\.hg','\.svn','\.bzr']
 
-" Add color into the tree based on the filetype
-" NERDTress File highlighting
-function! NERDTreeHighlightFileExt(extension, fg, bg)
-  exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:bg .' guifg='. a:fg
-endfunction
-
-function! NERDTreeHighlightFile(regex, fg, bg)
-  exec 'autocmd filetype nerdtree syn match ' . a:regex.' #'. a:regex.'#'
-  exec 'autocmd filetype nerdtree highlight ' . a:regex.' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:bg .' guifg='. a:fg
-endfunction
-
-
-" call NERDTreeHighlightFileExt('html', 'green', 'black')
-" call NERDTreeHighlightFileExt('css', 'yellow', 'black')
-" call NERDTreeHighlightFileExt('coffee', 'red', 'white')
-" call NERDTreeHighlightFileExt('rb', 'cyan', 'black')
-" call NERDTreeHighlightFile('model', 'red', 'black')
-"
-" -----------------------------------------------------------------------------
-"  Plugin: twitvim.vim
-" -----------------------------------------------------------------------------
-
-" Auth settings located into `_auth.vim` file
-
 " -----------------------------------------------------------------------------
 " Plugin: vim-pasta
 " -----------------------------------------------------------------------------
 let g:pasta_enabled_filetypes = ['ruby', 'javascript', 'css', 'coffee', 'php']
-
-" -----------------------------------------------------------------------------
-" Plugin: Rails - turn off rails related things in statusbar
-" -----------------------------------------------------------------------------
-let g:rails_statusline=0
 
 " -----------------------------------------------------------------------------
 " Plugin: ctrlp
@@ -192,21 +110,10 @@ let g:ctrlp_working_path_mode='ra'
 set wildignore+=.git/*,*/tmp/*,*.so,*.swp,*.zip,*node_modules* " MacOSX/Linux
 let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
 
-"let g:ctrlp_custom_ignore = '\v[\/](\.(git|hg|svn)|node_modules)$'
-"let g:ctrlp_custom_ignore = {
-      "\ 'dir':  '\.git$\|\.hg$\|\.svn$',
-      "\ 'file': '\.exe$\|\.so$\|\.dll$',
-      "\ 'link': 'some_bad_symbolic_links',
-      "\ }
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp\|node_modules$',
   \ 'file': '\.exe$\|\.so$\|\.dat\|.swp$'
   \ }
-" -----------------------------------------------------------------------------
-" Plugin: PIV
-" -----------------------------------------------------------------------------
-let g:DisableAutoPHPFolding=0
-let g:PIVAutoClose=0
 
 " -----------------------------------------------------------------------------
 " Plugin: Snipmate configuration
@@ -255,25 +162,14 @@ let g:neocomplcache_max_list=3 "default is 100
 nnoremap <silent> <Space>ne :<C-u>NeoComplCacheCachingBuffer<CR>:echo "Caching done."<CR>
 
 set completeopt=menu,menuone,longest
-" <CR>: close popup
-" <s-CR>: close popup and save indent.
-"inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "\<CR>"
-"inoremap <expr><s-CR> pumvisible() ? neocomplcache#close_popup() "\<CR>" : "\<CR>"
-" <TAB>: completion.
-"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-
-" <C-h>, <BS>: close popup and delete backword char.
-"inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-"inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-"inoremap <expr><C-y>  neocomplcache#close_popup()
-"inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 " Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+"
+autocmd FileType css           setlocal    omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal    omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript    setlocal    omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python        setlocal    omnifunc=pythoncomplete#Complete
+autocmd FileType xml           setlocal    omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
@@ -293,15 +189,6 @@ let g:coffee_lint_options = "-f ~/.vim/configs/lint.json"
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 "au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
-
-" -----------------------------------------------------------------------------
-" Plugin: Powerline
-" -----------------------------------------------------------------------------
-if has("win32") || has("win64")
-  let g:Powerline_symbols = 'compatible'
-else
-  let g:Powerline_symbols = 'fancy'
-endif
 
 " -----------------------------------------------------------------------------
 " Plugin: vim-airline
@@ -367,6 +254,7 @@ let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 
 let g:syntastic_coffee_checkers = ['coffeelint']
 let g:syntastic_coffee_coffeelint_args="--csv -f ~/.vim/configs/lint.json"
+
 " -----------------------------------------------------------------------------
 " Plugin: vim-indent-guides
 " -----------------------------------------------------------------------------
@@ -421,25 +309,6 @@ noremap <space> :call ToggleFold()<CR>
 
 
 " -----------------------------------------------------------------------------
-" Plugin: startify
-" -----------------------------------------------------------------------------
-let g:startify_custom_header = [
-                \ '   __      ___            ______ ____   ',
-                \ '   \ \    / (_)           |____  |___ \ ',
-                \ '    \ \  / / _ _ __ ___       / /  __) |',
-                \ '     \ \/ / | | ''_ ` _ \     / /  |__ <',
-                \ '      \  /  | | | | | | |   / /   ___) |',
-                \ '       \/   |_|_| |_| |_|  /_(_) |____/ ',
-                \ '',
-                \ '',
-                \ ]
-
-" -----------------------------------------------------------------------------
-" Plugin: vim-rspec
-" -----------------------------------------------------------------------------
-let g:rspec_command = "!rspec --format documentation --color {spec}"
-
-" -----------------------------------------------------------------------------
 " Plugin: Tagbar
 " -----------------------------------------------------------------------------
 let g:tagbar_compact = 1
@@ -454,6 +323,8 @@ let g:gitgutter_diff_args = '-w'
 let g:gitgutter_eager = 0
 
 " -----------------------------------------------------------------------------
-" Plugin: TimeKeeper
+" Plugin: Switch
 " -----------------------------------------------------------------------------
-" let g:TimeKeeperStartOnLoad = 1
+
+nnoremap - :Switch<cr>
+
