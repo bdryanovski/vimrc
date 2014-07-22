@@ -21,6 +21,8 @@ Bundle 'airblade/vim-gitgutter.git'
 Bundle 'majutsushi/tagbar'
 Bundle 'bdryanovski/number-marks.git'
 Bundle 'vim-scripts/TagHighlight.git'
+Bundle 'Raimondi/delimitMate'
+Bundle 'laurentgoudet/vim-howdoi.git'
 
 " Control Version Systems
 Bundle 'tpope/vim-fugitive'
