@@ -23,7 +23,7 @@ set background=dark
 " colorscheme base16-monokai
 "colorscheme hemisu
 "colorscheme GitHub
-colorscheme solarized
+colorscheme base16-atelierforest 
 "
 
 " -----------------------------------------------------------------------------
