@@ -124,6 +124,14 @@ set statusline+=%-14.([%l/%L],%c%V%)     " cursor info
 "
 syntax enable
 set background=dark
+
+if !exists("autocmd_colorscheme_loaded")
+  let autocmd_colorscheme_loaded = 1
+  autocmd ColorScheme * highlight TodoRed ctermbg=darkgreen guibg=#002b37 ctermfg=LightRed guifg=#E01B1B
+  autocmd ColorScheme * highlight TodoOrange   ctermbg=darkgreen guibg=#002b37 ctermfg=LightMagenta guifg=#E0841B
+  autocmd ColorScheme * highlight TodoYellow   ctermbg=darkgreen guibg=#002b37 ctermfg=LightYellow  guifg=#E0D91B
+endif
+
 colorscheme molokai
 
 " -----------------------------------------------------------------------------

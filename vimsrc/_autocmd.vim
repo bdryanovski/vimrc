@@ -70,6 +70,11 @@ if has("autocmd")
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
   augroup END " }
 
+  " @TODO: something new
+  if v:version > 701
+    autocmd Syntax * call matchadd('TodoRed','\W\zs\(@TODO:\)')
+  endif
+
 endif
 
 function! PlaySound()
