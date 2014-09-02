@@ -23,6 +23,7 @@ Bundle 'bdryanovski/number-marks.git'
 Bundle 'vim-scripts/TagHighlight.git'
 Bundle 'Raimondi/delimitMate'
 Bundle 'laurentgoudet/vim-howdoi.git'
+Bundle 'rking/ag.vim'
 
 " Control Version Systems
 Bundle 'tpope/vim-fugitive'
