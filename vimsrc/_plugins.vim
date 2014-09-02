@@ -108,11 +108,13 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode='ra'
 
 set wildignore+=.git/*,*/tmp/*,*.so,*.swp,*.zip,*node_modules* " MacOSX/Linux
-let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+" let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp\|node_modules$',
-  \ 'file': '\.exe$\|\.so$\|\.dat\|.swp$'
+  \ 'file': '\.exe$\|\.so$\|\.dat\|\.jpg\|\.png\|\.DS_Store\|.swp$'
   \ }
 
 " -----------------------------------------------------------------------------
