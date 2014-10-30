@@ -132,7 +132,8 @@ if !exists("autocmd_colorscheme_loaded")
   autocmd ColorScheme * highlight TodoYellow   ctermbg=darkgreen guibg=#002b37 ctermfg=LightYellow  guifg=#E0D91B
 endif
 
-colorscheme molokai
+" colorscheme molokai
+colorscheme ecostation
 
 " -----------------------------------------------------------------------------
 " Windows settings
