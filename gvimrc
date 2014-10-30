@@ -24,7 +24,8 @@ set background=dark
 "colorscheme hemisu
 "colorscheme GitHub
 " colorscheme base16-atelierforest 
-colorscheme ecostation
+" colorscheme ecostation
+colorscheme getafe
 "
 
 " -----------------------------------------------------------------------------
