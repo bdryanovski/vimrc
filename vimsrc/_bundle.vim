@@ -49,6 +49,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'bilalq/lite-dfm'
 Bundle 'vim-scripts/ecostation.git'
 Bundle 'larssmit/vim-getafe.git'
+Bundle 'reedes/vim-colors-pencil.git'
 
 Bundle 'vim-scripts/HTML-AutoCloseTag'
 Bundle 'walm/jshint.vim'
