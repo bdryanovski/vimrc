@@ -39,6 +39,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'leshill/vim-json'
 Bundle 'sudar/vim-arduino-syntax'
 Bundle 'tpope/vim-endwise.git'
+Bundle 'moll/vim-node.git'
 
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'

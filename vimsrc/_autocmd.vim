@@ -52,6 +52,9 @@ if has("autocmd")
     " Autogenerate the docs
     autocmd BufWritePost $VIMHOME/doc/* :helptags $VIMHOME/doc
 
+    " Be sure that JavaScript always use 2 space = 1 tab
+    autocmd Filetype javascript setlocal ts=2 sw=2 expandtab 
+
 
     " Delete trailing white space on save, useful for Python and CoffeeScript
     func! DeleteTrailingWS()
