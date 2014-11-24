@@ -9,6 +9,7 @@ Bundle 'msanders/snipmate.vim'
 Bundle 'widox/vim-buffer-explorer-plugin'
 Bundle 'sickill/vim-pasta'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'lukaszb/vim-web-indent.git'
 Bundle 'godlygeek/tabular'
 Bundle 'sheerun/vim-polyglot.git'
 
