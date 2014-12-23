@@ -26,6 +26,7 @@ set background=dark
 " colorscheme base16-atelierforest 
 " colorscheme ecostation
 colorscheme getafe
+" colorscheme lucario
 "
 
 " -----------------------------------------------------------------------------

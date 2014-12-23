@@ -8,9 +8,23 @@
 source $VIMHOME/vimsrc/autocorrect.vim
 
 " -----------------------------------------------------------------------------
+" Plugin: vim-javascript
+" -----------------------------------------------------------------------------
+let g:javascript_enable_domhtmlcss=1
+let b:javascript_fold=1
+let g:javascript_ignore_javaScriptdoc=0
+let g:javascript_conceal_function   = "ƒ"
+let g:javascript_conceal_null       = "ø"
+let g:javascript_conceal_this       = "@"
+let g:javascript_conceal_return     = "⇚"
+let g:javascript_conceal_undefined  = "¿"
+let g:javascript_conceal_NaN        = "ℕ"
+let g:javascript_conceal_prototype  = "¶"
+
+" -----------------------------------------------------------------------------
 " Plugin: javascript-libraries-syntax.vim.git
 " -----------------------------------------------------------------------------
-let g:used_javascript_libs = 'underscore,jquery,angularjs,angularui,requirejs'
+let g:used_javascript_libs = 'underscore,jquery,angularjs,angularui,jasmine,requirejs'
 
 " -----------------------------------------------------------------------------
 " Plugin: splitjoin
@@ -331,3 +345,11 @@ let g:gitgutter_eager = 0
 
 nnoremap - :Switch<cr>
 
+
+" -----------------------------------------------------------------------------
+" Plugin: RainbowParentheses
+" -----------------------------------------------------------------------------
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
