@@ -133,12 +133,25 @@ let g:ctrlp_custom_ignore = {
 
 " -----------------------------------------------------------------------------
 " Plugin: Snipmate configuration
+" Plugin: UltiSnips
+" Plugin: vim-snippets
 " -----------------------------------------------------------------------------
 " Loading helper function used into the snippets itself.
 source $VIMHOME/snippets/support_functions.vim
 "
-let g:snippets_dir = expand($VIMHOME.'/snippets/')
+" let g:snippets_dir = expand($VIMHOME.'/snippets/')
 let g:snips_author = 'Bozhidar Dryanovski'
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-e>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"
+" " If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+
 
 " -----------------------------------------------------------------------------
 " Plugin: neocomplcache

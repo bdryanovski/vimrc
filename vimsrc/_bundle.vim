@@ -2,10 +2,14 @@
 
 Bundle 'gmarik/vundle'
 
+" Snippets
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets.git'
+
 " Extend VIM
 Bundle 'scrooloose/nerdtree'
 Bundle 'Shougo/neocomplcache'
-Bundle 'msanders/snipmate.vim'
+" Bundle 'msanders/snipmate.vim'
 Bundle 'widox/vim-buffer-explorer-plugin'
 Bundle 'sickill/vim-pasta'
 Bundle 'nathanaelkane/vim-indent-guides'
