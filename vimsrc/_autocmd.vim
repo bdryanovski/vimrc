@@ -56,6 +56,9 @@ if has("autocmd")
     autocmd Filetype javascript setlocal ts=2 sw=2 expandtab 
 
 
+    " let terminal resize scale the internal windows
+    autocmd VimResized * :wincmd =
+
     " Delete trailing white space on save, useful for Python and CoffeeScript
     func! DeleteTrailingWS()
       exe "normal mz"

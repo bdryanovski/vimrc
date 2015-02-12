@@ -56,6 +56,7 @@ Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
 
 " Themes and UI
+Bundle 'whatyouhide/vim-gotham'
 Bundle 'bling/vim-airline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bilalq/lite-dfm'

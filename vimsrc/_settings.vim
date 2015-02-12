@@ -97,10 +97,10 @@ set wildignore=*.swp,*.bak,*.puc,*.class
 " -----------------------------------------------------------------------------
 " Make undo persistant even after the file is closed
 " -----------------------------------------------------------------------------
-if has("persistent_undo")
+" if has("persistent_undo")
   set undodir=~/.vim/undo
   set undofile
-endif
+" endif
 
 " backup to ~/.tmp
 set backup
@@ -183,6 +183,12 @@ set foldmethod=syntax         " folding based on the indent
 set foldnestmax=10            " deepest fold
 set foldlevel=1
 set nofoldenable              " don't start with folded lines
+
+" -----------------------------------------------------------------------------
+" Extend SyntaxHighlight 
+" -----------------------------------------------------------------------------
+" Highlight merge conflict markers
+match Todo '\v^(\<|\=|\>){7}([^=].+)?$'
 
 " -----------------------------------------------------------------------------
 " Only do this part if compiled with support for autocommands

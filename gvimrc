@@ -25,7 +25,8 @@ set background=dark
 "colorscheme GitHub
 " colorscheme base16-atelierforest 
 " colorscheme ecostation
-colorscheme getafe
+" colorscheme getafe
+colorscheme gotham
 " colorscheme lucario
 "
 
