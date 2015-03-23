@@ -33,6 +33,9 @@ Bundle 'laurentgoudet/vim-howdoi.git'
 Bundle 'rking/ag.vim'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'gregsexton/MatchTag'
+Bundle 'gelguy/snapshot.vim.git'
+Bundle 'jbgutierrez/vim-partial.git'
+Bundle 'gorkunov/smartpairs.vim.git'
 
 " Control Version Systems
 Bundle 'tpope/vim-fugitive'
@@ -57,6 +60,7 @@ Bundle 'einars/js-beautify'
 
 " Themes and UI
 Bundle 'whatyouhide/vim-gotham'
+" Bundle 'farseer90718/flattr.vim.git'
 Bundle 'bling/vim-airline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bilalq/lite-dfm'

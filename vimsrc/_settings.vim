@@ -64,6 +64,7 @@ source $VIMHOME/vimsrc/_bundle.vim
 
 call vundle#end()
 
+
 " -----------------------------------------------------------------------------
 
 filetype plugin indent on             " enable filetype use
