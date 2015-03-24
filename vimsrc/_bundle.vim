@@ -60,7 +60,6 @@ Bundle 'einars/js-beautify'
 
 " Themes and UI
 Bundle 'whatyouhide/vim-gotham'
-" Bundle 'farseer90718/flattr.vim.git'
 Bundle 'bling/vim-airline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bilalq/lite-dfm'
