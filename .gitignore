@@ -22,3 +22,4 @@ sessions/**
 sessions/
 # Stupid
 colors/ir_black.vim
+bundle1

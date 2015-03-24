@@ -55,19 +55,38 @@ set lazyredraw                        " Don't redraw while executing macros (goo
 
 filetype off
 
-" Load the Vundle
-set rtp+=~/.vim/Vundle.vim
-call vundle#begin()
+if has('vim_starting')
+  if &compatible
+    set nocompatible
+  endif
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-" Vim plugins list
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+
 source $VIMHOME/vimsrc/_bundle.vim
 
-call vundle#end()
+call neobundle#end()
+
+filetype plugin indent on
+
+NeoBundleCheck
+
+" Load the Vundle
+" set rtp+=~/.vim/Vundle.vim
+" call vundle#begin()
+
+" Vim plugins list
+"source $VIMHOME/vimsrc/_bundle.vim
+
+"call vundle#end()
 
 
 " -----------------------------------------------------------------------------
 
-filetype plugin indent on             " enable filetype use
+"filetype plugin indent on             " enable filetype use
 setlocal ofu=syntaxcomplete#Complete  " enable syntax based omni completion
 
 " -----------------------------------------------------------------------------
