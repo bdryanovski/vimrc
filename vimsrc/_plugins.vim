@@ -40,6 +40,21 @@ nnoremap sj :SplitjoinJoin<cr>
 nnoremap sk :SplitjoinSplit<cr>
 
 " -----------------------------------------------------------------------------
+" Plugin: vim-webdevicons
+" -----------------------------------------------------------------------------
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_enable_airline_tabline = 1
+let g:webdevicons_enable_airline_statusline = 1
+let g:WebDevIconsUnicodeDecorateFileNodes = 1
+let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+let g:webdevicons_conceal_nerdtree_brackets = 0
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let WebDevIconsUnicodeDecorateFolderNodesExactMatches = 1
+
+
+" -----------------------------------------------------------------------------
 " Plugin: tabular.vim
 " -----------------------------------------------------------------------------
 nnoremap <leader>a= :Tabularize /=<CR>
@@ -109,6 +124,26 @@ let NERDTreeShowHidden=1
 let NERDTreeHighlightCursorline = 1
 let NERDTreeKeepTreeInNewTab=1
 let NERDTreeIgnore=['\.pyc','\~$','\.swo$','\.swp$','\.git','\.hg','\.svn','\.bzr']
+
+" NERDTress File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+  exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
+call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
 " -----------------------------------------------------------------------------
 " Plugin: vim-pasta
@@ -251,23 +286,23 @@ if !exists('g:airline_symbols')
 endif
 
 " unicode symbols
-let g:airline_left_sep = '⮀'
-let g:airline_left_alt_sep = '⮁'
-let g:airline_right_sep = '⮂'
-let g:airline_right_alt_sep = '⮃'
-let g:airline_symbols.branch = '⭠'
-let g:airline_symbols.readonly = '⭤'
-let g:airline_symbols.linenr = '⭡'
-
-let g:airline_symbols.linenr = '␊'
+" let g:airline_left_sep = '⮀'
+" let g:airline_left_alt_sep = '⮁'
+" let g:airline_right_sep = '⮂'
+" let g:airline_right_alt_sep = '⮃'
+" let g:airline_symbols.branch = '⭠'
+" let g:airline_symbols.readonly = '⭤'
+" let g:airline_symbols.linenr = '⭡'
+"
+" let g:airline_symbols.linenr = '␊'
 let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
+" let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.branch = '⎇  '
 let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
-
+" let g:airline_symbols.paste = 'Þ'
+" let g:airline_symbols.paste = '∥'
+" let g:airline_symbols.whitespace = 'Ξ'
+"
 " -----------------------------------------------------------------------------
 " Plugin: Syntastic
 " -----------------------------------------------------------------------------

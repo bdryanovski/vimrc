@@ -1,7 +1,8 @@
 if has("unix")
   "set guifont=Monospace\ 10      " set font
   "set guifont=Inconsolata\ Medium\ 12
-  set guifont=Monaco\ for\ Powerline\ 9
+  " set guifont=Monaco\ for\ Powerline\ 9
+  set guifont=Sauce\ Code\ Powerline\ Plus\ Nerd\ File\ Types:h12
 elseif has("win32")
   "set guifont=Droid_Sans_Mono:h10
 end
@@ -26,7 +27,8 @@ set background=dark
 " colorscheme base16-atelierforest 
 " colorscheme ecostation
 " colorscheme getafe
-colorscheme gotham
+" colorscheme gotham
+colorscheme atom-dark
 " colorscheme lucario
 "
 

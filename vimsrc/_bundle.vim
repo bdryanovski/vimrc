@@ -36,6 +36,7 @@ NeoBundle 'gregsexton/MatchTag'
 NeoBundle 'gelguy/snapshot.vim.git'
 NeoBundle 'jbgutierrez/vim-partial.git'
 NeoBundle 'gorkunov/smartpairs.vim.git'
+" NeoBundle 'chrisbra/vim-diff-enhanced'
 
 " Control Version Systems
 NeoBundle 'tpope/vim-fugitive'
@@ -59,6 +60,7 @@ NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'einars/js-beautify'
 
 " Themes and UI
+NeoBundle 'ryanoasis/vim-webdevicons.git'
 NeoBundle 'whatyouhide/vim-gotham'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'altercation/vim-colors-solarized'
@@ -70,6 +72,8 @@ NeoBundle 'reedes/vim-colors-pencil.git'
 NeoBundle 'vim-scripts/HTML-AutoCloseTag'
 NeoBundle 'walm/jshint.vim'
 NeoBundle 'wojtekmach/vim-rename'
+NeoBundle 'gosukiwi/vim-atom-dark.git'
+NeoBundle 'farseer90718/flattr.vim.git'
 
 " Forgoten :
 "
