@@ -47,7 +47,7 @@ NeoBundle 'wakatime/vim-wakatime'
 " Syntax Highlighting and Language specifically
 NeoBundle 'othree/javascript-libraries-syntax.vim.git'
 NeoBundle 'tpope/vim-markdown'
-" NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'leshill/vim-json'
