@@ -55,6 +55,7 @@ NeoBundle 'sudar/vim-arduino-syntax'
 NeoBundle 'tpope/vim-endwise.git'
 NeoBundle 'moll/vim-node.git'
 NeoBundle 'heavenshell/vim-jsdoc'
+NeoBundle 'mxw/vim-jsx.git'
 
 NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'einars/js-beautify'
