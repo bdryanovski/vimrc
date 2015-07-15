@@ -102,19 +102,19 @@ vnoremap <silent> <C-S> <C-C>:update<CR>
 inoremap <silent> <C-S> <C-O>:update<CR>
 
 " CTRL-X and SHIFT-Del are Cut
-vnoremap <C-X> "+x
-vnoremap <S-Del> "+x
+" vnoremap <C-X> "+x
+" vnoremap <S-Del> "+x
 
 " CTRL-C and CTRL-Insert are Copy
-vnoremap <C-C> "+y
-vnoremap <C-Insert> "+y
+" vnoremap <C-C> "+y
+" vnoremap <C-Insert> "+y
 
 " CTRL-V and SHIFT-Insert are Paste
-noremap <C-V> "+gP
-noremap <S-Insert> "+gP
+" noremap <C-V> "+gP
+" noremap <S-Insert> "+gP
 
-cnoremap <C-V> <C-R>+
-cnoremap <S-Insert> <C-R>+
+" cnoremap <C-V> <C-R>+
+" cnoremap <S-Insert> <C-R>+
 
 " Pasting blockwise and linewise selections is not possible in Insert and
 " Visual mode without the +virtualedit feature.  They are pasted as if they
@@ -126,10 +126,6 @@ exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
 
 inoremap <S-Insert> <C-V>
 vnoremap <S-Insert> <C-V>
-
-" Use CTRL-Q to do what CTRL-V used to do
-" TODO: not working under xterm under unix
-noremap <C-Q> <C-V>
 
 " CTRL-A is Select all
 noremap <C-A> gggH<C-O>G
@@ -259,3 +255,8 @@ cnoremap Q q
 
 " Easily mark a single line in charactger-wise visual mode
 nnoremap vv _vg_
+
+" -----------------------------------------------------------------------------
+" Ferret Search
+" -----------------------------------------------------------------------------
+nnoremap <leader>x <Plug>(FerretAck)

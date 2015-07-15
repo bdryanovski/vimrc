@@ -36,10 +36,13 @@ NeoBundle 'gregsexton/MatchTag'
 NeoBundle 'gelguy/snapshot.vim.git'
 NeoBundle 'jbgutierrez/vim-partial.git'
 NeoBundle 'gorkunov/smartpairs.vim.git'
+NeoBundle 'jplaut/vim-arduino-ino.git'
+NeoBundle 'wincent/ferret.git'
 " NeoBundle 'chrisbra/vim-diff-enhanced'
 
 " Control Version Systems
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'isRuslan/vim-es6'
 
 " Time tracking
 NeoBundle 'wakatime/vim-wakatime'
@@ -49,6 +52,8 @@ NeoBundle 'othree/javascript-libraries-syntax.vim.git'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'pangloss/vim-javascript'
+" NeoBundle 'othree/yajs.vim.git'
+NeoBundle 'danprince/vim-ngdoc.git'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'leshill/vim-json'
 NeoBundle 'sudar/vim-arduino-syntax'

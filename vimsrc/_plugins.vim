@@ -442,3 +442,15 @@ let g:smartpairs_revert_key = '<C-V>'
 "Smartpairs works only with 20 lines before cursor position
 "but you can changes this limit:
 let g:smartpairs_maxdepth = 20")
+
+" -----------------------------------------------------------------------------
+" Plugin: JsDoc
+" -----------------------------------------------------------------------------
+let g:jsdoc_allow_input_prompt = 1
+let g:jsdoc_input_description = 1
+let g:jsdoc_additional_descriptions = 0
+let g:jsdoc_return = 1
+let g:jsdoc_return_description = 0
+let g:jsdoc_access_descriptions = 0
+let g:jsdoc_underscore_private = 1
+let g:jsdoc_allow_shorthand = 1
