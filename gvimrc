@@ -1,11 +1,5 @@
-if has("unix")
-  "set guifont=Monospace\ 10      " set font
-  "set guifont=Inconsolata\ Medium\ 12
-  " set guifont=Monaco\ for\ Powerline\ 9
-  set guifont=Sauce\ Code\ Powerline\ Plus\ Nerd\ File\ Types:h12
-elseif has("win32")
-  "set guifont=Droid_Sans_Mono:h10
-end
+" set guifont=Sauce\ Code\ Powerline\ Plus\ Nerd\ File\ Types:h12
+set guifont=Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono\ Plus\ Font\ Awesome\ Plus\ Octicons\ Plus\ Pomicons\ Windows\ Compatible:h12 
 
 " Make gvim set some usefull size when it's start
 set lines=88
@@ -17,20 +11,8 @@ set guioptions-=r                       " no right scrollbar
 set guioptions-=m                       " no menu
 set guioptions-=L                       " no left scrollbar when v.split
 
-"colorscheme molokai  " monokai
-" set background=light
-" colorscheme molokai-alt
 set background=dark
-" colorscheme base16-monokai
-"colorscheme hemisu
-"colorscheme GitHub
-" colorscheme base16-atelierforest 
-" colorscheme ecostation
-" colorscheme getafe
-" colorscheme gotham
-colorscheme atom-dark
-" colorscheme lucario
-"
+colorscheme hybrid
 
 " -----------------------------------------------------------------------------
 " Hacks

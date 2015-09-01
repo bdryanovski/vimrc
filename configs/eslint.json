@@ -1,0 +1,37 @@
+{
+  "globals": {
+    "_":           true,
+    "document":    true,
+    "window":      true,
+    "angular":     true,
+    "kizzy":       true,
+    "$":           true,
+    "console":     true,
+    "Application": true,
+    "moment":      true,
+    "getModel":    true,
+    "sc":          true,
+    "io":          true,
+    "WebSocket":   true,
+    "FormData":    true
+
+  },
+  "rules": {
+    "no-cond-assign":        [0,"always"],
+    "no-console":            1,
+    "no-constant-condition": 1,
+    "camelcase":             [0, {"properties": "never"}],
+    "strict":                0,
+    "semi":                  [2, "never"],
+    "no-extra-semi":         0,
+    "quotes":                [0, "single", "avoid-escape"],
+    "no-trailing-spaces":    [2, { skipBlankLines: false }],
+    "no-multi-spaces":       [0, { exceptions: { "Property": false } }],
+    "key-spacing":           [2, { align: "value" }],
+    "yoda":                  [2, "never", { "exceptRange": true }],
+    "no-underscore-dangle":  0,
+    "no-return-assign":      0,
+    "no-undef-init":         0
+
+  }
+}

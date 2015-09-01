@@ -1,89 +1,206 @@
 " Global packages.
 
-NeoBundle 'gmarik/vundle'
-
 " Snippets
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets.git'
 
-" Extend VIM
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'Shougo/neocomplcache'
-" NeoBundle 'msanders/snipmate.vim'
-NeoBundle 'widox/vim-buffer-explorer-plugin'
+"
+" Always loaded Plugings
+"
 NeoBundle 'sickill/vim-pasta'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'lukaszb/vim-web-indent.git'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'sheerun/vim-polyglot.git'
-
-" Extra features
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'AndrewRadev/splitjoin.vim.git'
 NeoBundle 'AndrewRadev/switch.vim.git'
 NeoBundle 'tomtom/tcomment_vim.git'
 NeoBundle 'airblade/vim-gitgutter.git'
-NeoBundle 'majutsushi/tagbar'
-" NeoBundle 'bdryanovski/number-marks.git'
 NeoBundle 'MattesGroeger/vim-bookmarks'
-NeoBundle 'vim-scripts/YankRing.vim'
-NeoBundle 'vim-scripts/TagHighlight.git'
 NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'laurentgoudet/vim-howdoi.git'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundle 'gregsexton/MatchTag'
+
+"
+" This plugin lets you create snapshots of regions of code. This allows you to
+" quickly switch between snapshots of code you have taken.
+" <leader>a Create Snapshot Region (defines where the snapshot starts and ends)
+" <leader>s Take snapshot
+" <leader>S View and select snapshots (using <Tab> and <S-Tab>)
+" "<leader>A View and select Region
 NeoBundle 'gelguy/snapshot.vim.git'
-NeoBundle 'jbgutierrez/vim-partial.git'
-NeoBundle 'gorkunov/smartpairs.vim.git'
-NeoBundle 'jplaut/vim-arduino-ino.git'
-NeoBundle 'wincent/ferret.git'
-" NeoBundle 'chrisbra/vim-diff-enhanced'
 
 " Control Version Systems
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'isRuslan/vim-es6'
 
 " Time tracking
 NeoBundle 'wakatime/vim-wakatime'
 
 " Syntax Highlighting and Language specifically
-NeoBundle 'othree/javascript-libraries-syntax.vim.git'
-NeoBundle 'tpope/vim-markdown'
-NeoBundle 'jelera/vim-javascript-syntax'
-NeoBundle 'pangloss/vim-javascript'
-" NeoBundle 'othree/yajs.vim.git'
-NeoBundle 'danprince/vim-ngdoc.git'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'leshill/vim-json'
-NeoBundle 'sudar/vim-arduino-syntax'
 NeoBundle 'tpope/vim-endwise.git'
-NeoBundle 'moll/vim-node.git'
-NeoBundle 'heavenshell/vim-jsdoc'
-NeoBundle 'mxw/vim-jsx.git'
 
-NeoBundle 'maksimr/vim-jsbeautify'
-NeoBundle 'einars/js-beautify'
 
-" Themes and UI
-NeoBundle 'ryanoasis/vim-webdevicons.git'
-NeoBundle 'whatyouhide/vim-gotham'
+"
+" Extend VIM
+"
+NeoBundle 'scrooloose/nerdtree', {
+      \ 'lazy': 1,
+      \ 'commands': ['NERDTreeToggle']
+      \}
+NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+
+NeoBundle 'widox/vim-buffer-explorer-plugin', {
+      \ 'lazy': 1,
+      \ 'commands': ['BufExplorer']
+      \}
+
+"
+" Language: Arduino 
+"
+NeoBundle 'sudar/vim-arduino-syntax', {
+  \ 'lazy': 1,
+  \ 'autoload': { 'filetypes': ['cpp', 'arduino'] }
+  \ }
+"
+" Vim Arduino Ino can be run using the following keys:
+" <Leader>ac - Compile the current sketch.
+" <Leader>ad - Compile and deploy the current sketch.
+" <Leader>as - Open a serial port in screen.
+"
+NeoBundle 'jplaut/vim-arduino-ino.git', {
+  \ 'lazy': 1,
+  \ 'autoload': { 'filetypes': ['cpp', 'arduino'] }
+  \ }
+
+"
+" Language: JavaScript 
+"
+NeoBundle 'othree/javascript-libraries-syntax.vim.git', {
+      \ 'lazy': 1,
+      \ 'autoload': { 'filetypes': ['javascript', 'html', 'coffee'] }
+      \}
+NeoBundle 'jelera/vim-javascript-syntax', {
+      \ 'lazy': 1, 
+      \ 'autoload': { 'filetypes': ['javascript', 'html'] } 
+      \}
+NeoBundle 'pangloss/vim-javascript', {
+      \ 'lazy': 1,
+      \ 'autoload': { 'filetypes': ['javascript']}
+      \}
+"
+" Use gf on paths or requires to open the same file Node.js would.
+" Use gf on require(".") to open ./index.js
+" Use gf on require("./dir") to open ./dir/index.js
+" Use gf on require("./foo") to open foo.js.
+" Use gf on require("./package") and have it open package.json.
+" Use gf on require("module") to open the module's main file (parsed for you from package.json).
+" Use gf on require("module/lib/utils") and open files inside the module.
+" Automatically sets the filetypes to JavaScript for files with Node's shebang (#!).
+" Use [I etc. to look for a keyword in required files (Sets Vim's &include).
+" Use :Nedit to quickly edit any module, file in a module or your project file.
+" Use :Nopen to quickly edit any module and lcd to its directory.
+" Lets you even open Node's core modules. They're shown straight from Node's online repository without you having to download everything.
+" Node.vim itself is tested with a thorough automated integration test suite! No cowboy coding here!
+NeoBundle 'moll/vim-node.git',
+      \ { 'lazy': 1, 'autoload': { 'filetypes': ['javascript', 'html'] } }
+
+NeoBundle 'maksimr/vim-jsbeautify', { 
+      \ 'lazy': 1, 
+      \ 'autoload': {  'filetypes': ['javascript'] }
+      \}
+
+NeoBundle 'walm/jshint.vim',
+      \ { 'lazy': 1, 'autoload': { 'filetypes': ['javascript', 'html'] } }
+
+NeoBundle 'lukaszb/vim-web-indent.git', {
+      \ 'lazy': 1,
+      \ 'autoload': { 'filetypes': ['javascript', 'html' ] }
+      \}
+
+
+" Yet Another JavaScript Syntax file for Vim. Key differences:
+"
+" Use 'javascript' as group name's prefix, not 'javaScript' nor 'JavaScript'. Works great with SyntaxComplete.
+" Recognize Web API and DOM keywords. Keep increase.
+" Works perfect with javascript-libraries-syntax.vim
+" Remove old, unused syntax definitions.
+" Support ES6 new syntax, ex: arrow function =>.
+NeoBundle 'othree/yajs.vim.git', { 'lazy': 1, 'autoload': { 'filetypes': ['javascript', 'html'] } }
+
+NeoBundle 'bdryanovski/vim-jsdoc.git',
+      \ { 'lazy': 1, 'autoload': { 'filetypes': ['javascript', 'html'] } }
+"
+" Language: Markdown
+"
+NeoBundle 'tpope/vim-markdown', {
+  \ 'lazy': 1,
+  \ 'autoload':  { 'filetypes': ['markdown'] }
+  \ }
+
+"
+" Language: JSON
+"
+NeoBundle 'leshill/vim-json', {
+      \ 'lazy': 1,
+      \ 'autoload': { 'filetypes': ['json'] }
+      \}
+
+"
+" Language: CoffeeScript
+"
+NeoBundle 'kchmck/vim-coffee-script', {
+  \ 'lazy': 1,
+  \ 'autoload': { 'filetypes': ['coffee'] }
+  \}
+
+"
+" Language: JSX
+"
+NeoBundle 'mxw/vim-jsx.git', {
+  \ 'lazy': 1,
+  \ 'autoload': { 'filetypes': ['jsx'] }
+  \}
+
+"
+" Language: HTML
+"
+NeoBundle 'vim-scripts/HTML-AutoCloseTag', {
+      \ 'lazy': 1,
+      \ 'autoload': { 'filetypes': ['html', 'xhtml']}
+      \}
+
+"
+" UI:
+"
 NeoBundle 'bling/vim-airline'
+NeoBundle 'ryanoasis/vim-devicons.git'
+
+"
+" Themes:
+"
+NeoBundle 'NLKNguyen/papercolor-theme.git'
+NeoBundle 'whatyouhide/vim-gotham'
 NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'bilalq/lite-dfm'
 NeoBundle 'vim-scripts/ecostation.git'
 NeoBundle 'larssmit/vim-getafe.git'
 NeoBundle 'reedes/vim-colors-pencil.git'
 
-NeoBundle 'vim-scripts/HTML-AutoCloseTag'
-NeoBundle 'walm/jshint.vim'
-NeoBundle 'wojtekmach/vim-rename'
 NeoBundle 'gosukiwi/vim-atom-dark.git'
 NeoBundle 'farseer90718/flattr.vim.git'
+NeoBundle 'w0ng/vim-hybrid.git'
 
 " Forgoten :
 "
+" NeoBundle 'msanders/snipmate.vim'
+" NeoBundle 'bdryanovski/number-marks.git'
+" NeoBundle 'wincent/ferret.git'
+" NeoBundle 'chrisbra/vim-diff-enhanced'
 " NeoBundle 'noahfrederick/Hemisu'
+" NeoBundle 'heavenshell/vim-jsdoc'
 " NeoBundle 'tpope/vim-rails'
 " NeoBundle 'itspriddle/vim-jquery'
 " NeoBundle 'briancollins/vim-jst.git'
@@ -99,16 +216,3 @@ NeoBundle 'farseer90718/flattr.vim.git'
 " NeoBundle 'tsaleh/vim-matchit'
 " NeoBundle 'tpope/vim-surround.git'
 " NeoBundle 'Lokaltog/vim-easymotion.git'
-
-
-
-if has("unix")
-  NeoBundle 'mutewinter/swap-parameters.git'
-
-  " Linux me will use Command-T
-  NeoBundle 'wincent/Command-T'
-
-  " Experimenting with ctrlp
-  NeoBundle 'kien/ctrlp.vim'
-
-endif 

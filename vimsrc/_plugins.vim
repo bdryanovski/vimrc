@@ -42,17 +42,27 @@ nnoremap sk :SplitjoinSplit<cr>
 " -----------------------------------------------------------------------------
 " Plugin: vim-webdevicons
 " -----------------------------------------------------------------------------
-let g:webdevicons_enable = 1
-let g:webdevicons_enable_nerdtree = 1
+if has("gui_running")
+  let g:webdevicons_enable = 1
+else
+  let g:webdevicons_enable = 0
+endif
+
+let g:airline_powerline_fonts = 1
 let g:webdevicons_enable_airline_tabline = 1
 let g:webdevicons_enable_airline_statusline = 1
+let g:webdevicons_enable_ctrlp = 1
 let g:WebDevIconsUnicodeDecorateFileNodes = 1
-let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
-let g:webdevicons_conceal_nerdtree_brackets = 1
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
 let WebDevIconsUnicodeDecorateFolderNodesExactMatches = 1
 
+" NERDTree
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+let g:DevIconsEnableFoldersOpenClose = 1
 
 " -----------------------------------------------------------------------------
 " Plugin: tabular.vim
@@ -162,9 +172,9 @@ set wildignore+=.git/*,*/tmp/*,*.so,*.swp,*.zip,*node_modules* " MacOSX/Linux
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp\|node_modules$',
-  \ 'file': '\.exe$\|\.so$\|\.dat\|\.jpg\|\.png\|\.DS_Store\|.swp$'
-  \ }
+      \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp\|node_modules$',
+      \ 'file': '\.exe$\|\.so$\|\.dat\|\.jpg\|\.png\|\.DS_Store\|.swp$'
+      \ }
 
 " -----------------------------------------------------------------------------
 " Plugin: Snipmate configuration
@@ -258,7 +268,7 @@ autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 " Plugin: vim-airline
 " -----------------------------------------------------------------------------
 let g:airline_detect_modified=1
-let g:airline_powerline_fonts=0
+let g:airline_powerline_fonts=1
 
 " Figutive
 let g:airline#extensions#branch#enabled = 1
@@ -285,38 +295,39 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 
-" unicode symbols
-" let g:airline_left_sep = '⮀'
-" let g:airline_left_alt_sep = '⮁'
-" let g:airline_right_sep = '⮂'
-" let g:airline_right_alt_sep = '⮃'
-" let g:airline_symbols.branch = '⭠'
-" let g:airline_symbols.readonly = '⭤'
-" let g:airline_symbols.linenr = '⭡'
-"
-" let g:airline_symbols.linenr = '␊'
 let g:airline_symbols.linenr = '␤'
-" let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇  '
 let g:airline_symbols.paste = 'ρ'
-" let g:airline_symbols.paste = 'Þ'
-" let g:airline_symbols.paste = '∥'
-" let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_symbols.branch ='🍺'
+let g:airline_symbols.crypt = '🔒'
+
+if has("gui_running")
+  let g:airline_left_sep = '▶'
+  let g:airline_right_sep = '◀'
+  let g:airline_symbols.branch = '⎇  '
+endif
 "
 " -----------------------------------------------------------------------------
 " Plugin: Syntastic
 " -----------------------------------------------------------------------------
-let g:syntastic_check_on_open=1
+let g:syntastic_check_on_open=0
+let g:syntastic_check_on_wq=0
 let g:syntastic_echo_current_error=1
+let g:syntastic_enable_signs=1
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = "⚠"
+let g:syntastic_enable_highlighting=1
 let g:syntastic_enable_balloons=1
-let g:syntastic_auto_jump=1
+let g:syntastic_auto_jump=0
 let g:syntastic_mode_map = { 'mode': 'active',
       \ 'active_filetypes': ['ruby','php'],
-      \ 'passive_filetypes': ['less', 'vim', 'coffee', 'html'] }
+      \ 'passive_filetypes': ['less', 'vim', 'coffee', 'html', 'javascript'] }
 
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 
 let g:syntastic_coffee_checkers = ['coffeelint']
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_args="-c ~/.vim/configs/eslint.json"
 let g:syntastic_coffee_coffeelint_args="--csv -f ~/.vim/configs/lint.json"
 
 " -----------------------------------------------------------------------------
@@ -448,7 +459,7 @@ let g:smartpairs_maxdepth = 20")
 " -----------------------------------------------------------------------------
 let g:jsdoc_allow_input_prompt = 1
 let g:jsdoc_input_description = 1
-let g:jsdoc_additional_descriptions = 0
+let g:jsdoc_additional_descriptions = 1
 let g:jsdoc_return = 1
 let g:jsdoc_return_description = 0
 let g:jsdoc_access_descriptions = 0

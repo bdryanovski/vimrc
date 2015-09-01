@@ -44,7 +44,7 @@ noremap <F4> <ESC>
 noremap <F5> <ESC>
 noremap <F6> <ESC>
 noremap <F7> <ESC>
-noremap <F8> :TagbarToggle<CR>
+noremap <F8> :SyntasticCheck<CR>
 noremap <F9> <Esc>
 noremap <F10> :help vimbook.txt<CR>
 noremap <S-F10> :tabnew $VIMHOME/doc/vimbook.txt<CR>
@@ -260,3 +260,8 @@ nnoremap vv _vg_
 " Ferret Search
 " -----------------------------------------------------------------------------
 nnoremap <leader>x <Plug>(FerretAck)
+
+" -----------------------------------------------------------------------------
+" Plugin: jsDoc
+" -----------------------------------------------------------------------------
+nmap <silent> <C-l> <Plug>(jsdoc)
