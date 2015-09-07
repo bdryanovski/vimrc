@@ -69,6 +69,7 @@ if has("autocmd")
 
     autocmd BufWrite *.py     :call DeleteTrailingWS()
     autocmd BufWrite *.coffee :call DeleteTrailingWS()
+    autocmd BufWrite *.js     :call DeleteTrailingWS()
 
   augroup END
 
@@ -79,7 +80,12 @@ if has("autocmd")
 
   " @TODO: something new
   if v:version > 701
-    autocmd Syntax * call matchadd('TodoRed','\W\zs\(@TODO:\)')
+    autocmd Syntax * call matchadd('TodoRed','\W\zs\(@TODO\)')
+    autocmd Syntax * call matchadd('TodoRed','\W\zs\(@todo\)')
+    autocmd Syntax * call matchadd('TodoOrange', '\W\zs\(@REFACTOR\)')
+    autocmd Syntax * call matchadd('TodoOrange', '\W\zs\(@refactor\)')
+    autocmd Syntax * call matchadd('TodoYellow', '\W\zs\(@NOTE\)')
+    autocmd Syntax * call matchadd('TodoYellow', '\W\zs\(@note\)')
   endif
 
 endif
