@@ -9,7 +9,6 @@ NeoBundle 'honza/vim-snippets.git'
 "
 NeoBundle 'sickill/vim-pasta'
 NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'lukaszb/vim-web-indent.git'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'sheerun/vim-polyglot.git'
 NeoBundle 'kien/ctrlp.vim'
@@ -20,10 +19,23 @@ NeoBundle 'AndrewRadev/switch.vim.git'
 NeoBundle 'tomtom/tcomment_vim.git'
 NeoBundle 'airblade/vim-gitgutter.git'
 NeoBundle 'MattesGroeger/vim-bookmarks'
-NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'rking/ag.vim'
 NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundle 'gregsexton/MatchTag'
+NeoBundle 'Raimondi/delimitMate'
+
+"
+" The following keyboard shortcuts are available in the quickfix window:
+" e                   open file and close the quickfix window.
+" o                   open file (same as enter).
+" go                  preview file (open but maintain focus on ag.vim results).
+" t                   open in a new tab.
+" T                   open in new tab silently.
+" h                   open in horizontal split.
+" H                   open in horizontal split silently.
+" v                   open in vertical split.
+" gv                  open in vertical split silently.
+" q                   close the quickfix window.
+NeoBundle 'rking/ag.vim'
 
 "
 " This plugin lets you create snapshots of regions of code. This allows you to
@@ -162,7 +174,7 @@ NeoBundle 'kchmck/vim-coffee-script', {
 "
 NeoBundle 'mxw/vim-jsx.git', {
   \ 'lazy': 1,
-  \ 'autoload': { 'filetypes': ['jsx'] }
+  \ 'autoload': { 'filetypes': ['javascript', 'jsx'] }
   \}
 
 "

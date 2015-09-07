@@ -169,7 +169,14 @@ let g:ctrlp_working_path_mode='ra'
 set wildignore+=.git/*,*/tmp/*,*.so,*.swp,*.zip,*node_modules* " MacOSX/Linux
 " let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
 
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+" let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+      \ --ignore .git
+      \ --ignore .svn
+      \ --ignore .hg
+      \ --ignore .DS_Store
+      \ --ignore "**/*.pyc"
+      \ -g ""'
 
 let g:ctrlp_custom_ignore = {
       \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp\|node_modules$',
@@ -465,3 +472,8 @@ let g:jsdoc_return_description = 0
 let g:jsdoc_access_descriptions = 0
 let g:jsdoc_underscore_private = 1
 let g:jsdoc_allow_shorthand = 1
+
+" -----------------------------------------------------------------------------
+" Plugin: Ag
+" -----------------------------------------------------------------------------
+let g:ag_highlight = 1
