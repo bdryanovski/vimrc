@@ -20,3 +20,7 @@ colorscheme hybrid
 
 " This is a hack for the nasty vim screen flash/blink
 set vb t_vb=
+
+set guioptions+=lrbmTLce
+set guioptions-=lrbmTLce
+set guioptions+=c
