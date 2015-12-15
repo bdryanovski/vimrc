@@ -200,6 +200,8 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'vim-scripts/ecostation.git'
 NeoBundle 'larssmit/vim-getafe.git'
 NeoBundle 'reedes/vim-colors-pencil.git'
+NeoBundle 'morhetz/gruvbox.git'
+NeoBundle 'jscappini/material.vim.git'
 
 NeoBundle 'gosukiwi/vim-atom-dark.git'
 NeoBundle 'farseer90718/flattr.vim.git'
