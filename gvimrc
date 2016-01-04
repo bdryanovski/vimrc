@@ -12,7 +12,7 @@ set guioptions-=m                       " no menu
 set guioptions-=L                       " no left scrollbar when v.split
 
 set background=dark
-colorscheme hybrid
+colorscheme material-theme
 
 " -----------------------------------------------------------------------------
 " Hacks
