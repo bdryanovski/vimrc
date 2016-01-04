@@ -186,6 +186,16 @@ NeoBundle 'vim-scripts/ecostation.git'
 NeoBundle 'jdkanani/vim-material-theme.git'
 "
 " NeoBundle 'gosukiwi/vim-atom-dark.git'
+NeoBundle 'larssmit/vim-getafe.git'
+NeoBundle 'reedes/vim-colors-pencil.git'
+
+NeoBundle 'gosukiwi/vim-atom-dark.git'
+NeoBundle 'larssmit/vim-getafe.git'
+NeoBundle 'reedes/vim-colors-pencil.git'
+NeoBundle 'morhetz/gruvbox.git'
+NeoBundle 'jscappini/material.vim.git'
+
+NeoBundle 'gosukiwi/vim-atom-dark.git'
 NeoBundle 'farseer90718/flattr.vim.git'
 NeoBundle 'w0ng/vim-hybrid.git'
 "
