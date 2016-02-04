@@ -4,7 +4,7 @@ set guifont=Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 
 " Make gvim set some usefull size when it's start
 set lines=50
 set columns=110                         " characters per line = 100
-winpos 0 0
+winpos 300 0
 
 set guioptions-=T                       " no toolbar
 set guioptions-=r                       " no right scrollbar
