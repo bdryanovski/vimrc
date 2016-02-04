@@ -71,6 +71,9 @@ if has("autocmd")
     autocmd BufWrite *.coffee :call DeleteTrailingWS()
     autocmd BufWrite *.js     :call DeleteTrailingWS()
 
+    " Spaces
+    autocmd Filetype php setlocal ts=4 sts=4 sw=4
+
   augroup END
 
   augroup reload_vimrc " {
