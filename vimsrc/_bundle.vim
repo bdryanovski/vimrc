@@ -11,7 +11,7 @@
  NeoBundle 'nathanaelkane/vim-indent-guides'
  NeoBundle 'godlygeek/tabular'
  NeoBundle 'sheerun/vim-polyglot.git'
- NeoBundle 'kien/ctrlp.vim'
+ NeoBundle 'ctrlpvim/ctrlp.vim'
  NeoBundle 'Shougo/neocomplete.vim'
  NeoBundle 'scrooloose/syntastic'
  NeoBundle 'AndrewRadev/splitjoin.vim.git'
