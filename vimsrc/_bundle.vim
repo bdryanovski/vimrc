@@ -92,8 +92,8 @@ NeoBundle 'widox/vim-buffer-explorer-plugin', {
 " Language: JavaScript 
 "
 NeoBundle 'othree/javascript-libraries-syntax.vim.git'
-NeoBundle 'jelera/vim-javascript-syntax'
-NeoBundle 'pangloss/vim-javascript'
+" NeoBundle 'jelera/vim-javascript-syntax'
+" NeoBundle 'pangloss/vim-javascript'
 
 " Use gf on paths or requires to open the same file Node.js would.
 " Use gf on require(".") to open ./index.js
@@ -120,7 +120,8 @@ NeoBundle 'lukaszb/vim-web-indent.git'
 " Works perfect with javascript-libraries-syntax.vim
 " Remove old, unused syntax definitions.
 " Support ES6 new syntax, ex: arrow function =>.
-NeoBundle 'othree/yajs.vim.git'
+" NeoBundle 'othree/yajs.vim.git'
+"
 NeoBundle 'bdryanovski/vim-jsdoc.git'
 
 "
