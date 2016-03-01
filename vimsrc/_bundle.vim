@@ -23,6 +23,7 @@
  NeoBundle 'gregsexton/MatchTag'
  NeoBundle 'Raimondi/delimitMate'
  NeoBundle 'mxw/vim-jsx'
+ NeoBundle 'ap/vim-buftabline.git'
 
 "
 " The following keyboard shortcuts are available in the quickfix window:
