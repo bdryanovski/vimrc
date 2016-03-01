@@ -64,6 +64,7 @@ NeoBundle 'scrooloose/nerdtree', {
       \ 'lazy': 1,
       \ 'commands': ['NERDTreeToggle']
       \}
+NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 
 NeoBundle 'widox/vim-buffer-explorer-plugin', {
