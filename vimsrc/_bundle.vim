@@ -180,6 +180,7 @@ NeoBundle 'fatih/vim-go'
 "
 " Themes:
 "
+NeoBundle 'https://github.com/morhetz/gruvbox'
 " NeoBundle 'NLKNguyen/papercolor-theme.git'
 NeoBundle 'whatyouhide/vim-gotham'
 " NeoBundle 'altercation/vim-colors-solarized'
