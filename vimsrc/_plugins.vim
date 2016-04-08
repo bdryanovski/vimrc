@@ -573,9 +573,14 @@ let g:polyglot_disabled = ['php']
 "
 " Theme: gruvebox
 "
-
 let g:gruvbox_bold = 1
 let g:gruvbox_italic = 1
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_invert_signs = 1
+
+" -----------------------------------------------------------------------------
+" Plugin: gitv
+" -----------------------------------------------------------------------------
+let g:Gitv_OpenHorizontal = 1
+let g:Gitv_WipeAllOnClose = 1
 

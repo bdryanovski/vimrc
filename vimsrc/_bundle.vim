@@ -50,6 +50,7 @@ NeoBundle 'gelguy/snapshot.vim.git'
 
 " Control Version Systems
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'gregsexton/gitv.git'
 
 " Time tracking
 NeoBundle 'wakatime/vim-wakatime'
