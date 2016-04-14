@@ -25,6 +25,7 @@
  NeoBundle 'mxw/vim-jsx'
  NeoBundle 'ap/vim-buftabline.git'
 
+NeoBundle 'majutsushi/tagbar.git'
 "
 " The following keyboard shortcuts are available in the quickfix window:
 " e                   open file and close the quickfix window.

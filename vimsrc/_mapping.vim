@@ -40,7 +40,7 @@ noremap <F1> <ESC>
 noremap <F2> :BufExplorer<CR>
 noremap <F3> :NERDTreeToggle<CR>
 " Clear syntax highlighting
-noremap <F4> <ESC>
+noremap <F4> :TagbarToggle<CR>
 noremap <F5> <ESC>
 noremap <F6> <ESC>
 noremap <F7> <ESC>

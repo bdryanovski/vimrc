@@ -479,6 +479,33 @@ noremap <space> :call ToggleFold()<CR>
 let g:tagbar_compact = 1
 let g:tagbar_autofocus = 1
 "let g:tagbar_autopreview = 1
+let g:tagbar_type_go = {  
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+    \ }
 
 " -----------------------------------------------------------------------------
 " Plugin: gitgutter
@@ -584,3 +611,13 @@ let g:gruvbox_invert_signs = 1
 let g:Gitv_OpenHorizontal = 1
 let g:Gitv_WipeAllOnClose = 1
 
+
+" -----------------------------------------------------------------------------
+" Plugin: vim-go
+" -----------------------------------------------------------------------------
+" Highlight
+let g:go_highlight_functions = 1  
+let g:go_highlight_methods = 1  
+let g:go_highlight_structs = 1  
+let g:go_highlight_operators = 1  
+let g:go_highlight_build_constraints = 1  
