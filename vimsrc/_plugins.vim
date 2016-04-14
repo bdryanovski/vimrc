@@ -478,7 +478,8 @@ noremap <space> :call ToggleFold()<CR>
 " -----------------------------------------------------------------------------
 let g:tagbar_compact = 1
 let g:tagbar_autofocus = 1
-"let g:tagbar_autopreview = 1
+let g:tagbar_autoclose = 1
+let g:tagbar_autopreview = 1
 let g:tagbar_type_go = {  
     \ 'ctagstype' : 'go',
     \ 'kinds'     : [
