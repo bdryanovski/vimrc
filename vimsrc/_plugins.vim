@@ -616,6 +616,9 @@ let g:Gitv_WipeAllOnClose = 1
 " -----------------------------------------------------------------------------
 " Plugin: vim-go
 " -----------------------------------------------------------------------------
+let g:go_fmt_command = "goimports"
+let g:syntastic_go_checkers = ['golint']
+
 " Highlight
 let g:go_highlight_functions = 1  
 let g:go_highlight_methods = 1  
