@@ -182,6 +182,7 @@ NeoBundle 'fatih/vim-go'
 "
 " Themes:
 "
+NeoBundle 'zenorocha/dracula-theme'
 NeoBundle 'https://github.com/morhetz/gruvbox'
 " NeoBundle 'NLKNguyen/papercolor-theme.git'
 NeoBundle 'whatyouhide/vim-gotham'
