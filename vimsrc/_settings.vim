@@ -203,7 +203,7 @@ set foldmethod=syntax         " folding based on the indent
 set foldnestmax=10            " deepest fold
 set foldlevel=1
 set nofoldenable              " don't start with folded lines
-
+"
 " -----------------------------------------------------------------------------
 " Extend SyntaxHighlight 
 " -----------------------------------------------------------------------------

@@ -212,26 +212,30 @@ let g:UltiSnipsEditSplit="vertical"
 " Plugin: neocomplete
 " -----------------------------------------------------------------------------
 " Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
+let g:acp_enableAtStartup = 1
+let g:neocomplete#use_vimproc = 1
+let g:neocomplete#data_directory='~/.vim/.cache/neocomplete'
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#max_list = 15
-let g:neocomplete#max_keyword_width = 70
-let g:necomplete#auto_completion_start_length = 3
-let g:necomplete#min_keyword_length = 4
-
+let g:neocomplcache_disable_auto_complete = 1
 " Use smartcase.
 let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#sources#buffer#max_keyword_width = 40
+let g:neocomplete#max_list = 10
+let g:neocomplete#max_keyword_width = 50
+let g:necomplete#auto_completion_start_length = 2
+let g:necomplete#min_keyword_length = 6
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+let g:neocomplete#enable_smart_case = 'infercase'
 
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'vimshell' : $HOME.'/.vimshell_hist',
     \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+    \ }
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
@@ -273,7 +277,7 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 " autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+" autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
@@ -578,10 +582,13 @@ let g:jsdoc_allow_input_prompt = 1
 let g:jsdoc_input_description = 1
 let g:jsdoc_additional_descriptions = 1
 let g:jsdoc_return = 1
-let g:jsdoc_return_description = 0
-let g:jsdoc_access_descriptions = 0
+let g:jsdoc_return_type = 1
+let g:jsdoc_return_description = 1
+let g:jsdoc_access_descriptions = 1
 let g:jsdoc_underscore_private = 1
-let g:jsdoc_allow_shorthand = 1
+let g:jsdoc_allow_shorthand = 0
+let g:jsdoc_enable_es6 = 1
+let g:jsdoc_param_description_separator = ' - '
 
 " -----------------------------------------------------------------------------
 " Plugin: Ag
