@@ -213,7 +213,7 @@ let g:UltiSnipsEditSplit="vertical"
 " -----------------------------------------------------------------------------
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 1
-let g:neocomplete#use_vimproc = 1
+" let g:neocomplete#use_vimproc = 1
 let g:neocomplete#data_directory='~/.vim/.cache/neocomplete'
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
