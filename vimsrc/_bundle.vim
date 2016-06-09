@@ -25,7 +25,10 @@
  NeoBundle 'mxw/vim-jsx'
  NeoBundle 'ap/vim-buftabline.git'
 
-NeoBundle 'majutsushi/tagbar.git'
+NeoBundle 'majutsushi/tagbar.git', {
+   \ 'lazy': 1,
+   \ 'autoload':  { 'filetypes': ['go'] }
+   \ }
 "
 " The following keyboard shortcuts are available in the quickfix window:
 " e                   open file and close the quickfix window.
@@ -47,7 +50,7 @@ NeoBundle 'majutsushi/tagbar.git'
 " <leader>s Take snapshot
 " <leader>S View and select snapshots (using <Tab> and <S-Tab>)
 " "<leader>A View and select Region
-NeoBundle 'gelguy/snapshot.vim.git'
+" NeoBundle 'gelguy/snapshot.vim.git'
 
 " Control Version Systems
 NeoBundle 'tpope/vim-fugitive'
@@ -77,21 +80,21 @@ NeoBundle 'widox/vim-buffer-explorer-plugin', {
 "
 " Language: Arduino 
 "
- NeoBundle 'sudar/vim-arduino-syntax', {
-   \ 'lazy': 1,
-   \ 'autoload': { 'filetypes': ['cpp', 'arduino'] }
-   \ }
+"  NeoBundle 'sudar/vim-arduino-syntax', {
+"    \ 'lazy': 1,
+"    \ 'autoload': { 'filetypes': ['cpp', 'arduino'] }
+"    \ }
 " "
 " Vim Arduino Ino can be run using the following keys:
 " <Leader>ac - Compile the current sketch.
 " <Leader>ad - Compile and deploy the current sketch.
 " <Leader>as - Open a serial port in screen.
 "
- NeoBundle 'jplaut/vim-arduino-ino.git', {
-   \ 'lazy': 1,
-   \ 'autoload': { 'filetypes': ['cpp', 'arduino'] }
-   \ }
-"
+"  NeoBundle 'jplaut/vim-arduino-ino.git', {
+"    \ 'lazy': 1,
+"    \ 'autoload': { 'filetypes': ['cpp', 'arduino'] }
+"    \ }
+" "
 "
 " Language: JavaScript 
 "
@@ -113,8 +116,8 @@ NeoBundle 'othree/javascript-libraries-syntax.vim.git'
 " Lets you even open Node's core modules. They're shown straight from Node's online repository without you having to download everything.
 " Node.vim itself is tested with a thorough automated integration test suite! No cowboy coding here!
 NeoBundle 'moll/vim-node.git'
-NeoBundle 'maksimr/vim-jsbeautify'
-NeoBundle 'lukaszb/vim-web-indent.git'
+" NeoBundle 'maksimr/vim-jsbeautify'
+" NeoBundle 'lukaszb/vim-web-indent.git'
 
 "
 " Yet Another JavaScript Syntax file for Vim. Key differences:
@@ -126,7 +129,8 @@ NeoBundle 'lukaszb/vim-web-indent.git'
 " Support ES6 new syntax, ex: arrow function =>.
 " NeoBundle 'othree/yajs.vim.git'
 "
-NeoBundle 'bdryanovski/vim-jsdoc.git'
+" NeoBundle 'bdryanovski/vim-jsdoc.git'
+NeoBundle 'https://github.com/heavenshell/vim-jsdoc'
 
 "
 " Language: Markdown
@@ -147,10 +151,10 @@ NeoBundle 'bdryanovski/vim-jsdoc.git'
 " "
 " Language: CoffeeScript
 "
-NeoBundle 'kchmck/vim-coffee-script', {
-  \ 'lazy': 1,
-  \ 'autoload': { 'filetypes': ['coffee'] }
-  \}
+" NeoBundle 'kchmck/vim-coffee-script', {
+"   \ 'lazy': 1,
+"   \ 'autoload': { 'filetypes': ['coffee'] }
+"   \}
 "
 "
 " Language: JSX
@@ -182,29 +186,19 @@ NeoBundle 'fatih/vim-go'
 "
 " Themes:
 "
-NeoBundle 'zenorocha/dracula-theme'
-NeoBundle 'https://github.com/morhetz/gruvbox'
+" NeoBundle 'zenorocha/dracula-theme'
+" NeoBundle 'https://github.com/morhetz/gruvbox'
 " NeoBundle 'NLKNguyen/papercolor-theme.git'
 NeoBundle 'whatyouhide/vim-gotham'
 " NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'vim-scripts/ecostation.git'
-" NeoBundle 'larssmit/vim-getafe.git'
+" NeoBundle 'vim-scripts/ecostation.git'
+" NeoBundle 'jdkanani/vim-material-theme.git'
 " NeoBundle 'reedes/vim-colors-pencil.git'
-NeoBundle 'jdkanani/vim-material-theme.git'
-"
 " NeoBundle 'gosukiwi/vim-atom-dark.git'
-NeoBundle 'larssmit/vim-getafe.git'
-NeoBundle 'reedes/vim-colors-pencil.git'
-
-NeoBundle 'gosukiwi/vim-atom-dark.git'
-NeoBundle 'larssmit/vim-getafe.git'
-NeoBundle 'reedes/vim-colors-pencil.git'
-NeoBundle 'morhetz/gruvbox.git'
-NeoBundle 'jscappini/material.vim.git'
-
-NeoBundle 'gosukiwi/vim-atom-dark.git'
-NeoBundle 'farseer90718/flattr.vim.git'
-NeoBundle 'w0ng/vim-hybrid.git'
+" NeoBundle 'larssmit/vim-getafe.git'
+" NeoBundle 'jscappini/material.vim.git'
+" NeoBundle 'farseer90718/flattr.vim.git'
+" NeoBundle 'w0ng/vim-hybrid.git'
 "
 " Forgoten :
 "
