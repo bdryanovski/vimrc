@@ -14,6 +14,7 @@
  NeoBundle 'ctrlpvim/ctrlp.vim'
  NeoBundle 'Shougo/neocomplete.vim'
  NeoBundle 'scrooloose/syntastic'
+ NeoBundle 'mtscout6/syntastic-local-eslint.vim'
  NeoBundle 'AndrewRadev/splitjoin.vim.git'
  NeoBundle 'AndrewRadev/switch.vim.git'
  NeoBundle 'tomtom/tcomment_vim.git'
