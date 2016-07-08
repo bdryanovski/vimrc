@@ -413,15 +413,15 @@ let g:syntastic_enable_highlighting=1
 let g:syntastic_enable_balloons=1
 let g:syntastic_auto_jump=0
 let g:syntastic_mode_map = { 'mode': 'active',
-      \ 'active_filetypes': ['ruby','php'],
-      \ 'passive_filetypes': ['less', 'vim', 'coffee', 'html', 'javascript'] }
+      \ 'active_filetypes': ['ruby','php', 'javascript'],
+      \ 'passive_filetypes': ['less', 'vim', 'coffee', 'html'] }
 
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 
-let g:syntastic_coffee_checkers = ['coffeelint']
+" let g:syntastic_coffee_checkers = ['coffeelint']
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_args="-c ~/.vim/configs/eslint.json"
-let g:syntastic_coffee_coffeelint_args="--csv -f ~/.vim/configs/lint.json"
+" let g:syntastic_javascript_eslint_args="-c ~/.vim/configs/eslint.json"
+" let g:syntastic_coffee_coffeelint_args="--csv -f ~/.vim/configs/lint.json"
 
 " -----------------------------------------------------------------------------
 " Plugin: vim-indent-guides
