@@ -187,6 +187,7 @@ NeoBundle 'fatih/vim-go'
 "
 " Themes:
 "
+NeoBundle 'https://github.com/joshdick/onedark.vim.git'
 " NeoBundle 'zenorocha/dracula-theme'
 " NeoBundle 'https://github.com/morhetz/gruvbox'
 " NeoBundle 'NLKNguyen/papercolor-theme.git'
