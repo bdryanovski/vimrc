@@ -54,7 +54,7 @@ if has("autocmd")
     autocmd BufWritePost $VIMHOME/doc/* :helptags $VIMHOME/doc
 
     " Be sure that JavaScript always use 2 space = 1 tab
-    autocmd Filetype javascript setlocal ts=4 sw=4 expandtab 
+    autocmd Filetype javascript setlocal ts=2 sw=2 expandtab 
 
 
     " let terminal resize scale the internal windows
