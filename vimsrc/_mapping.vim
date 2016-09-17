@@ -54,15 +54,17 @@ noremap <S-F12> :source $MYVIMRC<CR>
 " -----------------------------------------------------------------------------
 " Mapping and using tabs
 " -----------------------------------------------------------------------------
-noremap <leader>1 :tabn 1<CR>
-noremap <leader>2 :tabn 2<CR>
-noremap <leader>3 :tabn 3<CR>
-noremap <leader>4 :tabn 4<CR>
-noremap <leader>5 :tabn 5<CR>
-noremap <leader>6 :tabn 6<CR>
-noremap <leader>7 :tabn 7<CR>
-noremap <leader>8 :tabn 8<CR>
-noremap <leader>9 :tabn 9<CR>
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <leader>- <Plug>AirlineSelectPrevTab
+nmap <leader>+ <Plug>AirlineSelectNextTab
 
 " tab navigation like firefox
 nnoremap <C-S-tab> :tabprevious<CR>
@@ -88,9 +90,9 @@ nnoremap <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 " -----------------------------------------------------------------------------
 " Buffers
 " -----------------------------------------------------------------------------
-nnoremap <Tab> :bn<CR>
-nnoremap <S-Tab> :bp<CR>
-
+" nnoremap <Tab> :bn<CR>
+" nnoremap <S-Tab> :bp<CR>
+"
 " -----------------------------------------------------------------------------
 "  Comman UI key binding
 " -----------------------------------------------------------------------------

@@ -24,7 +24,6 @@
  NeoBundle 'gregsexton/MatchTag'
  NeoBundle 'Raimondi/delimitMate'
  NeoBundle 'mxw/vim-jsx'
- NeoBundle 'ap/vim-buftabline.git'
 
 NeoBundle 'majutsushi/tagbar.git', {
    \ 'lazy': 1,

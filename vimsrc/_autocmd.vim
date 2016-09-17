@@ -80,6 +80,7 @@ if has("autocmd")
     au Syntax * RainbowParenthesesLoadRound
     au Syntax * RainbowParenthesesLoadSquare
     au Syntax * RainbowParenthesesLoadBraces
+    au Syntax * RainbowParenthesesLoadChevrons
   augroup END
 
   augroup reload_vimrc " {
