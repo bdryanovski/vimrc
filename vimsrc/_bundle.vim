@@ -20,10 +20,23 @@
  NeoBundle 'tomtom/tcomment_vim.git'
  NeoBundle 'airblade/vim-gitgutter.git'
  NeoBundle 'MattesGroeger/vim-bookmarks'
- NeoBundle 'kien/rainbow_parentheses.vim'
  NeoBundle 'gregsexton/MatchTag'
  NeoBundle 'Raimondi/delimitMate'
  NeoBundle 'mxw/vim-jsx'
+
+ NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
+
+" If you want to complete the candidates from include files or include files
+" candidates, you need to install the neoinclude plugin
+NeoBundle 'https://github.com/Shougo/neoinclude.vim'
 
 NeoBundle 'majutsushi/tagbar.git', {
    \ 'lazy': 1,
@@ -99,7 +112,7 @@ NeoBundle 'widox/vim-buffer-explorer-plugin', {
 " Language: JavaScript 
 "
 NeoBundle 'othree/javascript-libraries-syntax.vim.git'
-" NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundle 'jelera/vim-javascript-syntax'
 " NeoBundle 'pangloss/vim-javascript'
 
 " Use gf on paths or requires to open the same file Node.js would.

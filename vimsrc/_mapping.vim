@@ -36,8 +36,9 @@ cnoremap <C-p> <C-r>"
 " -----------------------------------------------------------------------------
 " Map F-keys (fkeys)
 " -----------------------------------------------------------------------------
-noremap <F1> <ESC>
+noremap <F1 <ESC>
 noremap <F2> :BufExplorer<CR>
+
 noremap <F3> :NERDTreeToggle<CR>
 " Clear syntax highlighting
 noremap <F4> :TagbarToggle<CR>

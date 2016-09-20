@@ -123,7 +123,8 @@ let g:solarized_contrast='high'
 "
 let g:bufExplorerDefaultHelp=0
 let g:bufExplorerShowRelativePath=1  " Show relative paths.
-let g:bufExplorerSplitBelow=0        " Split new window above current.
+let g:bufExplorerSplitBelow=1        " Split new window above current.
+let g:bufExplorerShowNoName=0        " Do not 'No name' buffers.
 
 
 " -----------------------------------------------------------------------------
@@ -164,7 +165,7 @@ call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 " -----------------------------------------------------------------------------
 " Plugin: vim-pasta
 " -----------------------------------------------------------------------------
-let g:pasta_enabled_filetypes = ['ruby', 'javascript', 'css', 'coffee', 'php']
+let g:pasta_enabled_filetypes = ['javascript', 'css', 'php']
 
 " -----------------------------------------------------------------------------
 " Plugin: ctrlp
@@ -218,16 +219,16 @@ let g:acp_enableAtStartup = 1
 let g:neocomplete#data_directory='~/.vim/.cache/neocomplete'
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#max_list = 10
+let g:neocomplete#max_keyword_width = 50
+let g:necomplete#auto_completion_start_length = 3
+let g:necomplete#min_keyword_length = 5
 let g:neocomplcache_disable_auto_complete = 1
 " Use smartcase.
 let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#sources#buffer#max_keyword_width = 40
-let g:neocomplete#max_list = 10
-let g:neocomplete#max_keyword_width = 50
-let g:necomplete#auto_completion_start_length = 2
-let g:necomplete#min_keyword_length = 6
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 let g:neocomplete#enable_smart_case = 'infercase'
 
@@ -277,8 +278,6 @@ inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-" autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-" autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
@@ -291,63 +290,6 @@ let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 " let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-
-" -----------------------------------------------------------------------------
-" Plugin: neocomplcache
-" -----------------------------------------------------------------------------
-"let g:acp_enableAtStartup = 0
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_max_list=5
-let g:neocomplcache_max_menu_width=15
-let g:neocomplcache_max_keyword_width=50
-let g:neocomplcache_max_filename_with=20
-let g:neocomplcache_auto_completion_start_length=4
-let g:neocomplcache_manual_completion_start_length=2
-let g:neocomplcache_min_keyword_length=3
-let g:neocomplcache_min_syntax_length=3
-let g:neocomplcache_enable_auto_select=0
-let g:neocomplcache_enable_ignore_case=1
-let g:neocomplcache_enable_camel_case_completion=1
-let g:neocomplcache_enable_smart_case=1
-let g:neocomplcache_enable_underbar_completion=1
-let g:neocomplcache_enable_fuzzy_completion=0 " too heavy
-"let g:neocomplcache_disable_auto_complete=1 " 1 if you want to use manual mode
-let g:neocomplcache_enable_wildcard=1 "like *
-let g:neocomplcache_enable_quick_match=0
-let g:neocomplcache_enable_caching_message=1
-
-" If you want to use this settings you must have vim >= 7.3.319
-"let g:neocomplcache_enable_cursor_hold_i=1 " relative with updatetime event
-"let g:neocomplcache_cursor_hold_i_time=100
-
-let g:neocomplcache_enable_auto_delimiter=0
-"let g:neocomplcache_enable_caching_message=1
-let g:neocomplcache_caching_limit_file_size=500
-let g:neocomplcache_snippets_dir=$VIMHOME +'/snippets'
-let g:neocomplcache_max_list=3 "default is 100
-
-" Caching keymap
-nnoremap <silent> <Space>ne :<C-u>NeoComplCacheCachingBuffer<CR>:echo "Caching done."<CR>
-
-set completeopt=menu,menuone,longest
-
-" Enable omni completion.
-"
-autocmd FileType css           setlocal    omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal    omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript    setlocal    omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python        setlocal    omnifunc=pythoncomplete#Complete
-autocmd FileType xml           setlocal    omnifunc=xmlcomplete#CompleteTags
-
-" Enable heavy omni completion.
-if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
-"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
-let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 " -----------------------------------------------------------------------------
 " Plugin: Coffe-Script
@@ -416,7 +358,7 @@ let g:syntastic_enable_balloons=1
 let g:syntastic_auto_jump=0
 let g:syntastic_mode_map = { 'mode': 'active',
       \ 'active_filetypes': ['ruby'],
-      \ 'passive_filetypes': ['less','php', 'vim', 'coffee', 'html', 'javascript'] }
+      \ 'passive_filetypes': ['less', 'php', 'vim', 'coffee', 'html', 'javascript'] }
 
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 
@@ -440,7 +382,7 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 " Plugin: Switch.vim
 " -----------------------------------------------------------------------------
 autocmd FileType ruby let g:switch_definitions = [ ['if', 'unless'], ['ASC', 'DESC'] ]
-autocmd FileType html,javascript let g:switch_definitions = [['slow', 'normal', 'fast'], ['true', 'false']]
+autocmd FileType html,javascript let g:switch_definitions = [['slow', 'normal', 'fast'], ['true', 'false'], ['map', 'filter']]
 autocmd FileType coffee let g:switch_definitions = [ ['if', 'unless'], ['and', 'or'], ['true', 'false']]
 
 " -----------------------------------------------------------------------------
@@ -527,14 +469,6 @@ let g:gitgutter_eager = 0
 
 nnoremap - :Switch<cr>
 
-
-" -----------------------------------------------------------------------------
-" Plugin: RainbowParentheses
-" -----------------------------------------------------------------------------
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
 "
 " -----------------------------------------------------------------------------
 " Plugin: smartpairs
@@ -620,7 +554,6 @@ let g:gruvbox_invert_signs = 1
 " -----------------------------------------------------------------------------
 let g:Gitv_OpenHorizontal = 1
 let g:Gitv_WipeAllOnClose = 1
-
 
 " -----------------------------------------------------------------------------
 " Plugin: vim-go

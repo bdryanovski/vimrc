@@ -39,7 +39,6 @@ if has("autocmd")
     autocmd BufNewFile,BufRead *_spec.rb                 set filetype=rspec.ruby
     autocmd BufRead,BufNewFile *.pde                     set filetype=arduino
     autocmd BufRead,BufNewFile *.ino                     set filetype=arduino
-    autocmd BufRead,BufNewFile *.ino                     set background=dark
     autocmd BufNewFile,BufReadPost *.coffee              set foldmethod=indent nofoldenable
     autocmd BufNewFile,BufReadPost *.coffee              set shiftwidth=2 expandtab
 
@@ -76,11 +75,11 @@ if has("autocmd")
 
 
     " Rainbow Parentheses
-    au VimEnter * RainbowParenthesesToggle
-    au Syntax * RainbowParenthesesLoadRound
-    au Syntax * RainbowParenthesesLoadSquare
-    au Syntax * RainbowParenthesesLoadBraces
-    au Syntax * RainbowParenthesesLoadChevrons
+    " au VimEnter * RainbowParenthesesToggle
+    " au Syntax * RainbowParenthesesLoadRound
+    " au Syntax * RainbowParenthesesLoadSquare
+    " au Syntax * RainbowParenthesesLoadBraces
+    " au Syntax * RainbowParenthesesLoadChevrons
   augroup END
 
   augroup reload_vimrc " {
