@@ -13,7 +13,7 @@ set guioptions-=L                       " no left scrollbar when v.split
 
 set background=dark
 " colorscheme material-theme
-colorscheme solarized 
+colorscheme gotham 
 " colorscheme gotham
 " colorscheme gruvbox
 

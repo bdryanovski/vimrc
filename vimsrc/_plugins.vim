@@ -20,7 +20,9 @@ source $VIMHOME/vimsrc/autocorrect.vim
 " let g:javascript_conceal_undefined  = "¿"
 " let g:javascript_conceal_NaN        = "ℕ"
 " let g:javascript_conceal_prototype  = "¶"
-" let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
 
 " -----------------------------------------------------------------------------
 " Plugin: javascript-libraries-syntax.vim.git
@@ -296,8 +298,6 @@ let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 " -----------------------------------------------------------------------------
 let coffee_make_options = "--bare"
 let g:coffee_lint_options = "-f ~/.vim/configs/lint.json"
-autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
-autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 "au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 
 " -----------------------------------------------------------------------------
@@ -384,42 +384,6 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 autocmd FileType ruby let g:switch_definitions = [ ['if', 'unless'], ['ASC', 'DESC'] ]
 autocmd FileType html,javascript let g:switch_definitions = [['slow', 'normal', 'fast'], ['true', 'false'], ['map', 'filter']]
 autocmd FileType coffee let g:switch_definitions = [ ['if', 'unless'], ['and', 'or'], ['true', 'false']]
-
-" -----------------------------------------------------------------------------
-" Folding code blocks
-" -----------------------------------------------------------------------------
-
-set foldenable
-
-hi Folded guibg=red guifg=Red cterm=bold ctermbg=DarkGrey ctermfg=lightblue
-hi FoldColumn guibg=grey78 gui=Bold guifg=DarkBlue
-set foldcolumn=2
-set foldclose=
-set foldmethod=indent
-set foldnestmax=10
-set foldlevel=0
-set fillchars=vert:\|,fold:\
-set foldminlines=1
-" Toggle fold state between closed and opened.
-"
-" If there is no fold at current line, just moves forward.
-" If it is present, reverse it's state.
-fu! ToggleFold()
-  if foldlevel('.') == 0
-    normal! l
-  else
-    if foldclosed('.') < 0
-      . foldclose
-    else
-      . foldopen
-    endif
-  endif
-  echo
-endf
-
-" Map this function to Space key.
-noremap <space> :call ToggleFold()<CR>
-
 
 " -----------------------------------------------------------------------------
 " Plugin: Tagbar

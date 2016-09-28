@@ -70,19 +70,8 @@ source $VIMHOME/vimsrc/_bundle.vim
 
 call neobundle#end()
 
-filetype plugin indent on
 
 NeoBundleCheck
-
-" Load the Vundle
-" set rtp+=~/.vim/Vundle.vim
-" call vundle#begin()
-
-" Vim plugins list
-"source $VIMHOME/vimsrc/_bundle.vim
-
-"call vundle#end()
-
 
 " -----------------------------------------------------------------------------
 
@@ -196,13 +185,41 @@ let &guicursor = &guicursor . ",a:blinkon0"
 set gcr=a:blinkon0
 
 " -----------------------------------------------------------------------------
-"  Code folding
+" Folding code blocks
 " -----------------------------------------------------------------------------
-" set nofoldenable            "dont fold by default
-set foldmethod=syntax         " folding based on the indent
-set foldnestmax=10            " deepest fold
-set foldlevel=1
-set nofoldenable              " don't start with folded lines
+
+set foldenable
+
+hi Folded guibg=red guifg=Red cterm=bold ctermbg=DarkGrey ctermfg=lightblue
+hi FoldColumn guibg=grey78 gui=Bold guifg=DarkBlue
+set foldcolumn=2
+set foldclose=
+set foldmethod=indent
+set foldnestmax=10
+set foldlevel=2
+set fillchars=vert:\|,fold:\
+set foldminlines=3
+" Toggle fold state between closed and opened.
+"
+" If there is no fold at current line, just moves forward.
+" If it is present, reverse it's state.
+fu! ToggleFold()
+  if foldlevel('.') == 0
+    normal! l
+  else
+    if foldclosed('.') < 0
+      . foldclose
+    else
+      . foldopen
+    endif
+  endif
+  echo
+endf
+
+" Map this function to Space key.
+noremap <space> :call ToggleFold()<CR>
+
+
 "
 " -----------------------------------------------------------------------------
 " Extend SyntaxHighlight 

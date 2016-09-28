@@ -6,6 +6,7 @@ if has("autocmd")
 
     " In text files, always limit the width of text to 98 characters
     autocmd FileType text set tw=98
+    autocmd FileType javascript set tw=120
 
     " When editing a file, always jump to the last cursor position
     autocmd BufReadPost *
@@ -49,9 +50,6 @@ if has("autocmd")
     " Custom filetypes settings: Python, Shell, JSON, Vagrant, CloudFormation
     autocmd FileType python,sh set tabstop=4 shiftwidth=4 softtabstop=4
 
-    " Autogenerate the docs
-    autocmd BufWritePost $VIMHOME/doc/* :helptags $VIMHOME/doc
-
     " Be sure that JavaScript always use 2 space = 1 tab
     autocmd Filetype javascript setlocal ts=2 sw=2 expandtab 
 
@@ -66,8 +64,6 @@ if has("autocmd")
       exe "normal `z"
     endfunc
 
-    autocmd BufWrite *.py     :call DeleteTrailingWS()
-    autocmd BufWrite *.coffee :call DeleteTrailingWS()
     autocmd BufWrite *.js     :call DeleteTrailingWS()
 
     " Spaces
@@ -102,4 +98,4 @@ endif
 function! PlaySound()
   silent! exec '!mpg123 -q ~/.vim/sounds/beep-21.mp3 &'
 endfunction
-" autocmd CursorMovedI * call PlaySound()
+"autocmd CursorMovedI * call PlaySound()
