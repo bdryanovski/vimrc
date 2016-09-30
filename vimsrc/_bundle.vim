@@ -1,8 +1,9 @@
 " Global packages.
 
 " Snippets
- NeoBundle 'SirVer/ultisnips'
- NeoBundle 'honza/vim-snippets.git'
+"  NeoBundle 'SirVer/ultisnips'
+"  NeoBundle 'honza/vim-snippets.git'
+ NeoBundle 'https://github.com/Shougo/neosnippet.vim.git'
 "
 "
 " Always loaded Plugings
