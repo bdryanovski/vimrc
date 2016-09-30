@@ -199,7 +199,10 @@ NeoBundle 'fatih/vim-go'
 "
 " Themes:
 "
+NeoBundle 'https://github.com/jdkanani/vim-material-theme.git'
+NeoBundle 'https://github.com/larssmit/vim-getafe.git'
 NeoBundle 'https://github.com/joshdick/onedark.vim.git'
+NeoBundle 'https://github.com/raphamorim/lucario.git'
 NeoBundle 'NLKNguyen/papercolor-theme'
 NeoBundle 'https://github.com/reedes/vim-colors-pencil'
 " NeoBundle 'zenorocha/dracula-theme'
