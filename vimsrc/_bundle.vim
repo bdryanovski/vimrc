@@ -4,6 +4,7 @@
 "  NeoBundle 'SirVer/ultisnips'
 "  NeoBundle 'honza/vim-snippets.git'
  NeoBundle 'https://github.com/Shougo/neosnippet.vim.git'
+ NeoBundle 'https://github.com/Shougo/neosnippet-snippets.git'
 "
 "
 " Always loaded Plugings
