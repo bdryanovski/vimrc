@@ -232,3 +232,8 @@ match Todo '\v^(\<|\=|\>){7}([^=].+)?$'
 " -----------------------------------------------------------------------------
 
 source $VIMHOME/vimsrc/_autocmd.vim
+
+"
+" Autocomment
+"
+set formatoptions=jcroql

@@ -114,7 +114,7 @@ NeoBundle 'widox/vim-buffer-explorer-plugin', {
 " Language: JavaScript 
 "
 NeoBundle 'othree/javascript-libraries-syntax.vim.git'
-"NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'pangloss/vim-javascript'
 
 " Use gf on paths or requires to open the same file Node.js would.
