@@ -116,7 +116,6 @@ NeoBundle 'widox/vim-buffer-explorer-plugin', {
 NeoBundle 'othree/javascript-libraries-syntax.vim.git'
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'pangloss/vim-javascript'
-
 " Use gf on paths or requires to open the same file Node.js would.
 " Use gf on require(".") to open ./index.js
 " Use gf on require("./dir") to open ./dir/index.js
