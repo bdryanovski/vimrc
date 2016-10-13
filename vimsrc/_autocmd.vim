@@ -47,12 +47,8 @@ if has("autocmd")
     set noerrorbells visualbell t_vb=
     autocmd GUIEnter * set visualbell t_vb=
 
-    " Custom filetypes settings: Python, Shell, JSON, Vagrant, CloudFormation
-    autocmd FileType python,sh set tabstop=4 shiftwidth=4 softtabstop=4
-
     " Be sure that JavaScript always use 2 space = 1 tab
     autocmd Filetype javascript setlocal ts=2 sw=2 expandtab 
-
 
     " let terminal resize scale the internal windows
     autocmd VimResized * :wincmd =
@@ -64,18 +60,11 @@ if has("autocmd")
       exe "normal `z"
     endfunc
 
-    autocmd BufWrite *.js     :call DeleteTrailingWS()
+    "autocmd BufWrite *.js     :call DeleteTrailingWS()
 
     " Spaces
     autocmd Filetype php setlocal ts=4 sts=4 sw=4
 
-
-    " Rainbow Parentheses
-    " au VimEnter * RainbowParenthesesToggle
-    " au Syntax * RainbowParenthesesLoadRound
-    " au Syntax * RainbowParenthesesLoadSquare
-    " au Syntax * RainbowParenthesesLoadBraces
-    " au Syntax * RainbowParenthesesLoadChevrons
   augroup END
 
   augroup reload_vimrc " {
@@ -94,8 +83,3 @@ if has("autocmd")
   endif
 
 endif
-
-function! PlaySound()
-  silent! exec '!mpg123 -q ~/.vim/sounds/beep-21.mp3 &'
-endfunction
-"autocmd CursorMovedI * call PlaySound()

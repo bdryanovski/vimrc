@@ -10,16 +10,6 @@ source $VIMHOME/vimsrc/autocorrect.vim
 " -----------------------------------------------------------------------------
 " Plugin: vim-javascript
 " -----------------------------------------------------------------------------
-"let g:javascript_enable_domhtmlcss=1
-" let b:javascript_fold=1
-" let g:javascript_ignore_javaScriptdoc=0
-" let g:javascript_conceal_function   = "ƒ"
-" let g:javascript_conceal_null       = "ø"
-" let g:javascript_conceal_this       = "@"
-" let g:javascript_conceal_return     = "⇚"
-" let g:javascript_conceal_undefined  = "¿"
-" let g:javascript_conceal_NaN        = "ℕ"
-" let g:javascript_conceal_prototype  = "¶"
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
@@ -88,8 +78,6 @@ vnoremap <leader>a<Bar> :Tabularize /<Bar><CR>
 nnoremap <leader>a# :Tabularize /#<CR>
 vnoremap <leader>a# :Tabularize /#<CR>
 
-
-
 " The following function automatically aligns when typing a
 " supported character
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
@@ -105,11 +93,9 @@ function! s:align()
   endif
 endfunction
 
-
 " -----------------------------------------------------------------------------
 " Plugin: Solarized
 " -----------------------------------------------------------------------------
-
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 let g:solarized_bold=1
@@ -127,7 +113,6 @@ let g:bufExplorerDefaultHelp=0
 let g:bufExplorerShowRelativePath=1  " Show relative paths.
 let g:bufExplorerSplitBelow=1        " Split new window above current.
 let g:bufExplorerShowNoName=0        " Do not 'No name' buffers.
-
 
 " -----------------------------------------------------------------------------
 " Plugin: NERDTree - keys to toggle NERDTree
@@ -208,6 +193,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsListSnippets="<c-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
 "
 " " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
