@@ -86,14 +86,15 @@ NeoBundle 'widox/vim-buffer-explorer-plugin', {
 "
 " Language: JavaScript 
 "
-"NeoBundle 'othree/javascript-libraries-syntax.vim.git'
+NeoBundle 'othree/javascript-libraries-syntax.vim.git'
 "NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'https://github.com/heavenshell/vim-jsdoc'
 NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'mxw/vim-jsx.git', {
-   \ 'lazy': 1,
-   \ 'autoload': { 'filetypes': ['javascript', 'jsx'] }
-   \}
+NeoBundle 'mxw/vim-jsx.git'
+" , {
+"    \ 'lazy': 1,
+"    \ 'autoload': { 'filetypes': ['javascript', 'jsx'] }
+"    \}
 " NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'gavocanov/vim-js-indent'
 " NeoBundle 'lukaszb/vim-web-indent.git'
