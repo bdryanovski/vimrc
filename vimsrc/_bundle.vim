@@ -21,7 +21,7 @@
  NeoBundle 'AndrewRadev/switch.vim.git'
  NeoBundle 'tomtom/tcomment_vim.git'
  NeoBundle 'airblade/vim-gitgutter.git'
- NeoBundle 'MattesGroeger/vim-bookmarks'
+"" NeoBundle 'MattesGroeger/vim-bookmarks'
  NeoBundle 'gregsexton/MatchTag'
  NeoBundle 'Raimondi/delimitMate'
 
@@ -86,8 +86,8 @@ NeoBundle 'widox/vim-buffer-explorer-plugin', {
 "
 " Language: JavaScript 
 "
-"NeoBundle 'othree/javascript-libraries-syntax.vim.git'
-"NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundle 'othree/javascript-libraries-syntax.vim.git'
+" NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'https://github.com/heavenshell/vim-jsdoc'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx.git', {
