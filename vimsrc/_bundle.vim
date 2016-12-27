@@ -12,18 +12,18 @@
  NeoBundle 'sickill/vim-pasta'
  NeoBundle 'nathanaelkane/vim-indent-guides'
  NeoBundle 'godlygeek/tabular'
- NeoBundle 'sheerun/vim-polyglot.git'
+"  NeoBundle 'sheerun/vim-polyglot.git'
  NeoBundle 'ctrlpvim/ctrlp.vim'
  NeoBundle 'Shougo/neocomplete.vim'
- NeoBundle 'scrooloose/syntastic'
- NeoBundle 'mtscout6/syntastic-local-eslint.vim'
- NeoBundle 'AndrewRadev/splitjoin.vim.git'
+"  NeoBundle 'scrooloose/syntastic'
+"  NeoBundle 'mtscout6/syntastic-local-eslint.vim'
+"  NeoBundle 'AndrewRadev/splitjoin.vim.git'
  NeoBundle 'AndrewRadev/switch.vim.git'
  NeoBundle 'tomtom/tcomment_vim.git'
  NeoBundle 'airblade/vim-gitgutter.git'
 "" NeoBundle 'MattesGroeger/vim-bookmarks'
  NeoBundle 'gregsexton/MatchTag'
- NeoBundle 'Raimondi/delimitMate'
+"  NeoBundle 'Raimondi/delimitMate'
 
  NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
@@ -97,7 +97,7 @@ NeoBundle 'mxw/vim-jsx.git'
 "    \ 'autoload': { 'filetypes': ['javascript', 'jsx'] }
 "    \}
 " NeoBundle 'maksimr/vim-jsbeautify'
-NeoBundle 'gavocanov/vim-js-indent'
+" NeoBundle 'gavocanov/vim-js-indent'
 " NeoBundle 'lukaszb/vim-web-indent.git'
 
 "
