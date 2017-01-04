@@ -1,1 +1,1 @@
-let b:switch_definitions = [['fadeIn','fadeOut']]
+let b:switch_definitions = [['fadeIn','fadeOut'], ['it', 'fit']]

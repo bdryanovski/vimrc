@@ -24,8 +24,6 @@ let g:used_javascript_libs = 'underscore,jquery,angularjs,angularui,jasmine'
 " -----------------------------------------------------------------------------
 let g:splitjoin_split_mapping = ''
 let g:splitjoin_join_mapping = ''
-let g:splitjoin_ruby_curly_braces = 1
-let g:splitjoin_coffee_suffix_if_clause = 1
 let g:splitjoin_normalize_whitespace = 1
 let g:splitjoin_align = 1
 
@@ -400,7 +398,7 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 " Plugin: Switch.vim
 " -----------------------------------------------------------------------------
 autocmd FileType ruby let g:switch_definitions = [ ['if', 'unless'], ['ASC', 'DESC'] ]
-autocmd FileType html,javascript let g:switch_definitions = [['slow', 'normal', 'fast'], ['true', 'false'], ['map', 'filter']]
+autocmd FileType html,javascript let g:switch_definitions = [['slow', 'normal', 'fast'], ['true', 'false'], ['map', 'filter'], ['fit', 'it']]
 autocmd FileType coffee let g:switch_definitions = [ ['if', 'unless'], ['and', 'or'], ['true', 'false']]
 
 " -----------------------------------------------------------------------------
@@ -516,7 +514,7 @@ let g:ag_highlight = 1
 " -----------------------------------------------------------------------------
 " Plugin: JSX
 " -----------------------------------------------------------------------------
-let g:jsx_ext_required = 0
+let g:jsx_ext_required = 1
 
 " -----------------------------------------------------------------------------
 " Plugin: vim-polyglot
