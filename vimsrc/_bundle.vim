@@ -20,7 +20,7 @@
  NeoBundle 'AndrewRadev/splitjoin.vim.git'
  NeoBundle 'AndrewRadev/switch.vim.git'
  NeoBundle 'tomtom/tcomment_vim.git'
- NeoBundle 'airblade/vim-gitgutter.git'
+"  NeoBundle 'airblade/vim-gitgutter.git'
 "" NeoBundle 'MattesGroeger/vim-bookmarks'
  NeoBundle 'gregsexton/MatchTag'
 "  NeoBundle 'Raimondi/delimitMate'
