@@ -237,9 +237,3 @@ source $VIMHOME/vimsrc/_autocmd.vim
 " Autocomment
 "
 set formatoptions=jcroql
-
-"
-" Indent fixes
-"
-"set cino=:2,>2,e-2,^-2,n-2,{0,f0,}0,=0,b0,p0,t0,c3,C0,/0,(0,U0
-"set indentkeys=0{,0},:,0#,!^F,o,O,e

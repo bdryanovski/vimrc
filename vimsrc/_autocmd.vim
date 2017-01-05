@@ -14,34 +14,13 @@ if has("autocmd")
           \   exe "normal! g'\"" |
           \ endif
 
-    " don't write swapfile on most commonly used directories for NFS mounts or USB sticks
-    autocmd BufNewFile,BufReadPre /media/*,/mnt/* set directory=~/tmp,/var/tmp,/tmp
-
     " Switch to working directory of the open file
     " autocmd BufEnter * silent! lcd %:p:h
 
-    " Setting compilers
-    autocmd BufEnter *.php compiler php
-    autocmd BufEnter *.c   compiler gcc
-    autocmd BufEnter *.cpp compiler gcc
-    autocmd BufEnter *.rb  compiler ruby
-
-    " Syntax highlight for files that don't end with *.rb extension - Adding
-    " syntax = ruby
-    autocmd BufRead,BufNewFile {Gemfile,Rakefile,config.ru,.irbrc} set filetype=ruby
-
     autocmd BufEnter *.tpl                               set filetype=html
     autocmd BufEnter *access.log*                        set filetype=httplog
-    autocmd BufEnter httpd*.conf                         set filetype=apache
-    autocmd BufRead *.jhtml                              set filetype=jhtml
-    autocmd BufNewFile,BufRead nginx.conf                set filetype=nginx
     autocmd BufNewFile,BufRead *.markdown,*.md           set filetype=markdown
     autocmd BufNewFile,BufRead *.json                    set filetype=javascript
-    autocmd BufNewFile,BufRead *_spec.rb                 set filetype=rspec.ruby
-    autocmd BufRead,BufNewFile *.pde                     set filetype=arduino
-    autocmd BufRead,BufNewFile *.ino                     set filetype=arduino
-    autocmd BufNewFile,BufReadPost *.coffee              set foldmethod=indent nofoldenable
-    autocmd BufNewFile,BufReadPost *.coffee              set shiftwidth=2 expandtab
 
     " Hacking the system bell and flash
     set noerrorbells visualbell t_vb=
@@ -60,17 +39,9 @@ if has("autocmd")
       exe "normal `z"
     endfunc
 
-    "autocmd BufWrite *.js     :call DeleteTrailingWS()
-
-    " Spaces
-    autocmd Filetype php setlocal ts=4 sts=4 sw=4
+    autocmd BufWrite *.js     :call DeleteTrailingWS()
 
   augroup END
-
-  augroup reload_vimrc " {
-    autocmd!
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC
-  augroup END " }
 
   " @TODO: something new
   if v:version > 701

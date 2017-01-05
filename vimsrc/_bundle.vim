@@ -9,7 +9,7 @@
 "
 " Always loaded Plugings
 "
- NeoBundle 'sickill/vim-pasta'
+"  NeoBundle 'sickill/vim-pasta'
  NeoBundle 'nathanaelkane/vim-indent-guides'
  NeoBundle 'godlygeek/tabular'
 "  NeoBundle 'sheerun/vim-polyglot.git'
@@ -87,11 +87,10 @@ NeoBundle 'widox/vim-buffer-explorer-plugin', {
 " Language: JavaScript 
 "
 NeoBundle 'othree/javascript-libraries-syntax.vim.git'
-"NeoBundle 'jelera/vim-javascript-syntax'
 " NeoBundle 'jelera/vim-javascript-syntax'
-NeoBundle 'https://github.com/heavenshell/vim-jsdoc'
+" NeoBundle 'https://github.com/heavenshell/vim-jsdoc'
 NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'mxw/vim-jsx.git'
+" NeoBundle 'mxw/vim-jsx.git'
 " , {
 "    \ 'lazy': 1,
 "    \ 'autoload': { 'filetypes': ['javascript', 'jsx'] }

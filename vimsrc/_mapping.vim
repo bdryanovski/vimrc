@@ -206,14 +206,6 @@ nnoremap <C-u> mzgUiw`z
 "
 nnoremap <leader>v V`]
 
-"
-" Split and execute any command:
-"
-nnoremap __ :split \|<Space>
-
-" Switch CWD to the directory of the open buffer
-nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
-
 " -----------------------------------------------------------------------------
 " Highlight merge conflict markers
 " -----------------------------------------------------------------------------
@@ -246,10 +238,6 @@ nnoremap <c-space> ?
 " Shortcuts
 " -----------------------------------------------------------------------------
 
-" Change working directory to that of the current file
-cnoremap cwd lcd %:p:h
-cnoremap cd. lcd %:p:h
-
 " Stupid me when holding shift
 cnoremap W w
 cnoremap WQ wq
@@ -258,13 +246,3 @@ cnoremap Q q
 
 " Easily mark a single line in charactger-wise visual mode
 nnoremap vv _vg_
-
-" -----------------------------------------------------------------------------
-" Ferret Search
-" -----------------------------------------------------------------------------
-nnoremap <leader>x <Plug>(FerretAck)
-
-" -----------------------------------------------------------------------------
-" Plugin: jsDoc
-" -----------------------------------------------------------------------------
-nmap <silent> <C-l> <Plug>(jsdoc)

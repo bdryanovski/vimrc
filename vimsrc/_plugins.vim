@@ -17,7 +17,7 @@ let g:javascript_plugin_flow = 1
 " -----------------------------------------------------------------------------
 " Plugin: javascript-libraries-syntax.vim.git
 " -----------------------------------------------------------------------------
-let g:used_javascript_libs = 'underscore,jquery,angularjs,angularui,jasmine'
+let g:used_javascript_libs = 'jquery,angularjs,angularui,jasmine'
 
 " -----------------------------------------------------------------------------
 " Plugin: splitjoin
@@ -92,17 +92,6 @@ function! s:align()
 endfunction
 
 " -----------------------------------------------------------------------------
-" Plugin: Solarized
-" -----------------------------------------------------------------------------
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-let g:solarized_bold=1
-let g:solarized_underline=1
-let g:solarized_italic=1
-let g:solarized_visibility='high'
-let g:solarized_contrast='high'
-
-" -----------------------------------------------------------------------------
 " Plugin: BufExplorer - easier invoke keys
 " -----------------------------------------------------------------------------
 " Hide the help
@@ -146,11 +135,6 @@ call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
 call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
 call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
-
-" -----------------------------------------------------------------------------
-" Plugin: vim-pasta
-" -----------------------------------------------------------------------------
-let g:pasta_enabled_filetypes = ['javascript', 'css', 'php']
 
 " -----------------------------------------------------------------------------
 " Plugin: ctrlp
@@ -310,13 +294,6 @@ let g:neosnippet#snippets_directory='~/.vim/snippets'
 
 
 " -----------------------------------------------------------------------------
-" Plugin: Coffe-Script
-" -----------------------------------------------------------------------------
-let coffee_make_options = "--bare"
-let g:coffee_lint_options = "-f ~/.vim/configs/lint.json"
-"au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
-
-" -----------------------------------------------------------------------------
 " Plugin: vim-airline
 " -----------------------------------------------------------------------------
 let g:airline_detect_modified=1
@@ -343,7 +320,7 @@ let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline#extensions#tabline#tab_min_count = 1
 let g:airline#extensions#tabline#excludes = ['BufExplorer']
 
-"let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
@@ -437,13 +414,6 @@ let g:tagbar_type_go = {
     \ }
 
 " -----------------------------------------------------------------------------
-" Plugin: gitgutter
-" -----------------------------------------------------------------------------
-let g:gitgutter_highlight_lines = 0
-let g:gitgutter_diff_args = '-w'
-let g:gitgutter_eager = 0
-
-" -----------------------------------------------------------------------------
 " Plugin: Switch
 " -----------------------------------------------------------------------------
 
@@ -487,10 +457,6 @@ let g:smartpairs_nextpairs_key_a = 'M'
 "under macvim you can use Cmd key e.g. <D-V> -> Cmd+Shift+v
 let g:smartpairs_revert_key = '<C-V>'
 
-"Smartpairs works only with 20 lines before cursor position
-"but you can changes this limit:
-let g:smartpairs_maxdepth = 20")
-
 " -----------------------------------------------------------------------------
 " Plugin: JsDoc
 " -----------------------------------------------------------------------------
@@ -515,25 +481,6 @@ let g:ag_highlight = 1
 " Plugin: JSX
 " -----------------------------------------------------------------------------
 let g:jsx_ext_required = 1
-
-" -----------------------------------------------------------------------------
-" Plugin: vim-polyglot
-" -----------------------------------------------------------------------------
-let g:polyglot_disabled = ['php']
-
-"
-" Theme: gruvebox
-"
-let g:gruvbox_bold = 1
-let g:gruvbox_italic = 1
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_invert_signs = 1
-
-" -----------------------------------------------------------------------------
-" Plugin: gitv
-" -----------------------------------------------------------------------------
-let g:Gitv_OpenHorizontal = 1
-let g:Gitv_WipeAllOnClose = 1
 
 " -----------------------------------------------------------------------------
 " Plugin: vim-go

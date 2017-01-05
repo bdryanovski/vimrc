@@ -1,9 +1,0 @@
-setlocal tabstop=2
-setlocal softtabstop=2
-setlocal shiftwidth=2
-"setlocal noexpandtab
-setlocal autoindent
-setlocal smarttab
-setlocal errorformat=%f:%l:%c:\%m
-setlocal makeprg=make
-setlocal makeef=/tmp/vim##.err
