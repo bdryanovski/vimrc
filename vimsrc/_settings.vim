@@ -30,7 +30,6 @@ set laststatus=2                      " always show statusline
 set lbr                               " enable line break
 set tw=500                            " break line after 500 characters
 set mouse=a                           " enable mouse in all modes
-"set relativenumber
 set number                            " show line numbers OR,...
 set showmode                          " always show what mode we'r
 set nowrap                            " don't wrap lines
@@ -40,7 +39,7 @@ set autochdir                         " Change working dir to the open file
 set noautochdir                       " disable auto_changedir"
 " set list                              " show non-print characters,...
 " set listchars=trail:⋅,nbsp:⋅,tab:▷⋅   " for tabs and trailing spaces
-"set relativenumber                    " relative line numbers (>= Vim 7.3)
+set relativenumber                    " relative line numbers (>= Vim 7.3)
 set hidden                            " You can have unwritten changes to a file and open new one without losing anything.
 set backspace=indent,eol,start        " allow backspace over everything in insert mode.
 set exrc                              " enable per-directory .vimrc files

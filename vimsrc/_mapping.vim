@@ -75,6 +75,9 @@ inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 
+nnoremap <silent>g0 :<C-u>tabfirst<CR>
+nnoremap <silent>g$ :<C-u>tablast<CR>
+nnoremap <silent>gr :<C-u>tabprevious<CR>
 
 " Mapping for the tabs
 "

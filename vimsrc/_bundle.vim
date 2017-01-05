@@ -86,10 +86,11 @@ NeoBundle 'widox/vim-buffer-explorer-plugin', {
 "
 " Language: JavaScript 
 "
-NeoBundle 'othree/javascript-libraries-syntax.vim.git'
 " NeoBundle 'jelera/vim-javascript-syntax'
 " NeoBundle 'https://github.com/heavenshell/vim-jsdoc'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'leshill/vim-json'
+NeoBundle 'othree/javascript-libraries-syntax.vim.git'
 " NeoBundle 'mxw/vim-jsx.git'
 " , {
 "    \ 'lazy': 1,
@@ -143,6 +144,7 @@ NeoBundle 'ryanoasis/vim-devicons.git'
 "
 " Themes:
 "
+NeoBundle 'mhartington/oceanic-next'
 NeoBundle 'https://github.com/jdkanani/vim-material-theme.git'
 NeoBundle 'https://github.com/larssmit/vim-getafe.git'
 NeoBundle 'https://github.com/joshdick/onedark.vim.git'
