@@ -139,6 +139,12 @@ call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 " -----------------------------------------------------------------------------
 " Plugin: ctrlp
 " -----------------------------------------------------------------------------
+
+" Don't cache anything ...
+"
+let g:ctrlp_use_caching=0
+let g:ctrlp_clear_cache_on_exit = 1
+
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode='ra'
 
