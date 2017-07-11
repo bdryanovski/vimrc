@@ -13,7 +13,8 @@ set guioptions-=L                       " no left scrollbar when v.split
 
 set background=dark
 " colorscheme material-theme
-colorscheme OceanicNext
+" colorscheme OceanicNext
+colorscheme PaperColor 
 " colorscheme getafe 
 " colorscheme gotham
 " colorscheme gruvbox

@@ -83,12 +83,16 @@ NeoBundle 'widox/vim-buffer-explorer-plugin', {
       \ 'commands': ['BufExplorer']
       \}
 
+
+NeoBundle 'maksimr/vim-jsbeautify'
+
 "
 " Language: JavaScript 
 "
 " NeoBundle 'jelera/vim-javascript-syntax'
 " NeoBundle 'https://github.com/heavenshell/vim-jsdoc'
-NeoBundle 'pangloss/vim-javascript'
+" NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'neoclide/vim-jsx-improve'
 NeoBundle 'leshill/vim-json'
 NeoBundle 'othree/javascript-libraries-syntax.vim.git'
 " NeoBundle 'mxw/vim-jsx.git'
