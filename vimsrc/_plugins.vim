@@ -259,7 +259,7 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
-let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 "let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 "let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
@@ -388,6 +388,8 @@ autocmd FileType coffee let g:switch_definitions = [ ['if', 'unless'], ['and', '
 " Plugin: Tagbar
 " -----------------------------------------------------------------------------
 let g:tagbar_compact = 1
+let g:tagbar_indent = 1
+let g:tagbar_foldlevel = 2
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 let g:tagbar_autopreview = 1

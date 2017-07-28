@@ -39,10 +39,7 @@
 " candidates, you need to install the neoinclude plugin
 NeoBundle 'https://github.com/Shougo/neoinclude.vim'
 
-" NeoBundle 'majutsushi/tagbar.git', {
-"   \ 'lazy': 1,
-"   \ 'autoload':  { 'filetypes': ['go'] }
-"   \ }
+NeoBundle 'majutsushi/tagbar.git'
 "
 " The following keyboard shortcuts are available in the quickfix window:
 " e                   open file and close the quickfix window.
