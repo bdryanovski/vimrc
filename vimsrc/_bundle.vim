@@ -84,6 +84,11 @@ NeoBundle 'widox/vim-buffer-explorer-plugin', {
 NeoBundle 'maksimr/vim-jsbeautify'
 
 "
+" Language Lua + Pico8
+"
+NeoBundle 'https://github.com/justinj/vim-pico8-syntax.git'
+
+"
 " Language: JavaScript 
 "
 " NeoBundle 'jelera/vim-javascript-syntax'
