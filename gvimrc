@@ -1,5 +1,6 @@
 " set guifont=Sauce\ Code\ Powerline\ Plus\ Nerd\ File\ Types:h12
 set guifont=Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono\ Plus\ Font\ Awesome\ Plus\ Octicons\ Plus\ Pomicons\ Windows\ Compatible:h12 
+" set guifont=Fira\ Code:h12
 
 " Make gvim set some usefull size when it's start
 set lines=50
