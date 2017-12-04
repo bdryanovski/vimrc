@@ -11,16 +11,7 @@ Thumbs.db
 .netrwhist
 .VimballRecord
 
-# Ignore backups
-backup/
-
 # Git ignore VIM bundle dir
 bundle/**
 bundle/
-# Ignore directories
-sessions/**
-sessions/
-# Stupid
-colors/ir_black.vim
-bundle1
 .cache/
