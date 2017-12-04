@@ -57,13 +57,14 @@ set vb t_vb=
 let mapleader = ","
 
 set swapfile
-set dir=~/tmp
+set dir=~/.vim/tmp
 set nobackup
-set showmatch
-set mat=5
 set undolevels=1500
 set undoreload=15000
 set wildignore=*.swp,*.bak,*.puc,*.class
+
+set showmatch
+set mat=5
 
 set statusline=
 set statusline+=%<%f\ %h%m%r             " filename and flags
