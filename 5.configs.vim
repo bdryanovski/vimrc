@@ -40,7 +40,7 @@ let g:bufExplorerShowNoName=0        " Do not 'No name' buffers.
 " -----------------------------------------------------------------------------
 nnoremap <leader>d :NERDTreeToggle<cr>
 
-let g:NERDTreeWinSize=25
+let g:NERDTreeWinSize=45
 let g:NERDTreeWinPos = "right"
 let NERDChristmasTree = 1
 let NERDTreeDirArrows=1
