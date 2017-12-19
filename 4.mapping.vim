@@ -42,3 +42,7 @@ cnoremap wQ wq
 cnoremap Wq wq
 cnoremap Q q
 
+
+" Show next matched string at the middle of the screen
+nnoremap n nzz
+nnoremap N Nzz
