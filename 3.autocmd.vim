@@ -17,6 +17,10 @@ if has("autocmd")
 
     autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
 
+    " JavaScript
+    " autocmd FileType javascript set formatprg=prettier\ --stdin
+    " autocmd BufWritePre *.js exe "normal! gggqG\<C-o>\<C-o>"
+
     func! DeleteTrailingWS()
       exe "normal mz"
       %s/\s\+$//ge
