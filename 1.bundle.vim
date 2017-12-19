@@ -36,10 +36,8 @@ NeoBundle 'widox/vim-buffer-explorer-plugin', { 'lazy': 1, 'commands': [ 'BufExp
 NeoBundle 'bling/vim-airline'
 NeoBundle 'ryanoasis/vim-devicons.git'
 NeoBundle 'jacoborus/tender.vim'
+NeoBundle 'https://github.com/gorkunov/smartpairs.vim'
 
-
-" You can specify revision/branch/tag.
-NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
 " Required:
 call neobundle#end()
