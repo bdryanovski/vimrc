@@ -1,0 +1,52 @@
+snippet rci
+abbr React Component Import
+options head
+  import React, { Component } from 'react'
+
+snippet rc
+abbr React Component
+options head
+  class ${1} extends Component {
+    render() {
+      return <div/>
+    }
+  }
+
+snippet rcs
+abbr React Component Simple
+options head
+  import React, { Component } from 'react'
+  
+  export default class ${1} extends Component {
+    static propTypes = {}
+    static defaultProps = {}
+
+    render() {
+      return ${2:<div />}
+    }
+  }
+
+snippet rcf
+abbr React Component Full
+options head
+  import Rreact, { Component } from 'react'
+
+  export default class ${1} extends Component {
+    static propTypes = {}
+    
+    static defaultProps = {}
+
+    constructor(props) {
+      super(props)
+
+      this.state = {}
+    }
+
+    componentDidMount() {
+      console.log('Component is here')
+    }
+
+    render() {
+      return ${2:null}
+    }
+  }
