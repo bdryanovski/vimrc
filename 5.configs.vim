@@ -103,7 +103,7 @@ let g:ctrlp_custom_ignore = {
 " -----------------------------------------------------------------------------
 " Loading helper function used into the snippets itself.
 "
-" let g:snippets_dir = expand($VIMHOME.'/snippets/')
+let g:snippets_dir = expand($VIMHOME.'/snippets/')
 let g:snips_author = 'Bozhidar Dryanovski'
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -286,3 +286,7 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 " Plugin: Ag
 " -----------------------------------------------------------------------------
 let g:ag_highlight = 1
+
+let g:vim_json_syntax_conceal = 0
+" Don't hide the double quote into JSON file
+set conceallevel=0
