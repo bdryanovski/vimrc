@@ -4,15 +4,15 @@ let macvim_skip_colorscheme=1
 " Plugin: vim-webdevicons
 " -----------------------------------------------------------------------------
 if has("gui_running")
-  let g:webdevicons_enable = 1
+  let g:webdevicons_enable = 0
 else
   let g:webdevicons_enable = 0
 endif
 
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:webdevicons_enable_airline_tabline = 1
 let g:webdevicons_enable_airline_statusline = 1
-let g:webdevicons_enable_ctrlp = 1
+let g:webdevicons_enable_ctrlp = 0
 let g:WebDevIconsUnicodeDecorateFileNodes = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
@@ -43,7 +43,7 @@ nnoremap <leader>d :NERDTreeToggle<cr>
 let g:NERDTreeWinSize=45
 let g:NERDTreeWinPos = "right"
 let NERDChristmasTree = 1
-let NERDTreeDirArrows=1
+let NERDTreeDirArrows=0
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
