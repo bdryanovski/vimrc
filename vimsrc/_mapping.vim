@@ -2,6 +2,14 @@
 " Map VIM custom keys
 " --------------------------------------------------------------------
 "
+" Touchbar Mapping
+"
+inoremap § <Esc>
+vnoremap § <Esc>
+nnoremap § <Esc>
+noremap <C-b> :BufExplorer<CR>
+noremap <C-\> :NERDTreeToggle<CR>
+"
 " Map w!! to write file with sudo, when forgot to open with sudo.
 "
 cnoremap w!! w !sudo tee % >/dev/null

@@ -60,7 +60,7 @@ NeoBundle 'tpope/vim-fugitive'
 "NeoBundle 'gregsexton/gitv.git'
 
 " Time tracking
-NeoBundle 'wakatime/vim-wakatime'
+" NeoBundle 'wakatime/vim-wakatime'
 
 " Syntax Highlighting and Language specifically
 NeoBundle 'tpope/vim-endwise.git'
