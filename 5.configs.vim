@@ -95,45 +95,20 @@ let g:ctrlp_custom_ignore = {
       \ 'file': '\.exe$\|\.so$\|\.dat\|\.jpg\|\.png\|\.DS_Store\|.swp$'
       \ }
 
-
-" -----------------------------------------------------------------------------
-" Plugin: Snipmate configuration
-" Plugin: UltiSnips
-" Plugin: vim-snippets
-" -----------------------------------------------------------------------------
-" Loading helper function used into the snippets itself.
-"
-let g:snippets_dir = expand($VIMHOME.'/snippets/')
-let g:snips_author = 'Bozhidar Dryanovski'
-
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsListSnippets="<c-e>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-"
-" " If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
 " -----------------------------------------------------------------------------
 " Plugin: neocomplete
 " -----------------------------------------------------------------------------
 " Disable AutoComplPop.
-let g:acp_enableAtStartup = 1
-" let g:neocomplete#use_vimproc = 1
-let g:neocomplete#data_directory='~/.vim/.cache/neocomplete'
-" Use neocomplete.
+let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 2
+let g:neocomplete#data_directory='~/.vim/.cache/neocomplete'
 let g:neocomplete#max_list = 10
 let g:neocomplete#max_keyword_width = 50
-let g:necomplete#auto_completion_start_length = 3
-let g:necomplete#min_keyword_length = 5
-let g:neocomplcache_disable_auto_complete = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#auto_completion_start_length = 2
+let g:neocomplete#min_keyword_length = 5
+let g:neocomplete#cache_disable_auto_complete = 1
 let g:neocomplete#sources#buffer#max_keyword_width = 40
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 let g:neocomplete#enable_smart_case = 'infercase'
