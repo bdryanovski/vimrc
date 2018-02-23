@@ -1,4 +1,12 @@
+" 
 " Stay real up/down/left/right are no longer here
+"
+"
+" Touchbar Mapping
+"
+noremap <C-b> :BufExplorer<CR>
+noremap <C-\> :NERDTreeToggle<CR>
+
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>

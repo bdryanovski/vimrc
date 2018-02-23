@@ -38,6 +38,10 @@ NeoBundle 'ryanoasis/vim-devicons.git'
 NeoBundle 'jacoborus/tender.vim'
 NeoBundle 'https://github.com/gorkunov/smartpairs.vim'
 
+NeoBundle 'prettier/vim-prettier', {
+    \ 'do': 'npm install',
+    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
+
 
 " Required:
 call neobundle#end()
