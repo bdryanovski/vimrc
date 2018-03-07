@@ -304,3 +304,8 @@ let g:prettier#config#trailing_comma = 'all'
 let g:prettier#config#parser = 'flow'
 
 
+" -----------------------------------------------------------------------------
+" Plugin: vim-perforce 
+" -----------------------------------------------------------------------------
+
+let g:perforce_open_on_change = 1

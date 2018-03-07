@@ -37,6 +37,7 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'ryanoasis/vim-devicons.git'
 NeoBundle 'jacoborus/tender.vim'
 NeoBundle 'https://github.com/gorkunov/smartpairs.vim'
+NeoBundle 'nfvs/vim-perforce'
 
 NeoBundle 'prettier/vim-prettier', {
     \ 'do': 'npm install',
