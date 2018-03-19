@@ -76,7 +76,7 @@ set statusline+=%-14.([%l/%L],%c%V%)     " cursor info
 
 syntax enable
 set background=dark
-colorscheme tender
+colorscheme onehalfdark
 
 if exists('+colorcolumn') 
 	set colorcolumn=100

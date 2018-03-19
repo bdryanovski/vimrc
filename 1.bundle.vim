@@ -38,6 +38,7 @@ NeoBundle 'ryanoasis/vim-devicons.git'
 NeoBundle 'jacoborus/tender.vim'
 NeoBundle 'https://github.com/gorkunov/smartpairs.vim'
 NeoBundle 'nfvs/vim-perforce'
+NeoBundle 'sonph/onehalf', {'rtp': 'vim/'}
 
 NeoBundle 'prettier/vim-prettier', {
     \ 'do': 'npm install',
